@@ -25,6 +25,7 @@
   "derivation": {
     "method": "BRIEF.md was read and split; no design decision was taken. Every fixed_requirements entry, and every spec-table row sourced from the brief, carries a quotation that was checked by literal substring match against the brief bytes digested above. The build refuses to emit this file if any quotation is not found.",
     "quotations_verified": 22,
+    "where_the_quotations_are": "Every one of them is in this file: fixed_requirements[].brief_evidence and brief_spec_rows[].brief_evidence. The count above is the sum of those two lists, so it is recomputable from this repository alone - re-read BRIEF.md and check each string is a substring of it. brief_spec_rows carries the quotations behind the README's spec table, which would otherwise cite the brief with the evidence left in a build script.",
     "review": "two rounds of adversarial review against the brief, looking for invented requirements, lost requirements, evidence supporting a weaker claim than the one made beside it, and worksheet questions that presuppose their own answer"
   },
   "fixed_requirements": [
@@ -91,6 +92,53 @@
     {
       "id": "REQ-13",
       "requirement": "The requirements the brief does state are authoritative and bind the design; they may not be relaxed, traded away, or overridden by the design agent's own preferences, and the open/fixed boundary is set by the brief itself.",
+      "brief_evidence": "Treat stated requirements as authoritative; where the brief leaves choices open"
+    }
+  ],
+  "brief_spec_rows": [
+    {
+      "aspect": "Function and power source",
+      "value": "A small USB-powered status beacon board",
+      "brief_evidence": "Design a small USB-powered status beacon board with a microcontroller"
+    },
+    {
+      "aspect": "Controller",
+      "value": "A microcontroller (specific device not named by the brief)",
+      "brief_evidence": "a microcontroller, one pushbutton, and at least eight individually controllable RGB LEDs"
+    },
+    {
+      "aspect": "User input",
+      "value": "One pushbutton",
+      "brief_evidence": "one pushbutton, and at least eight individually controllable RGB LEDs"
+    },
+    {
+      "aspect": "Indicators",
+      "value": "At least eight individually controllable RGB LEDs (a floor, with no upper bound stated)",
+      "brief_evidence": "at least eight individually controllable RGB LEDs. It should be inexpensive"
+    },
+    {
+      "aspect": "Programming/debug access",
+      "value": "A small programming/debug connector must be exposed; the brief names no family, form or pinout",
+      "brief_evidence": "easy to assemble, and expose a small programming/debug connector"
+    },
+    {
+      "aspect": "Cost and assembly posture",
+      "value": "Inexpensive and easy to assemble",
+      "brief_evidence": "It should be inexpensive, easy to assemble, and expose a small programming/debug connector."
+    },
+    {
+      "aspect": "Layer count preference",
+      "value": "Two layers preferred, deviation allowed only with a compelling reason",
+      "brief_evidence": "Prefer a two-layer board unless there is a compelling reason not to."
+    },
+    {
+      "aspect": "MCU, LED technology, board shape, connector family",
+      "value": "Explicitly delegated to the design agent by the brief",
+      "brief_evidence": "Choose the MCU, LED technology, exact board shape, and connector family yourself."
+    },
+    {
+      "aspect": "Status of stated requirements",
+      "value": "Stated requirements are authoritative; open choices are to be decided and documented, not invented into requirements",
       "brief_evidence": "Treat stated requirements as authoritative; where the brief leaves choices open"
     }
   ],
