@@ -457,7 +457,6 @@
       "ROUTE.GEOMETRY_HYGIENE",
       "ROUTE.PROVENANCE",
       "ROUTE.TINY_SEGMENTS",
-      "SIM.MODEL_PROVENANCE",
       "SIM.SCENARIOS",
       "SIM.STAGE_COVERAGE",
       "STACK.GERBER_PARITY",
@@ -472,7 +471,6 @@
     ]
   },
   "simulation": {
-    "models": "sim/models.json",
     "stages": {
       "pre_layout": [
         "sim/pre_layout_rail_droop.json",
@@ -486,7 +484,17 @@
     "required_stages": [
       "pre_layout",
       "post_layout"
-    ]
+    ],
+    "extracted_models": {
+      "physical_from_requirements": "fab/requirements.json",
+      "paths": {
+        "led_data_copper": {
+          "net": "LED_DATA",
+          "from_pad": "U1.20",
+          "to_pad": "R4.1"
+        }
+      }
+    }
   },
   "timing": {
     "physical_stackup": {

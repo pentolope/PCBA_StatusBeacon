@@ -1,28 +1,19 @@
 from __future__ import annotations
 
-import hashlib
 import json
 import os
 import sys
 
 from . import layout, netlist
 
-sys.path.insert(0, os.path.join(layout.REPO_ROOT, "tooling",
-                                "PCBA_AutoDesignAndTest"))
-
-from pcbqa import extract, geom, headless  # noqa: E402
-from pcbqa.fabricators.store import CatalogStore  # noqa: E402
-
 REPO_ROOT = layout.REPO_ROOT
 SIM_DIR = os.path.join(REPO_ROOT, "sim")
-REQUIREMENTS_PATH = os.path.join(REPO_ROOT, "fab", "requirements.json")
-CATALOG_ROOT = os.path.join(REPO_ROOT, "tooling", "PCBA_AutoDesignAndTest",
-                            "profiles", "jlcpcb")
 PARAMETERS_PATH = os.path.join(REPO_ROOT, "components", "parameters.json")
 
-CHORD_ERROR_MM = 0.001
-
-EXTRACTED_PATHS = (("LED_DATA", "U1.20", "R4.1"),)
+#: The name the manifest registers the extracted copper model under. The
+#: measured identity embeds the board digest, so only an alias can be
+#: written into a stored scenario.
+EXTRACTED_MODEL_ALIAS = "led_data_copper"
 
 SUPPLY_PATH_BUDGET_OHM = 0.1
 LED_INPUT_CAPACITANCE_F = 10e-12
@@ -69,38 +60,6 @@ def _board_digest(path):
         for chunk in iter(lambda: handle.read(1 << 16), b""):
             hasher.update(chunk)
     return hasher.hexdigest()
-
-
-def extracted_models():
-    """Simulation models measured from the routed copper, not declared."""
-    import pcbnew
-
-    headless.suppress_blocking_ui()
-    geom.configure(CHORD_ERROR_MM)
-    with open(REQUIREMENTS_PATH, "rb") as handle:
-        raw = handle.read()
-    requirements = json.loads(raw)
-    requirements.setdefault("inner_copper_oz", None)
-    requirements_digest = hashlib.sha256(raw).hexdigest()
-
-    board = pcbnew.LoadBoard(layout.BOARD_PATH)
-    board_sha256 = _board_digest(layout.BOARD_PATH)
-    stack = [board.GetLayerName(layer)
-             for layer in board.GetEnabledLayers().CuStack()]
-    copper = extract.approved_finished_copper(
-        CatalogStore(CATALOG_ROOT).approved(),
-        extract.copper_assignments_from_requirements(requirements, stack))
-    physical = {
-        "copper_thickness_mm": copper,
-        "board_thickness_mm": extract.requirements_board_thickness(
-            requirements, requirements_digest),
-    }
-    models = []
-    for net, from_pad, to_pad in EXTRACTED_PATHS:
-        record = extract.path_resistance(board, net, from_pad, to_pad, copper)
-        models.append(extract.interconnect_model_from_path(
-            record, board_sha256, physical))
-    return models
 
 
 def _ideal(records):
@@ -303,8 +262,7 @@ def _write(path, document):
 
 def write():
     parameters = _parameters()
-    models = extracted_models()
-    written = [_write(os.path.join(SIM_DIR, "models.json"), models)]
+    written = []
     for name, document in (
             ("pre_layout_rail_droop.json", rail_droop_scenario(parameters)),
             ("pre_layout_button_release.json",
@@ -312,7 +270,7 @@ def write():
             ("pre_layout_led_data_edge.json",
              led_data_edge_scenario(parameters)),
             ("post_layout_led_data_edge.json",
-             led_data_edge_scenario(parameters, models[0]["identity"]))):
+             led_data_edge_scenario(parameters, EXTRACTED_MODEL_ALIAS))):
         written.append(_write(os.path.join(SIM_DIR, name), document))
     return written
 

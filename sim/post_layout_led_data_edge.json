@@ -40,7 +40,7 @@
     },
     {
       "kind": "model_instance",
-      "model": "path:LED_DATA:U1.20->R4.1@880fd457fe51+phys:4eceeee7ec0a",
+      "model": "led_data_copper",
       "name": "COPPER",
       "nodes": [
         "drv",
