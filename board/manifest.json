@@ -432,7 +432,11 @@
     "source_closure": [
       "*.kicad_sch",
       "*.kicad_pcb",
-      "*.kicad_pro"
+      "*.kicad_pro",
+      "sim/*.json",
+      "fab/requirements.json",
+      "components/*.json",
+      "evidence/index.json"
     ],
     "source_hash_field": "source_sha256",
     "closure_field": "source_closure_sha256"

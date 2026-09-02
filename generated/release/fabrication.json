@@ -3,16 +3,16 @@
   "board_id": "status_beacon",
   "constraint_version": "schematic-stage-2026-09-01",
   "release_profile": "jlcpcb-2layer-assembled",
-  "generated_utc": "2026-09-02T04:22:54.613986+00:00",
-  "source_closure_sha256": "c38b5079918f2b9d2b8e1ee4141607af489de8738110579d95fb6f0932837652",
-  "source_closure_files": 5,
+  "generated_utc": "2026-09-02T04:26:03.020443+00:00",
+  "source_closure_sha256": "910cc2969f8c4aa0efe2adec5135dc235baa3096921cd5388c7dbc2ca8e40f40",
+  "source_closure_files": 13,
   "tools": {
     "kicad": "10.0.5",
     "kicad_cli": "kicad-cli"
   },
   "toolkit": {
-    "commit": "d14f53c5efd8e03e5eaf2ad52bc91e2868610584",
-    "working_tree_dirty": true,
+    "commit": "e2ae2372bd7c878b94794c5e19b3bc537994366e",
+    "working_tree_dirty": false,
     "detail": "git HEAD of the toolkit checkout that executed this validation"
   },
   "commands": [
@@ -27,20 +27,20 @@
   "artifacts": {
     "bom.csv": "18e97370d0c01a5cf4d276e2e6004100628f48b0269874b5aa0fdc0360bfe26d",
     "cpl.csv": "f3671944d5646168d28c8a35c28c0496bae1818523ed4eac8c3b65bdf35ae6f2",
-    "gerbers/status_beacon-B_Cu.gbr": "0a48bab6521dbcb1c356f0913a36726684350ad22144b851de9b2d6c0dff3111",
-    "gerbers/status_beacon-B_Mask.gbr": "156c4ff475354b068061a9f66b74f57d403fed2ff6878d13ad935d9695ffaf56",
-    "gerbers/status_beacon-B_Silkscreen.gbr": "3e1ba71408fe4165ed0e79c4e8032912504a5a0b218cb5f736ae80a7681f01ed",
-    "gerbers/status_beacon-Edge_Cuts.gbr": "1888596441e4f2428e0ac1d371a4a6cf307a6122e19787f32c590ea6550b3f4d",
-    "gerbers/status_beacon-F_Cu.gbr": "a64451621cd963d4d621275c73067a1bb15441a227b274dccae3fc5c15ac0c53",
-    "gerbers/status_beacon-F_Mask.gbr": "a68468c6a6d2306dd6b331ca5cd86448282a663c21465e7e0d0b0a097465ecc5",
-    "gerbers/status_beacon-F_Paste.gbr": "8ee0eb949b590f1840b6051b0a6a2f0c0dd3284b83b95b9a80f887adebad9045",
-    "gerbers/status_beacon-F_Silkscreen.gbr": "21dbae9b478f856b74b322422e7a9b936a369ea1df6e1f2ff5ce0102549fb46e",
-    "gerbers/status_beacon-NPTH.drl": "21c9f59fe17bf4ddd9d6106ecb5628b1a88ad4ae838c253a2d68eb0c2198106a",
-    "gerbers/status_beacon-PTH.drl": "b5e489989e192cf6174874327a2d3ec0c23711743dac2375af2b7d3e2b976382",
-    "gerbers/status_beacon-job.gbrjob": "51b075380b088df83e510eabc294d918b9eb26034acbf475434a421ae77d2c39",
-    "reports/drc.json": "7e2b24b928a9cc3c17dc659be46276e2640d77fa4cd20733410ad301ff26a800",
-    "reports/erc.json": "40be0f288fbc9678c05ca64c0ccef05e316230a48d78918876915403589025f8",
-    "status_beacon-fabrication.zip": "071a2a4cde8ba75668ec2b032e4007b0d7d94b9bfaa5dcad2ff25e06c2d0f5e6"
+    "gerbers/status_beacon-B_Cu.gbr": "8862e1156fc15bd8be4657898a4bd92ccd71f065edf0314cbee130a4f2329613",
+    "gerbers/status_beacon-B_Mask.gbr": "0ea9ce5d33192f34bd08a1b8c73a39cfe0d340c1f2268ec1b2dfa78bd5f736ca",
+    "gerbers/status_beacon-B_Silkscreen.gbr": "2dccd99062d9bef9f231bdbf21ca11d0eb8be83d213804d91b22e6bf521d2ef8",
+    "gerbers/status_beacon-Edge_Cuts.gbr": "cedd2086ab621e979181ad8623bad0c2369195bf37154b66f1a656e72223b149",
+    "gerbers/status_beacon-F_Cu.gbr": "4b3ffdff51597028e7d74156e701f37a4d8ed57bd85809c4e9621c458e41ae88",
+    "gerbers/status_beacon-F_Mask.gbr": "b2bbba0f749586c6bd097644385d8dbb209684171881b445674fa8c43bda8c32",
+    "gerbers/status_beacon-F_Paste.gbr": "5e0c2462e469e30db87aafca360449f9aab483d8bcce3af49a039ea87a3f0661",
+    "gerbers/status_beacon-F_Silkscreen.gbr": "8ec4d93bbd837dde3a79f9cc5ce019518e2880506de49f10577030f7a9262bf8",
+    "gerbers/status_beacon-NPTH.drl": "1169f9e43dd785a1eb6400a3c6c20cc219e9916a4d135887757046cc7c45b3c2",
+    "gerbers/status_beacon-PTH.drl": "f582ac4ea52b0c9f9bb1c669f873dfb981a652078d1b532573b7da347d8710bb",
+    "gerbers/status_beacon-job.gbrjob": "31198197a9d519c8f041515ba081451c47eec2a86dd1f2e4272b19f45c8d73d2",
+    "reports/drc.json": "b987ae355c6086b49c4702ae8171517730981578f81ada092c6561afc2342809",
+    "reports/erc.json": "45352630ca638c9a1221fc576a9570cf2ddc9212e6b9625d5404139482af96ef",
+    "status_beacon-fabrication.zip": "36e3701c033716ec29da928bd1f01b59c5ebd66b4d00354f71092de00f549dbd"
   },
   "excluded_layers": []
 }
