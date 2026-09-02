@@ -3,16 +3,16 @@
   "board_id": "status_beacon",
   "constraint_version": "schematic-stage-2026-09-01",
   "release_profile": "jlcpcb-2layer-assembled",
-  "generated_utc": "2026-09-02T04:49:56.151921+00:00",
-  "source_closure_sha256": "2f08a167740c4761651d351bf8872e149bc570cd94a94087d310652ded1e44f4",
+  "generated_utc": "2026-09-02T04:51:21.877562+00:00",
+  "source_closure_sha256": "261205fdba0acb507ac046f4819f62049ed4f98af4fed9716f155eaad0d179ee",
   "source_closure_files": 15,
   "tools": {
     "kicad": "10.0.5",
     "kicad_cli": "kicad-cli"
   },
   "toolkit": {
-    "commit": "584ee99bfa227d077ee1b9a8b8833941570d5323",
-    "working_tree_dirty": true,
+    "commit": "9528bfa3466b95f2e48b989d0b71fff8350865ad",
+    "working_tree_dirty": false,
     "detail": "git HEAD of the toolkit checkout that executed this validation"
   },
   "commands": [
@@ -27,20 +27,20 @@
   "artifacts": {
     "bom.csv": "18e97370d0c01a5cf4d276e2e6004100628f48b0269874b5aa0fdc0360bfe26d",
     "cpl.csv": "f3671944d5646168d28c8a35c28c0496bae1818523ed4eac8c3b65bdf35ae6f2",
-    "gerbers/status_beacon-B_Cu.gbr": "5d464e9d3a6e278cefd81ce00b951571d41c92e97cdb62854e02a333156cf7ae",
-    "gerbers/status_beacon-B_Mask.gbr": "63940e36516640574ac849ffcfa4fdedfbc6489c1e16924787dfb02fe1da064b",
-    "gerbers/status_beacon-B_Silkscreen.gbr": "f4846d12c491d38d7adeada4730ca6d8569b4b83d39636b89a6be54b667537df",
-    "gerbers/status_beacon-Edge_Cuts.gbr": "923d655e07dd112fae0da72348f7960a2641104d5e5e0102d6cd86f131e00ef1",
-    "gerbers/status_beacon-F_Cu.gbr": "6c25b7dc8cdf112c0147563564b258baa5f2e6ba75390038aee5371349750fcd",
-    "gerbers/status_beacon-F_Mask.gbr": "a1a68ee0777de1ab7941de4ac00a8268458e04cf179f9c9cc4b0e58ed17774cd",
-    "gerbers/status_beacon-F_Paste.gbr": "107164755726d26ba88b4f91d777ddba2f67e56886438834dd2f866b8e077d1a",
-    "gerbers/status_beacon-F_Silkscreen.gbr": "46564b6a3f54ec45baf77a8fe779ce438bad41287c1ac6f2ed910caebf9f30af",
-    "gerbers/status_beacon-NPTH.drl": "a6f2b96b8b1d35b5850fcb96a7e02572f87cdf515f3cea3f19d6d7ee382e8b88",
-    "gerbers/status_beacon-PTH.drl": "52fa4001f27d56182c2dc3ee21c0b6ae1ff9e98da5b132cd1188a45648c9c4fa",
-    "gerbers/status_beacon-job.gbrjob": "24d577f22eb70c02a10d02c8d52db02d2d5a5be70745890dddb4bb981b916dc6",
-    "reports/drc.json": "581d39c6db74aee9dee240591fd961ab294f8b4f0a92d9c4252945fa010648b6",
-    "reports/erc.json": "1c5a676c42a76b6b46539b521ed8dbc426dfb1b616004621da0755434a57b994",
-    "status_beacon-fabrication.zip": "d911943cded053554fd57ab172d98f98a9dd681e05c43eccdab6a563bc8e48bb"
+    "gerbers/status_beacon-B_Cu.gbr": "a5c46674ae99cbfca6a6c8bcd69b4acc45a8d3538ae1a21b2a550a4f2cd1632d",
+    "gerbers/status_beacon-B_Mask.gbr": "4ac8749e31adfff6b03ced45b6b377ab952e9ccae80d73087f97515184994772",
+    "gerbers/status_beacon-B_Silkscreen.gbr": "c64968969d851ccecb0de3ed21ede4118d35892c89091c92283f3deeaf8d470b",
+    "gerbers/status_beacon-Edge_Cuts.gbr": "8e7a20c268d9814a693f65a138abe6328a82dc9348351b6d465063062ee627fc",
+    "gerbers/status_beacon-F_Cu.gbr": "6fff3975b09a5ca84362c9d84f2784343d596b300f676c1d68e627047a6ab036",
+    "gerbers/status_beacon-F_Mask.gbr": "098ed932fff66a36c550b5a4c35814032906f18ebc826ece933f12ef52e5bf5a",
+    "gerbers/status_beacon-F_Paste.gbr": "7e4517850259295ef486046a65b3a28ec7d6a627b6a9bb44f94fb968d51334ec",
+    "gerbers/status_beacon-F_Silkscreen.gbr": "b225c725b3edf71411c2dbd3b53bdd2f60e204749087bf001c626a904a529470",
+    "gerbers/status_beacon-NPTH.drl": "d011ec21591d78351305332049aa77e683b2477cce403c92f69b19c094a8519a",
+    "gerbers/status_beacon-PTH.drl": "4ff505461ee3d52dd689338b022c4dfda4ba37f7a004243475d3d6f9251052de",
+    "gerbers/status_beacon-job.gbrjob": "bcaf31f3a6f46a0a87e99b21dcc4ad079f8f955b02c953b289f297729d8aeae5",
+    "reports/drc.json": "47bc67048792aa462a66b2a5dee4a1645d27c77ae53b40fe8db8c840b4724072",
+    "reports/erc.json": "cba835b2967b61a8c5c6c094a686cdffc0a26928680f660383e8a9cd8d43c538",
+    "status_beacon-fabrication.zip": "a2a6ab3bb4535ea83d22fc0a579b51fb9969eb1e8f34a5d481e6501d9fa4edc6"
   },
   "excluded_layers": []
 }
