@@ -15,7 +15,9 @@
     100.0,
     100.0
   ],
-  "documentation_globs": [],
+  "documentation_globs": [
+    "BRIEF.md"
+  ],
   "checks": {
     "erc": {
       "extra_flags": []
@@ -184,7 +186,8 @@
     },
     "metric": "annulus_to_opening_mm",
     "contact_semantics": "annulus_contacts counts zero-distance tangency as contact; annulus_strict_overlaps counts positive shared area only",
-    "mask_dam_rule": "contact"
+    "mask_dam_rule": "contact",
+    "design_target_mm": 0.15
   },
   "artifacts": {
     "gerber_dir": "generated/release/gerbers",
@@ -450,6 +453,7 @@
       "ARCH.CONTENTS",
       "ARCH.PROVENANCE",
       "BOM.NATIVE_PARITY",
+      "CONTRACT.CONNECTOR",
       "CONTRACT.PLACEMENT",
       "CPL.NATIVE_PARITY",
       "DRC.AUTHORITATIVE",
@@ -467,7 +471,8 @@
       "STACK.NATIVE_VS_MANIFEST",
       "TIMING.PATH_INTEGRITY",
       "VIA.ANNULUS_MASK_OVERLAP",
-      "VIA.IN_PAD_CONTACT"
+      "VIA.IN_PAD_CONTACT",
+      "VIA.MASK_CLEARANCE_TARGET"
     ],
     "required_evidence": [
       "generated/routing.json",
@@ -542,5 +547,69 @@
         }
       }
     }
-  }
+  },
+  "connector_gender_tokens": {
+    "receptacle": [
+      "receptacle",
+      "socket",
+      "female"
+    ],
+    "plug": [
+      "plug",
+      "header",
+      "male"
+    ]
+  },
+  "connector_contracts": [
+    {
+      "id": "usb_c_power_receptacle",
+      "reference": "J1",
+      "required_positions": 17,
+      "required_side": "front",
+      "required_gender": "receptacle",
+      "population": {
+        "dnp": false,
+        "exclude_from_bom": false
+      },
+      "pin_map": {
+        "A1": "GND",
+        "A12": "GND",
+        "A4": "VBUS",
+        "A5": "CC1",
+        "A6": null,
+        "A7": null,
+        "A8": null,
+        "A9": "VBUS",
+        "B1": "GND",
+        "B12": "GND",
+        "B4": "VBUS",
+        "B5": "CC2",
+        "B6": null,
+        "B7": null,
+        "B8": null,
+        "B9": "VBUS",
+        "SH": "GND"
+      }
+    },
+    {
+      "id": "swd_programming_footprint",
+      "reference": "J2",
+      "required_positions": 6,
+      "required_rows": 2,
+      "required_pitch_mm": 1.27,
+      "required_side": "front",
+      "population": {
+        "dnp": false,
+        "exclude_from_bom": true
+      },
+      "pin_map": {
+        "1": "+5V",
+        "2": "SWDIO",
+        "3": "NRST",
+        "4": "SWCLK",
+        "5": "GND",
+        "6": null
+      }
+    }
+  ]
 }
