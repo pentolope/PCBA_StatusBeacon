@@ -185,6 +185,11 @@ FIRMWARE_GLOBAL_BRIGHTNESS_LIMIT = 0.65
 
 BUTTON_RELEASE_DETECT_S = 3e-3
 
+#: The ambient the product is specified to operate in. Every thermal claim
+#: is evaluated at this temperature; it is the number the estimate has to
+#: support, not one the estimate produces.
+THERMAL_AMBIENT_MAX_C = 40.0
+
 VBUS_CAPACITANCE_LIMIT_F = 10.0e-6
 
 

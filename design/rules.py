@@ -879,6 +879,105 @@ def evaluate_reference_gap_limit(parameters):
     }
 
 
+def evaluate_thermal(parameters):
+    """Dissipation, board rise and the ratings they have to respect.
+
+    Two kinds of claim come out of this. The regulator's dissipation
+    against its own package rating needs no thermal model at all and is
+    decidable. Everything that depends on the board's temperature rests on
+    a first-order natural-convection estimate for a bare disc in still air,
+    so those claims are APPROXIMATE and their verdicts are UNKNOWN: an
+    estimate is not a measured junction temperature and must not present
+    itself as one.
+    """
+    from . import thermal
+    report = thermal.report(parameters)
+    results = []
+    estimate_assumptions = [
+        "bare board in still air, mounted horizontally, no enclosure and "
+        "no forced convection",
+        "heat leaves only by natural convection and radiation from the two "
+        "faces of the outline, with emissivity %.2f" % thermal.EMISSIVITY,
+        "the board is isothermal: no spreading gradient between the LED "
+        "ring and the regulator is modelled",
+        "the regulator's thermal resistance is the one implied by its "
+        "package dissipation rating and maximum junction temperature, for "
+        "the smallest five-pin package its datasheet lists",
+    ]
+
+    spec = parameters["parts"][netlist.PARTS[thermal.REGULATOR_REFERENCE]
+                               ["mpn"]]["thermal"]
+    pd_rating = spec["package_power_dissipation_w"]["value"]
+    documents = (spec["package_power_dissipation_w"]["document"],)
+    results.append({
+        "id": "thermal_regulator_package_rating",
+        "identity": "%s@%.0fC" % (thermal.REGULATOR_REFERENCE,
+                                  spec["package_power_rated_at_c"]["value"]),
+        "report": report,
+        "claim": _claim(
+            "regulator_package_rating", "W", "device_power_dissipation",
+            pd_rating - report["regulator_w"], DIRECT, documents,
+            _requirement("within_package_power_rating", ">=", 0.0),
+            claim.EXACT, scope_level="measurement"),
+    })
+
+    results.append({
+        "id": "thermal_regulator_derated",
+        "identity": "%s@%.0fC" % (thermal.REGULATOR_REFERENCE,
+                                  report["board_temperature_c"]),
+        "report": report,
+        "claim": _claim(
+            "regulator_derated_headroom", "W", "device_power_dissipation",
+            report["regulator_allowable_w"] - report["regulator_w"],
+            DERIVED, documents,
+            _requirement("within_derated_dissipation", ">=", 0.0),
+            claim.APPROXIMATE, scope_level="measurement",
+            assumptions=estimate_assumptions),
+    })
+
+    led = parameters["parts"]["WS2812B-V5/W"]["thermal"]
+    results.append({
+        "id": "thermal_board_temperature",
+        "identity": "board@%.0fC_ambient" % report["ambient_declared_c"],
+        "report": report,
+        "claim": _claim(
+            "board_temperature_headroom", "K", "board_thermal_rise",
+            report["led_operating_max_c"] - report["board_temperature_c"],
+            DERIVED, (led["operating_max_c"]["document"],),
+            _requirement("board_within_component_operating_range", ">=", 0.0),
+            claim.APPROXIMATE, scope_level="board",
+            assumptions=estimate_assumptions),
+    })
+
+    results.append({
+        "id": "thermal_brightness_limit",
+        "identity": "firmware_limit_%.2f" % netlist.FIRMWARE_GLOBAL_BRIGHTNESS_LIMIT,
+        "report": report,
+        "claim": _claim(
+            "brightness_limit_headroom", "fraction", "board_thermal_rise",
+            report["maximum_brightness"]
+            - netlist.FIRMWARE_GLOBAL_BRIGHTNESS_LIMIT,
+            DERIVED, (led["operating_max_c"]["document"],),
+            _requirement("firmware_limit_within_thermal_budget", ">=", 0.0),
+            claim.APPROXIMATE, scope_level="board",
+            assumptions=estimate_assumptions),
+    })
+
+    results.append({
+        "id": "thermal_declared_ambient",
+        "identity": "ambient_%.0fC" % netlist.THERMAL_AMBIENT_MAX_C,
+        "report": report,
+        "claim": _claim(
+            "declared_ambient_headroom", "K", "board_thermal_rise",
+            report["maximum_ambient_c"] - netlist.THERMAL_AMBIENT_MAX_C,
+            DERIVED, (led["operating_max_c"]["document"],),
+            _requirement("estimate_supports_declared_ambient", ">=", 0.0),
+            claim.APPROXIMATE, scope_level="board",
+            assumptions=estimate_assumptions),
+    })
+    return results
+
+
 def evaluate_all():
     parameters = load_parameters()
     results = []
@@ -896,6 +995,7 @@ def evaluate_all():
     results.extend(evaluate_land_patterns(parameters))
     results.append(evaluate_debug_contract(parameters))
     results.append(evaluate_reference_gap_limit(parameters))
+    results.extend(evaluate_thermal(parameters))
     for result in results:
         result["verdict"] = claim.verdict(result["claim"])
     return results

@@ -12,7 +12,8 @@ if REPO_ROOT not in sys.path:
     sys.path.insert(0, REPO_ROOT)
 
 from design import (build, cost, evidence, ksym, libraries,  # noqa: E402
-                    netlist, physical, rules, sexpr, simulation)
+                    netlist, physical, rules, sexpr, simulation,
+                    thermal)
 
 KNOWN_OPEN_FAILURES = set()
 
@@ -622,6 +623,86 @@ class DeclaredContracts(unittest.TestCase):
     def test_the_reference_gap_limit_is_electrically_short(self):
         result = rules.evaluate_reference_gap_limit(rules.load_parameters())
         self.assertEqual(result["violations"], [])
+
+
+class Thermal(unittest.TestCase):
+    """The estimate, and the ratings it has to respect."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.parameters = rules.load_parameters()
+
+    def test_every_watt_is_attributed_to_a_part(self):
+        parts, total, load = thermal.dissipation(self.parameters, 1.0)
+        self.assertAlmostEqual(sum(parts.values()), total)
+        self.assertEqual(len(parts), netlist.LED_COUNT + 2)
+        for reference in parts:
+            self.assertIn(reference, netlist.PARTS)
+
+    def test_dissipation_scales_with_brightness(self):
+        _p, dim, _l = thermal.dissipation(self.parameters, 0.25)
+        _p, bright, _l = thermal.dissipation(self.parameters, 1.0)
+        self.assertLess(dim, bright)
+
+    def test_the_rise_solves_to_a_fixed_point(self):
+        rise, h_conv, h_rad = thermal.board_rise_k(2.0, 25.0)
+        area = thermal._board_area_m2()
+        self.assertAlmostEqual(rise * (h_conv + h_rad) * area, 2.0, places=6)
+
+    def test_radiation_and_convection_are_the_same_order(self):
+        """Neither path may be silently doing all the work."""
+        _rise, h_conv, h_rad = thermal.board_rise_k(1.6, 40.0)
+        self.assertGreater(h_conv, 0.3 * h_rad)
+        self.assertGreater(h_rad, 0.3 * h_conv)
+
+    def test_a_hotter_ambient_allows_the_regulator_less(self):
+        cool, _t = thermal.regulator_allowable_w(self.parameters, 25.0)
+        warm, _t = thermal.regulator_allowable_w(self.parameters, 85.0)
+        self.assertGreater(cool, warm)
+
+    def test_the_declared_ambient_is_supported_at_the_firmware_limit(self):
+        report = thermal.report(self.parameters)
+        self.assertLessEqual(report["board_temperature_c"],
+                             report["led_operating_max_c"])
+        self.assertLessEqual(report["regulator_w"],
+                             report["regulator_allowable_w"])
+        self.assertGreaterEqual(report["maximum_ambient_c"],
+                                netlist.THERMAL_AMBIENT_MAX_C)
+
+    def test_full_brightness_is_not_supported_at_the_declared_ambient(self):
+        """The brightness limit is doing thermal work, not just current work.
+
+        At full brightness the regulator passes its 25 C package rating and
+        still exceeds what the declared ambient leaves it, which is why the
+        limit cannot simply be raised to 1.0.
+        """
+        full = thermal.report(self.parameters, 1.0)
+        self.assertGreater(full["regulator_w"], full["regulator_allowable_w"])
+        self.assertLess(full["maximum_ambient_c"],
+                        netlist.THERMAL_AMBIENT_MAX_C)
+        self.assertLess(thermal.maximum_brightness(self.parameters), 1.0)
+
+    def test_the_firmware_limit_is_inside_the_thermal_budget(self):
+        self.assertLessEqual(netlist.FIRMWARE_GLOBAL_BRIGHTNESS_LIMIT,
+                             thermal.maximum_brightness(self.parameters))
+
+    def test_estimates_are_reported_as_estimates(self):
+        """An approximation must not present itself as a measurement."""
+        results = {r["id"]: r for r in rules.evaluate_thermal(self.parameters)}
+        for identity in ("thermal_board_temperature", "thermal_declared_ambient",
+                         "thermal_regulator_derated",
+                         "thermal_brightness_limit"):
+            record = results[identity]["claim"]
+            self.assertEqual(record["knowledge"], "approximate", identity)
+            self.assertTrue(record["evidence"]["assumptions"], identity)
+        exact = results["thermal_regulator_package_rating"]["claim"]
+        self.assertEqual(exact["knowledge"], "exact")
+
+    def test_no_thermal_claim_is_negative(self):
+        for result in rules.evaluate_thermal(self.parameters):
+            value = result["claim"]["quantity"].get("value")
+            if value is not None:
+                self.assertGreaterEqual(value, 0.0, result["id"])
 
 
 if __name__ == "__main__":

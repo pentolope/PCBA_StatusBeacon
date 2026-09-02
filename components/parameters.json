@@ -72,6 +72,12 @@
         "document": "py32f003_puya",
         "pad_count": 20,
         "pitch_mm": 0.65
+      },
+      "thermal": {
+        "theta_ja_c_per_w": {
+          "knowledge": "unknown",
+          "document": "py32f003_puya"
+        }
       }
     },
     "TPD1E10B06DPYR": {
@@ -112,6 +118,13 @@
             0.0
           ]
         ]
+      },
+      "thermal": {
+        "theta_ja_c_per_w": {
+          "value": 730.8,
+          "document": "tpd1e10b06_ti",
+          "basis": "direct"
+        }
       }
     },
     "K2-1187SQ-A4SW-06": {
@@ -508,6 +521,22 @@
           "document": "ws2812b_v5_worldsemi",
           "basis": "direct"
         }
+      },
+      "thermal": {
+        "operating_max_c": {
+          "value": 65.0,
+          "document": "ws2812b_v5_worldsemi",
+          "basis": "direct"
+        },
+        "operating_min_c": {
+          "value": -40.0,
+          "document": "ws2812b_v5_worldsemi",
+          "basis": "direct"
+        },
+        "theta_ja_c_per_w": {
+          "knowledge": "unknown",
+          "document": "ws2812b_v5_worldsemi"
+        }
       }
     },
     "ME6211C50M5G-N": {
@@ -580,6 +609,29 @@
         "value": 6e-05,
         "document": "me6211_microne",
         "basis": "direct"
+      },
+      "thermal": {
+        "package_power_dissipation_w": {
+          "value": 0.25,
+          "package_rated": "SOT-353",
+          "package_fitted": "SOT-23-5",
+          "document": "me6211_microne",
+          "basis": "direct"
+        },
+        "package_power_rated_at_c": {
+          "value": 25.0,
+          "document": "me6211_microne",
+          "basis": "assumed"
+        },
+        "junction_max_c": {
+          "value": 150.0,
+          "document": "me6211_microne",
+          "basis": "direct"
+        },
+        "theta_ja_c_per_w": {
+          "knowledge": "derived",
+          "document": "me6211_microne"
+        }
       }
     }
   },
