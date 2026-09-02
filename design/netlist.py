@@ -74,9 +74,12 @@ def _parts():
         parts["C%d" % (index + 5)] = _part(
             "Device:C", "Capacitor_SMD:C_0402_1005Metric", "100nF",
             lcsc="C1525")
-    parts["D17"] = _part(
-        "Device:D_Schottky", "Diode_SMD:D_SOD-323",
-        "1N5819WS", "1N5819WS", "Guangdong Hottech", "C191023")
+    parts["U2"] = _part(
+        "StatusBeacon:ME6211C50", "Package_TO_SOT_SMD:SOT-23-5",
+        "ME6211C50M5G-N", "ME6211C50M5G-N", "MICRONE", "C236670")
+    parts["C17"] = _part(
+        "Device:C", "Capacitor_SMD:C_0805_2012Metric", "4.7uF",
+        lcsc="C1779")
     for ref in ("D13", "D14", "D15", "D16"):
         parts[ref] = _part(
             "StatusBeacon:TPD1E10B06", "StatusBeacon:TI_X1SON-2_1.0x0.6mm_P0.65mm",
@@ -85,7 +88,7 @@ def _parts():
         parts["TP%d" % index] = _part(
             "Connector:TestPoint", "TestPoint:TestPoint_Pad_D1.0mm",
             "TestPoint", in_bom=False)
-    for index in range(1, 4):
+    for index in (1, 3):
         parts["#FLG%d" % index] = _part(
             "power:PWR_FLAG", "", "PWR_FLAG", in_bom=False, on_board=False)
     return parts
@@ -98,12 +101,12 @@ def _nets():
     ground = [
         "J1.A1", "J1.A12", "J1.B1", "J1.B12", "J1.SH", "R1.2", "R2.2",
         "U1.7", "SW1.2", "J2.5",
-        "C1.2", "C2.2", "C3.2", "C4.2",
+        "C1.2", "C2.2", "C3.2", "C4.2", "C17.2", "U2.2",
         "D13.1", "D14.1", "D15.1", "D16.1", "TP3.1", "#FLG3.1",
     ]
     five_volt = [
-        "D17.1", "C1.1", "C2.1", "U1.9", "J2.1", "R6.1",
-        "TP2.1", "#FLG2.1",
+        "U2.5", "C1.1", "C2.1", "U1.9", "J2.1", "R6.1",
+        "TP2.1",
     ]
     for index in range(LED_COUNT):
         ground.append("D%d.3" % (index + 1))
@@ -113,8 +116,8 @@ def _nets():
 
     nets = {
         "GND": ground,
-        "VBUS": ["J1.A4", "J1.A9", "J1.B4", "J1.B9", "D13.2", "D17.2",
-                 "TP1.1", "#FLG1.1"],
+        "VBUS": ["J1.A4", "J1.A9", "J1.B4", "J1.B9", "D13.2",
+                 "U2.1", "U2.3", "C17.1", "TP1.1", "#FLG1.1"],
         "+5V": five_volt,
         "CC1": ["J1.A5", "R1.1", "D14.2"],
         "CC2": ["J1.B5", "R2.1", "D15.2"],
@@ -139,14 +142,23 @@ NETS = _nets()
 NO_CONNECT = tuple(
     ["U1.%d" % pin for pin in
      (1, 2, 3, 4, 5, 6, 8, 12, 13, 14, 15, 16, 17)]
-    + ["J1.A6", "J1.A7", "J1.A8", "J1.B6", "J1.B7", "J1.B8", "J2.6"])
+    + ["J1.A6", "J1.A7", "J1.A8", "J1.B6", "J1.B7", "J1.B8", "J2.6",
+       "U2.4"])
 
 
-SERIES_DIODE_VF_MAX_V = 0.60
+#: The regulator's specified output band, and the dropout that decides the
+#: rail when the source is too low for it to regulate. The datasheet states
+#: dropout as a TYPICAL at 100 mA and 200 mA only, so the figure carried here
+#: extrapolates that slope to the declared port budget and adds the pass
+#: device's rise with temperature.
+LDO_OUTPUT_TOLERANCE = 0.01
+LDO_OUTPUT_NOMINAL_V = 5.0
+LDO_DROPOUT_AT_BUDGET_V = 0.70
 
 RAILS = {
     "VBUS": {"min_v": 4.75, "max_v": 5.5},
-    "+5V": {"min_v": 4.75 - SERIES_DIODE_VF_MAX_V, "max_v": 5.5},
+    "+5V": {"min_v": 4.75 - LDO_DROPOUT_AT_BUDGET_V,
+            "max_v": LDO_OUTPUT_NOMINAL_V * (1.0 + LDO_OUTPUT_TOLERANCE)},
     "GND": {"min_v": 0.0, "max_v": 0.0},
 }
 

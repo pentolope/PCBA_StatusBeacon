@@ -1,15 +1,5 @@
 {
   "documents": {
-    "1n5819ws_hottech": {
-      "applies_to": [
-        "1N5819WS"
-      ],
-      "bytes": 1157833,
-      "file": "datasheets/1n5819ws_hottech.pdf",
-      "retrieved": "2026-09-02",
-      "sha256": "609a5bc2fcd5bbb36f47f802b11102f1e140eae519c74b067cb615b4d52d0a4f",
-      "url": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Guangdong-Hottech-1N5819WS_C191023.pdf"
-    },
     "k2_1187sq_hro": {
       "applies_to": [
         "K2-1187SQ-A4SW-06"
@@ -19,6 +9,16 @@
       "retrieved": "2026-09-01",
       "sha256": "a2ae14416616397e00185313b0e597a644385d3eb8a09170daea0f6b6ef51c10",
       "url": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Korean-Hroparts-Elec-K2-1187SQ-A4SW-06_C92584.pdf"
+    },
+    "me6211_microne": {
+      "applies_to": [
+        "ME6211C50M5G-N"
+      ],
+      "bytes": 865046,
+      "file": "datasheets/me6211_microne.pdf",
+      "retrieved": "2026-09-02",
+      "sha256": "23084e9d0d0fd762c7419509ee656856be36f08ffc39f184e22a2acf7cfae5e6",
+      "url": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_MICRONE-Nanjing-Micro-One-Elec-ME6211C50M5G-N_C236670.pdf"
     },
     "py32f003_puya": {
       "applies_to": [

@@ -17,12 +17,13 @@ SOURCES = {
         "retrieved": "2026-09-02",
         "applies_to": ["WS2812B-V5/W"],
     },
-    "1n5819ws_hottech": {
-        "file": "datasheets/1n5819ws_hottech.pdf",
+    "me6211_microne": {
+        "file": "datasheets/me6211_microne.pdf",
         "url": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/"
-               "2304140030_Guangdong-Hottech-1N5819WS_C191023.pdf",
+               "2304140030_MICRONE-Nanjing-Micro-One-Elec-"
+               "ME6211C50M5G-N_C236670.pdf",
         "retrieved": "2026-09-02",
-        "applies_to": ["1N5819WS"],
+        "applies_to": ["ME6211C50M5G-N"],
     },
     "py32f003_puya": {
         "file": "datasheets/py32f003_puya.pdf",

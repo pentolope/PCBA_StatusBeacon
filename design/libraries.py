@@ -99,6 +99,7 @@ def py32_symbol_text():
     lines.append('\t\t)')
     lines.append('\t)')
     lines.append(tvs_symbol_text())
+    lines.append(ldo_symbol_text())
     lines.append(')')
     return "\n".join(lines) + "\n"
 
@@ -276,6 +277,46 @@ def tvs_symbol_text():
         '\t\t(symbol "%s_1_1"' % TVS_SYMBOL_NAME,
         _pin_text("passive", 0.0, -3.81, 90, "A1", "1"),
         _pin_text("passive", 0.0, 3.81, 270, "A2", "2"),
+        '\t\t)',
+        '\t)',
+    ])
+
+
+LDO_SYMBOL_NAME = "ME6211C50"
+LDO_DATASHEET = ("https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/"
+                 "2304140030_MICRONE-Nanjing-Micro-One-Elec-"
+                 "ME6211C50M5G-N_C236670.pdf")
+
+
+def ldo_symbol_text():
+    """SOT-23-5 CMOS LDO: 1 VIN, 2 VSS, 3 CE, 4 NC, 5 VOUT."""
+    return "\n".join([
+        '\t(symbol "%s"' % LDO_SYMBOL_NAME,
+        '\t\t(pin_names\n\t\t\t(offset 0.762)\n\t\t)',
+        '\t\t(exclude_from_sim no)',
+        '\t\t(in_bom yes)',
+        '\t\t(on_board yes)',
+        _symbol_property("Reference", "U", 0, False).rstrip("\n"),
+        _symbol_property("Value", LDO_SYMBOL_NAME, 1, False).rstrip("\n"),
+        _symbol_property("Footprint", "Package_TO_SOT_SMD:SOT-23-5", 2,
+                         True).rstrip("\n"),
+        _symbol_property("Datasheet", LDO_DATASHEET, 3, True).rstrip("\n"),
+        _symbol_property("ki_fp_filters", "SOT?23*", 4, True).rstrip("\n"),
+        '\t\t(symbol "%s_0_1"' % LDO_SYMBOL_NAME,
+        '\t\t\t(rectangle',
+        '\t\t\t\t(start -7.62 5.08)',
+        '\t\t\t\t(end 7.62 -5.08)',
+        '\t\t\t\t(stroke\n\t\t\t\t\t(width 0.254)\n'
+        '\t\t\t\t\t(type default)\n\t\t\t\t)',
+        '\t\t\t\t(fill\n\t\t\t\t\t(type background)\n\t\t\t\t)',
+        '\t\t\t)',
+        '\t\t)',
+        '\t\t(symbol "%s_1_1"' % LDO_SYMBOL_NAME,
+        _pin_text("power_in", -10.16, 2.54, 0, "VIN", "1"),
+        _pin_text("power_in", 0.0, -7.62, 90, "VSS", "2"),
+        _pin_text("input", -10.16, -2.54, 0, "CE", "3"),
+        _pin_text("no_connect", 10.16, -2.54, 180, "NC", "4"),
+        _pin_text("power_out", 10.16, 2.54, 180, "VOUT", "5"),
         '\t\t)',
         '\t)',
     ])

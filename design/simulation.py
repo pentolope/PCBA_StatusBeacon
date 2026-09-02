@@ -99,21 +99,20 @@ def _measurement(name, kind, node, op, value):
 
 def rail_droop_scenario(parameters):
     spec = led(parameters)
-    # The rail is fed through the series Schottky, whose forward voltage the
-    # datasheet states only as a MAXIMUM. Driving the scenario at the source
-    # minimum less that maximum makes every rail voltage it reports a LOWER
-    # BOUND on the real one, which is exactly the direction a ">=" assertion
-    # needs. Nothing here can bound the rail from above: no diode datasheet
-    # guarantees a minimum drop.
-    source_v = (parameters["usb"]["vsafe5v_min_v"]
-                - netlist.SERIES_DIODE_VF_MAX_V)
+    # The rail is the regulator's output. Driving the scenario at the low end
+    # of the declared rail - the source minimum less the dropout the regulator
+    # shows at the declared port budget - makes every rail voltage it reports
+    # a LOWER BOUND on the real one, which is the direction a ">=" assertion
+    # needs.
+    source_v = netlist.RAILS["+5V"]["min_v"]
     step_a = (netlist.LED_COUNT * spec["supply_current_max_a"]["value"]
               * netlist.FIRMWARE_GLOBAL_BRIGHTNESS_LIMIT)
     bound = {"kind": "lower_bound",
              "basis": {"kind": "assumed",
-                       "detail": "the source is held at its minimum and the "
-                                 "series diode at its maximum forward "
-                                 "voltage, so the rail can only be higher "
+                       "detail": "the rail is held at the low end of its "
+                                 "declared range, the source minimum less "
+                                 "the regulator's dropout at the declared "
+                                 "port budget, so it can only be higher "
                                  "than this in service"}}
     return {
         "name": "rail_droop_on_led_turn_on",
@@ -142,9 +141,10 @@ def rail_droop_scenario(parameters):
              "node": "rail", "knowledge": bound},
         ],
         "assumptions": _ideal({
-            "SRC": "the USB-C source at vSafe5V minimum, less the series "
-                   "Schottky's maximum forward voltage, as an ideal source "
-                   "with no output impedance of its own",
+            "SRC": "the regulator's output at the low end of the declared "
+                   "rail, as an ideal source; its transient response to a "
+                   "load step is not modelled, and the datasheet states no "
+                   "load-transient figure to model it from",
             "RPATH": "the series resistance of the cable, the receptacle "
                      "contacts and the board copper between the receptacle "
                      "and the LED ring, as a design budget",

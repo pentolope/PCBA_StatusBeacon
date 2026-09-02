@@ -1,6 +1,6 @@
 {
   "accepted_attempt": 2,
-  "adopted_sha256": "fccc88ba56d527682f0a417a3e3083bdb60ff2ab0888a647e73c9a06c9aa4932",
+  "adopted_sha256": "d2b2fb1fea76bdf557194ebe119272c63e11b4987a36d7d6cfebffc4d298d412",
   "attempts": [
     {
       "accepted": false,
@@ -13,7 +13,7 @@
           "finalize_excluded_nets": [
             "GND"
           ],
-          "main_loop_time_s": 0.52,
+          "main_loop_time_s": 0.4,
           "min_clearance_used": 0.15,
           "multipoint_deficit": 0,
           "open_single": [],
@@ -27,11 +27,11 @@
           "vias": 11
         }
       },
-      "source_sha256": "01fd87034d23645eaf2a2727c8550689e13ff93a9f33c114bf0b21df27735fde",
+      "source_sha256": "38a7e850e96fff079b4bcb5145c4342a677504c66ed1a6f28beb570d94f14228",
       "stages": [
         {
           "produced_by": "router",
-          "sha256": "cfae1b302db4a08b0d471e028222514cc002fe24123322dca721955f5ee078f5",
+          "sha256": "31247a8f6e3d6a8f1c14a1492fdd42409cab64d6d05d5950f1c9890bfe77c633",
           "stage": "routed"
         },
         {
@@ -45,7 +45,7 @@
             "touch_tolerance_mm": 0.01
           },
           "produced_by": "transform",
-          "sha256": "16a95ee9877a32ac701954f9f39e7c19da8da883382788bd3aa2d0d19d188ec9",
+          "sha256": "c54cd195c4dfbbb0063f32f49fb397af724bf94ffe698bf5e099d2f3b28d2a39",
           "stage": "tidied",
           "transform": "snap track endpoints onto same-net via centres; prune dangling track ends, keeping any removal only while connectivity is unchanged; refill the zones so the pour is knocked out around the copper the router added"
         }
@@ -76,11 +76,11 @@
           "vias": 10
         }
       },
-      "source_sha256": "01fd87034d23645eaf2a2727c8550689e13ff93a9f33c114bf0b21df27735fde",
+      "source_sha256": "38a7e850e96fff079b4bcb5145c4342a677504c66ed1a6f28beb570d94f14228",
       "stages": [
         {
           "produced_by": "router",
-          "sha256": "4c7e2d36f8064510bcd25bedf4d0a7dd3b28d5ed6c808876e530510377ce7855",
+          "sha256": "d71826369db658080d59bb2e3c73072e70dbc13b67161d0808a82cb9d748d693",
           "stage": "routed"
         },
         {
@@ -94,7 +94,7 @@
             "touch_tolerance_mm": 0.01
           },
           "produced_by": "transform",
-          "sha256": "fccc88ba56d527682f0a417a3e3083bdb60ff2ab0888a647e73c9a06c9aa4932",
+          "sha256": "d2b2fb1fea76bdf557194ebe119272c63e11b4987a36d7d6cfebffc4d298d412",
           "stage": "tidied",
           "transform": "snap track endpoints onto same-net via centres; prune dangling track ends, keeping any removal only while connectivity is unchanged; refill the zones so the pour is knocked out around the copper the router added"
         }
@@ -158,5 +158,5 @@
     }
   },
   "kind": "routing-run",
-  "source_sha256": "01fd87034d23645eaf2a2727c8550689e13ff93a9f33c114bf0b21df27735fde"
+  "source_sha256": "38a7e850e96fff079b4bcb5145c4342a677504c66ed1a6f28beb570d94f14228"
 }

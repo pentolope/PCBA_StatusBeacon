@@ -510,32 +510,75 @@
         }
       }
     },
-    "1N5819WS": {
-      "forward_voltage_max_v": {
-        "value": 0.6,
-        "at_current_a": 1.0,
-        "document": "1n5819ws_hottech",
+    "ME6211C50M5G-N": {
+      "supply_pins": [
+        "1"
+      ],
+      "ground_pins": [
+        "2"
+      ],
+      "supply": {
+        "abs_max_v": {
+          "value": 6.5,
+          "document": "me6211_microne",
+          "basis": "direct"
+        },
+        "abs_min_v": {
+          "value": -0.3,
+          "document": "me6211_microne",
+          "basis": "direct"
+        },
+        "characterised_min_v": {
+          "value": 1.2,
+          "document": "me6211_microne",
+          "basis": "direct"
+        },
+        "characterised_max_v": {
+          "value": 6.0,
+          "document": "me6211_microne",
+          "basis": "direct"
+        }
+      },
+      "output_voltage_nominal_v": {
+        "value": 5.0,
+        "document": "me6211_microne",
         "basis": "direct"
       },
-      "forward_voltage_min_v": {
-        "knowledge": "unknown",
-        "document": "1n5819ws_hottech"
-      },
-      "average_forward_current_max_a": {
-        "value": 1.0,
-        "document": "1n5819ws_hottech",
+      "output_voltage_tolerance": {
+        "value": 0.01,
+        "document": "me6211_microne",
         "basis": "direct"
       },
-      "reverse_voltage_max_v": {
-        "value": 40.0,
-        "document": "1n5819ws_hottech",
+      "output_current_max_a": {
+        "value": 0.5,
+        "document": "me6211_microne",
         "basis": "direct"
       },
-      "supply_pins": [],
-      "ground_pins": [],
+      "dropout_v": {
+        "at_100ma": 0.1,
+        "at_200ma": 0.2,
+        "document": "me6211_microne",
+        "basis": "direct",
+        "knowledge": "typical"
+      },
+      "digital_inputs": {
+        "3": {
+          "vih_min": {
+            "value": 1.0,
+            "document": "me6211_microne",
+            "basis": "direct"
+          },
+          "vil_max": {
+            "value": 0.7,
+            "document": "me6211_microne",
+            "basis": "direct"
+          },
+          "input_current_max_a": 1e-06
+        }
+      },
       "supply_current_max_a": {
-        "value": 0.0,
-        "document": "1n5819ws_hottech",
+        "value": 6e-05,
+        "document": "me6211_microne",
         "basis": "direct"
       }
     }

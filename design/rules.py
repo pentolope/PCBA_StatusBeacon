@@ -353,7 +353,8 @@ def _capacitance_farads(value):
 
 def evaluate_vbus_capacitance(parameters):
     pin_map = _pin_map()
-    domain = {"VBUS", "+5V"}
+    net_pins = _net_pins()
+    domain, _series = _reachable_nets("VBUS", pin_map, net_pins)
     total = 0.0
     included = {}
     for reference, part in sorted(netlist.PARTS.items()):
@@ -566,14 +567,15 @@ def evaluate_probe_access(parameters):
     required = set(PROBE_REQUIRED_NETS)
     required |= {name for name in netlist.NETS if name.startswith("LED_CH")}
     violations = sorted(required - test_point_nets)
-    # Exactly one two-terminal part must bridge the input rail to the board
-    # rail, whatever kind it is: bring-up needs one identifiable element to
-    # lift or measure across, and more than one would mean a parallel supply
-    # path that no single measurement characterises.
+    # Exactly one part must bridge the input rail to the board rail, whatever
+    # kind it is: a link, a diode or a regulator. More than one would mean a
+    # parallel supply path that no single measurement characterises, and none
+    # would mean the two rails are the same net.
     links = []
-    for reference in netlist.PARTS:
-        nets = {pin_map.get(reference + ".1"), pin_map.get(reference + ".2")}
-        if nets == {"VBUS", "+5V"}:
+    for reference, part in netlist.PARTS.items():
+        touched = {net for pin_ref, net in pin_map.items()
+                   if pin_ref.split(".", 1)[0] == reference}
+        if {"VBUS", "+5V"} <= touched:
             links.append(reference)
     if len(links) != 1:
         violations.append("supply_current_link")

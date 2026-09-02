@@ -157,44 +157,44 @@
       ],
       "stock": 3228004
     },
-    "C191023": {
-      "library_type": "base",
-      "manufacturer": "Guangdong Hottech",
-      "mpn": "1N5819WS",
-      "package": "SOD-323",
+    "C236670": {
+      "library_type": "extended",
+      "manufacturer": "MICRONE(Nanjing Micro One Elec)",
+      "mpn": "ME6211C50M5G-N",
+      "package": "SOT-23-5",
       "price_breaks": [
         {
-          "max_qty": 499,
+          "max_qty": 99,
           "min_qty": 1,
-          "unit_usd": 0.0137
+          "unit_usd": 0.061
+        },
+        {
+          "max_qty": 299,
+          "min_qty": 100,
+          "unit_usd": 0.0495
         },
         {
           "max_qty": 2999,
-          "min_qty": 500,
-          "unit_usd": 0.0116
+          "min_qty": 300,
+          "unit_usd": 0.0438
         },
         {
           "max_qty": 5999,
           "min_qty": 3000,
-          "unit_usd": 0.011
+          "unit_usd": 0.0393
         },
         {
-          "max_qty": 23999,
+          "max_qty": 8999,
           "min_qty": 6000,
-          "unit_usd": 0.0103
-        },
-        {
-          "max_qty": 50999,
-          "min_qty": 24000,
-          "unit_usd": 0.01
+          "unit_usd": 0.0357
         },
         {
           "max_qty": null,
-          "min_qty": 51000,
-          "unit_usd": 0.0098
+          "min_qty": 9000,
+          "unit_usd": 0.0341
         }
       ],
-      "stock": 6205386
+      "stock": 7264
     },
     "C25105": {
       "library_type": "base",

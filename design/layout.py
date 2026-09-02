@@ -70,11 +70,16 @@ CENTRE_PLACEMENT = {
     "TP4": (8.2, 5.6, 0.0),
 }
 
+# Spacing is angular on the service radius, so the SOT-23-5 regulator needs
+# more of the arc than the 0805 link it replaced: at 26.5 mm radius one
+# degree is 0.46 mm, and its courtyard against an 0805 wants about 3.1 mm
+# centre to centre.
 SERVICE_PLACEMENT = {
-    "TP3": (230.0, 0.0),
-    "D17": (219.0, 0.0),
-    "C1": (208.0, 0.0),
-    "TP2": (197.0, 0.0),
+    "TP3": (232.0, 0.0),
+    "U2": (221.0, 0.0),
+    "C17": (212.0, 0.0),
+    "C1": (203.0, 0.0),
+    "TP2": (194.0, 0.0),
     "D13": (310.0, 0.0),
     "TP1": (321.0, 0.0),
 }
@@ -613,9 +618,15 @@ def _route_connector(board, footprints, nets):
            [pad_xy(footprints["D13"], "2"),
             pad_xy(footprints["TP1"], "1")], POWER_TRACK_WIDTH_MM)
     _route(board, nets["VBUS"],
-           [right, pad_xy(footprints["D17"], "2")], POWER_TRACK_WIDTH_MM)
+           [right, pad_xy(footprints["U2"], "1")], POWER_TRACK_WIDTH_MM)
+    _route(board, nets["VBUS"],
+           [pad_xy(footprints["U2"], "1"),
+            pad_xy(footprints["U2"], "3")], POWER_TRACK_WIDTH_MM)
+    _route(board, nets["VBUS"],
+           [pad_xy(footprints["U2"], "1"),
+            pad_xy(footprints["C17"], "1")], POWER_TRACK_WIDTH_MM)
     _route(board, nets["+5V"],
-           [pad_xy(footprints["D17"], "1"),
+           [pad_xy(footprints["U2"], "5"),
             pad_xy(footprints["C1"], "1")], POWER_TRACK_WIDTH_MM)
     _route(board, nets["+5V"],
            [pad_xy(footprints["C1"], "1"),

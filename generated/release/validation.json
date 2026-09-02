@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_utc": "2026-09-02T06:09:52.140229+00:00",
-  "source_closure_sha256": "9e7397a9dbe27140482ea1d05dd286b7eefcb7101bfabaf57720a860d0a6738d",
+  "generated_utc": "2026-09-02T07:34:29.271602+00:00",
+  "source_closure_sha256": "5fa74863ae50fb5c9493f1b4261960a3f8db115ea5ed1d66fbff7dd15f6be622",
   "manifest": {
     "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/board/manifest.json",
     "sha256": "5db11803b64c25ac362bb8b2369b41faae03ebd119bdbb3204f092bfdb983683",
@@ -160,7 +160,7 @@
         {
           "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/generated/release/status_beacon-fabrication.zip",
           "name": "status_beacon-fabrication.zip",
-          "sha256": "b4b77d54e653b06eaebde6b469f8904d4a73fd3b796d3bc2627a01c899e38582"
+          "sha256": "c467c07a3dcc19773d69218c9e9eacc25006d6931f16221c0880360553d56524"
         }
       ]
     },
@@ -173,8 +173,8 @@
         "fabrication_manifest": "fabrication.json",
         "artifacts_recorded": 16,
         "artifacts_present": 16,
-        "source_closure_sha256": "9e7397a9dbe27140482ea1d05dd286b7eefcb7101bfabaf57720a860d0a6738d",
-        "recorded_source_closure_sha256": "9e7397a9dbe27140482ea1d05dd286b7eefcb7101bfabaf57720a860d0a6738d"
+        "source_closure_sha256": "5fa74863ae50fb5c9493f1b4261960a3f8db115ea5ed1d66fbff7dd15f6be622",
+        "recorded_source_closure_sha256": "5fa74863ae50fb5c9493f1b4261960a3f8db115ea5ed1d66fbff7dd15f6be622"
       },
       "limits": {},
       "finding_count": 0,
@@ -183,7 +183,7 @@
         {
           "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/generated/release/fabrication.json",
           "name": "fabrication.json",
-          "sha256": "d3aa3f857055f4afecca78150cb883e3d319b0456b3236fea21290ac2f31c963"
+          "sha256": "8ecf2cf69335e9f1686bca999493d3be57f2d64100a13a4b56af5e7cfbe74824"
         }
       ]
     },
@@ -191,12 +191,12 @@
       "gate": "BOM.NATIVE_PARITY",
       "title": "Packaged BOM matches the native schematic",
       "status": "PASS",
-      "reason": "the schematic, the board and the packaged BOM agree on all 41 populated parts",
+      "reason": "the schematic, the board and the packaged BOM agree on all 42 populated parts",
       "measurements": {
         "bom_lines": 12,
-        "schematic_symbols": 41,
-        "board_footprints": 59,
-        "schematic_populated": 41,
+        "schematic_symbols": 42,
+        "board_footprints": 60,
+        "schematic_populated": 42,
         "board_not_in_bom_export": [
           "J2",
           "TP1",
@@ -252,12 +252,12 @@
         {
           "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/generated/release/bom.csv",
           "name": "bom.csv",
-          "sha256": "e2f10bffca9af32a4c404e332e2a43fd7e1d81d9e81fac360b5b7d0f3b45f316"
+          "sha256": "5061db0e5008364b1f7345a28c514938782279f708ca5e78e4dac07a4f41cffd"
         },
         {
           "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/status_beacon.kicad_sch",
           "name": "status_beacon.kicad_sch",
-          "sha256": "d533026f4f969e43b6aca28c9d8a92d56027f77ae50673f63e97ea0cf2a7ede3"
+          "sha256": "8b49a41176642a0d166848f29c57efdb2b76f80da45d3edb8b71594a43ebdc71"
         }
       ]
     },
@@ -333,10 +333,10 @@
       "gate": "CPL.NATIVE_PARITY",
       "title": "Packaged CPL matches the native design",
       "status": "PASS",
-      "reason": "all 41 populated parts agree between the native design and the packaged CPL",
+      "reason": "all 42 populated parts agree between the native design and the packaged CPL",
       "measurements": {
-        "cpl_rows": 41,
-        "schematic_populated": 41,
+        "cpl_rows": 42,
+        "schematic_populated": 42,
         "coordinate_frame": {
           "frame": "absolute page origin",
           "offset_mm": [
@@ -383,7 +383,7 @@
         {
           "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/generated/release/cpl.csv",
           "name": "cpl.csv",
-          "sha256": "83b14beb832bb5c35d316a5fd08636d16fb49fc9eb32fecb09ede7efd88db3a0"
+          "sha256": "8621b1fe5a451d530727a298cdadb2193a3a52f203f1ce4ee392c6ab643830f5"
         }
       ]
     },
@@ -402,7 +402,7 @@
       "gate": "DRC.AUTHORITATIVE",
       "title": "Fresh DRC on the exact final board",
       "status": "PASS",
-      "reason": "DRC clean: exit 0, schema https://schemas.kicad.org/drc.v1.json validated, no ignored checks, severities ['error', 'warning', 'exclusion'], all 7 required options used, source fccc88ba56d5",
+      "reason": "DRC clean: exit 0, schema https://schemas.kicad.org/drc.v1.json validated, no ignored checks, severities ['error', 'warning', 'exclusion'], all 7 required options used, source d2b2fb1fea76",
       "measurements": {
         "command": "kicad-cli pcb drc --format json -o drc_authoritative.json --severity-all --severity-exclusions --all-track-errors --schematic-parity --refill-zones --save-board --exit-code-violations status_beacon.kicad_pcb",
         "command_sha256": "97df328d564dc261c244b468c4fcafadc1dc4fb822800899ce30c5d91fba8244",
@@ -418,15 +418,15 @@
         "exit_status": 0,
         "violations_exit_code": 5,
         "source": "status_beacon.kicad_pcb",
-        "source_sha256": "fccc88ba56d527682f0a417a3e3083bdb60ff2ab0888a647e73c9a06c9aa4932",
-        "checked_copy_sha256": "d7fc4775d87103e299917abf384599c949294b5da71e07edb0f99fca979413f1",
+        "source_sha256": "d2b2fb1fea76bdf557194ebe119272c63e11b4987a36d7d6cfebffc4d298d412",
+        "checked_copy_sha256": "7c7eeb3487d425c0ffa915da13589fde48791b0defba4e19ceace5581b5882ac",
         "rules_sha256": "86dbe5cee6469f5c2a5fcaefb0964cb190d4f714345a825139e472f4f3f805a9",
         "constraint_manifest_sha256": "5db11803b64c25ac362bb8b2369b41faae03ebd119bdbb3204f092bfdb983683",
         "kicad_version": "10.0.5",
-        "generated_utc": "2026-09-02T06:09:46.922279+00:00",
+        "generated_utc": "2026-09-02T07:34:22.927225+00:00",
         "report_meta": {
           "schema": "https://schemas.kicad.org/drc.v1.json",
-          "date": "2026-09-02T00:09:46",
+          "date": "2026-09-02T01:34:22",
           "kicad_version": "10.0.5",
           "source": "status_beacon.kicad_pcb",
           "ignored_checks": [],
@@ -460,9 +460,9 @@
       "findings": [],
       "evidence": [
         {
-          "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260902T060943Z-80f91fa0/work/drc_authoritative.json",
+          "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260902T073419Z-5030183b/work/drc_authoritative.json",
           "name": "drc_authoritative.json",
-          "sha256": "8db0ed96aa1b7700c5847a3d74be427303094668411bc8faca2aae48ea74f1af"
+          "sha256": "f13694e8c9bedc92b3d907a635d3a5faf7bcfdb48be54605dfd36aed1a892196"
         }
       ]
     },
@@ -614,7 +614,7 @@
       "gate": "ERC.AUTHORITATIVE",
       "title": "Fresh ERC on the exact final schematic",
       "status": "PASS",
-      "reason": "ERC clean: exit 0, schema https://schemas.kicad.org/erc.v1.json validated, no ignored checks, severities ['error', 'warning', 'exclusion'], all 3 required options used, source d533026f4f96",
+      "reason": "ERC clean: exit 0, schema https://schemas.kicad.org/erc.v1.json validated, no ignored checks, severities ['error', 'warning', 'exclusion'], all 3 required options used, source 8b49a4117664",
       "measurements": {
         "command": "kicad-cli sch erc --format json -o erc_authoritative.json --severity-all --severity-exclusions --exit-code-violations status_beacon.kicad_sch",
         "command_sha256": "138c4f87cdf744068f3213d0bf5dff6894f1dc363c42306558dd2408a892c997",
@@ -626,15 +626,15 @@
         "exit_status": 0,
         "violations_exit_code": 5,
         "source": "status_beacon.kicad_sch",
-        "source_sha256": "d533026f4f969e43b6aca28c9d8a92d56027f77ae50673f63e97ea0cf2a7ede3",
-        "checked_copy_sha256": "d533026f4f969e43b6aca28c9d8a92d56027f77ae50673f63e97ea0cf2a7ede3",
+        "source_sha256": "8b49a41176642a0d166848f29c57efdb2b76f80da45d3edb8b71594a43ebdc71",
+        "checked_copy_sha256": "8b49a41176642a0d166848f29c57efdb2b76f80da45d3edb8b71594a43ebdc71",
         "rules_sha256": "86dbe5cee6469f5c2a5fcaefb0964cb190d4f714345a825139e472f4f3f805a9",
         "constraint_manifest_sha256": "5db11803b64c25ac362bb8b2369b41faae03ebd119bdbb3204f092bfdb983683",
         "kicad_version": "10.0.5",
-        "generated_utc": "2026-09-02T06:09:48.634862+00:00",
+        "generated_utc": "2026-09-02T07:34:25.530599+00:00",
         "report_meta": {
           "schema": "https://schemas.kicad.org/erc.v1.json",
-          "date": "2026-09-02T00:09:48",
+          "date": "2026-09-02T01:34:25",
           "kicad_version": "10.0.5",
           "source": "status_beacon.kicad_sch",
           "ignored_checks": [],
@@ -668,9 +668,9 @@
       "findings": [],
       "evidence": [
         {
-          "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260902T060943Z-80f91fa0/work/erc_authoritative.json",
+          "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260902T073419Z-5030183b/work/erc_authoritative.json",
           "name": "erc_authoritative.json",
-          "sha256": "098b4e1d28afdf395819cf2a87f7a63d629eeaeb0215f2004f66eb1c1053cbdf"
+          "sha256": "2cf6d77b87fa27de991b22f35084c1482b4ca7e6108e39bf2e015f9b941ffa75"
         }
       ]
     },
@@ -859,10 +859,10 @@
       "reason": "all 2 committed report(s) bind the canonical digest of all 15 source inputs, and every one still matches",
       "measurements": {
         "source_closure_files": 15,
-        "source_closure_sha256": "9e7397a9dbe27140482ea1d05dd286b7eefcb7101bfabaf57720a860d0a6738d",
+        "source_closure_sha256": "5fa74863ae50fb5c9493f1b4261960a3f8db115ea5ed1d66fbff7dd15f6be622",
         "source_sha256": {
-          "pcb": "fccc88ba56d52768",
-          "schematic": "d533026f4f969e43"
+          "pcb": "d2b2fb1fea76bdf5",
+          "schematic": "8b49a41176642a0d"
         },
         "reports_required": [],
         "reports_examined": 2,
@@ -935,7 +935,7 @@
       "reason": "the adopted board is the accepted candidate of 2 recorded attempt(s), every attempt started from the same declared source, and each of the 1 post-router transform(s) states what it changed",
       "measurements": {
         "record": "generated/routing.json",
-        "board_sha256": "fccc88ba56d527682f0a417a3e3083bdb60ff2ab0888a647e73c9a06c9aa4932",
+        "board_sha256": "d2b2fb1fea76bdf557194ebe119272c63e11b4987a36d7d6cfebffc4d298d412",
         "attempts": 2,
         "accepted_attempt": 2,
         "post_router_transforms": [
@@ -951,11 +951,11 @@
       "gate": "ROUTE.TINY_SEGMENTS",
       "title": "No unjustified sub-minimum track fragments",
       "status": "PASS",
-      "reason": "16 short fragments are all pad/via entry geometry",
+      "reason": "19 short fragments are all pad/via entry geometry",
       "measurements": {
-        "segments_total": 194,
-        "below_limit_total": 16,
-        "below_limit_justified_pad_or_via_entry": 16,
+        "segments_total": 208,
+        "below_limit_total": 19,
+        "below_limit_justified_pad_or_via_entry": 19,
         "below_limit_unjustified": 0
       },
       "limits": {
@@ -1037,7 +1037,7 @@
       "status": "PASS",
       "reason": "2 shipped copper layers match a fresh export by geometric symmetric difference (limit 0.05 mm2)",
       "measurements": {
-        "fresh_export_command": "pcb export gerbers --output /home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260902T060943Z-80f91fa0/work/fresh_gerbers --layers F.Cu,B.Cu,F.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts --no-protel-ext --use-drill-file-origin --subtract-soldermask /home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260902T060943Z-80f91fa0/work/design/status_beacon.kicad_pcb",
+        "fresh_export_command": "pcb export gerbers --output /home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260902T073419Z-5030183b/work/fresh_gerbers --layers F.Cu,B.Cu,F.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts --no-protel-ext --use-drill-file-origin --subtract-soldermask /home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260902T073419Z-5030183b/work/design/status_beacon.kicad_pcb",
         "fresh_export_exit": 0,
         "shipped_copper_layers": [
           "copper,l1,top",
@@ -1050,8 +1050,8 @@
         "per_layer": {
           "copper,l1,top": {
             "shipped_file": "status_beacon-F_Cu.gbr",
-            "shipped_area_mm2": 2904.5069,
-            "fresh_area_mm2": 2904.5069,
+            "shipped_area_mm2": 2899.1697,
+            "fresh_area_mm2": 2899.1697,
             "symmetric_difference_mm2": 0.0
           },
           "copper,l2,bot": {
@@ -1145,7 +1145,7 @@
       "status": "PASS",
       "reason": "no via annulus reaches a mask opening",
       "measurements": {
-        "vias_total": 49,
+        "vias_total": 51,
         "annulus_contacts": 0,
         "annulus_strict_overlaps": 0,
         "annulus_tangencies": 0
@@ -1225,9 +1225,9 @@
       "gate": "VIA.MASK_CLEARANCE_TARGET",
       "title": "Via to mask opening meets the project target",
       "status": "PASS",
-      "reason": "all 49 vias clear 0.15 mm (annulus_to_opening_mm)",
+      "reason": "all 51 vias clear 0.15 mm (annulus_to_opening_mm)",
       "measurements": {
-        "vias_total": 49,
+        "vias_total": 51,
         "vias_below_limit": 0
       },
       "limits": {
