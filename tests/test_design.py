@@ -12,7 +12,7 @@ if REPO_ROOT not in sys.path:
     sys.path.insert(0, REPO_ROOT)
 
 from design import (build, cost, evidence, ksym, libraries,  # noqa: E402
-                    netlist, rules, sexpr)
+                    netlist, rules, sexpr, simulation)
 
 KNOWN_OPEN_FAILURES = {("usb_source_range_coverage",
                         "vbus_declared_vs_vsafe5v")}
@@ -242,10 +242,6 @@ class ToolkitManifest(unittest.TestCase):
         self.assertEqual(manifest["board_id"], netlist.PROJECT_NAME)
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 class GeneratedLibraries(unittest.TestCase):
     def test_committed_libraries_match_the_generator(self):
         for path, text in libraries.artifacts().items():
@@ -377,3 +373,219 @@ class BoardLayout(unittest.TestCase):
         self.assertEqual(record["context"]["resolution"]["origin"],
                          "vendored submodule")
         self.assertIn("+5V", record["context"]["routed_nets"])
+
+
+class TestSuiteIsWhole(unittest.TestCase):
+    """Every test in this file must actually be collected.
+
+    unittest.main() calls sys.exit(), so a __main__ block anywhere but the
+    end silently stops the module being read - the classes after it are
+    never even defined, and the run reports OK for the ones that were.
+    """
+
+    def test_the_entry_point_is_the_last_statement(self):
+        import ast
+
+        with open(os.path.abspath(__file__), encoding="utf-8") as handle:
+            body = ast.parse(handle.read()).body
+        guards = [index for index, node in enumerate(body)
+                  if isinstance(node, ast.If)
+                  and "__main__" in ast.unparse(node.test)]
+        self.assertEqual(len(guards), 1)
+        self.assertEqual(guards[0], len(body) - 1,
+                         "the __main__ guard must be last; anything after it "
+                         "is never collected")
+
+    def test_every_declared_test_runs(self):
+        import ast
+
+        with open(os.path.abspath(__file__), encoding="utf-8") as handle:
+            body = ast.parse(handle.read()).body
+        declared = 0
+        for node in body:
+            if isinstance(node, ast.ClassDef):
+                declared += sum(
+                    1 for member in node.body
+                    if isinstance(member, ast.FunctionDef)
+                    and member.name.startswith("test_"))
+        loaded = unittest.defaultTestLoader.loadTestsFromModule(
+            sys.modules[__name__])
+        self.assertEqual(declared, loaded.countTestCases())
+
+
+class SimulationInputs(unittest.TestCase):
+    """The scenarios must describe this board, from frozen evidence."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.parameters = rules.load_parameters()
+        with open(os.path.join(REPO_ROOT, "board", "manifest.json"),
+                  encoding="utf-8") as handle:
+            cls.manifest = json.load(handle)
+
+    def _scenarios(self):
+        for stage, files in sorted(
+                self.manifest["simulation"]["stages"].items()):
+            for relative in files:
+                with open(os.path.join(REPO_ROOT, relative),
+                          encoding="utf-8") as handle:
+                    yield stage, relative, json.load(handle)
+
+    def test_every_declared_scenario_exists_and_is_current(self):
+        written = {os.path.relpath(path, REPO_ROOT).replace("\\", "/")
+                   for path in simulation.write()}
+        declared = {relative for _stage, files in
+                    self.manifest["simulation"]["stages"].items()
+                    for relative in files}
+        self.assertEqual(declared, written)
+
+    def test_the_generator_is_deterministic(self):
+        first = {}
+        for path in simulation.write():
+            with open(path, encoding="utf-8") as handle:
+                first[path] = handle.read()
+        for path in simulation.write():
+            with open(path, encoding="utf-8") as handle:
+                self.assertEqual(handle.read(), first[path], path)
+
+    def test_every_required_stage_is_declared(self):
+        for stage in self.manifest["simulation"]["required_stages"]:
+            self.assertIn(stage, self.manifest["simulation"]["stages"])
+            self.assertTrue(self.manifest["simulation"]["stages"][stage])
+
+    def test_passive_values_come_from_the_netlist(self):
+        wanted = {simulation._resistor_ohms("R4"),
+                  simulation._resistor_ohms("R5"),
+                  simulation._resistor_ohms("R6"),
+                  simulation._sum_capacitance("+5V"),
+                  simulation._sum_capacitance("BTN_SW")}
+        seen = set()
+        for _stage, _relative, scenario in self._scenarios():
+            for element in scenario["elements"]:
+                if "value" in element:
+                    seen.add(element["value"])
+        self.assertTrue(wanted <= seen, sorted(wanted - seen))
+
+    def test_thresholds_come_from_the_frozen_datasheets(self):
+        led = self.parameters["parts"]["WS2812B-B/T"]
+        mcu = self.parameters["parts"]["PY32F003F18P6TU"]
+        rail = netlist.RAILS["+5V"]["max_v"]
+        allowed = {
+            led["supply"]["characterised_min_v"]["value"],
+            led["supply"]["abs_max_v"]["value"],
+            mcu["supply"]["characterised_max_v"]["value"],
+            led["digital_inputs"]["4"]["vih_min"]["factor_of_supply"] * rail,
+            mcu["digital_inputs"]["19"]["vih_min"]["factor_of_supply"] * rail,
+        }
+        asserted = 0
+        for _stage, relative, scenario in self._scenarios():
+            for measurement in scenario["measurements"]:
+                assertion = measurement.get("assertion")
+                if assertion is None:
+                    continue
+                asserted += 1
+                self.assertIn(assertion["value"], allowed,
+                              "%s asserts %r, which no frozen parameter "
+                              "states" % (relative, assertion["value"]))
+        self.assertGreater(asserted, 0)
+
+    def test_every_ideal_element_declares_what_it_stands_in_for(self):
+        for _stage, relative, scenario in self._scenarios():
+            ideal = {element["name"] for element in scenario["elements"]
+                     if element["kind"] != "model_instance"}
+            self.assertEqual(set(scenario["assumptions"]), ideal, relative)
+
+    def test_the_extracted_model_is_referenced_by_its_manifest_alias(self):
+        aliases = set(
+            self.manifest["simulation"]["extracted_models"]["paths"])
+        referenced = {element["model"]
+                      for _stage, _relative, scenario in self._scenarios()
+                      for element in scenario["elements"]
+                      if element["kind"] == "model_instance"}
+        self.assertTrue(referenced <= aliases, sorted(referenced - aliases))
+        self.assertIn(simulation.EXTRACTED_MODEL_ALIAS, aliases)
+
+
+class FabricationRequirements(unittest.TestCase):
+    def setUp(self):
+        with open(os.path.join(REPO_ROOT, "fab", "requirements.json"),
+                  encoding="utf-8") as handle:
+            self.requirements = json.load(handle)
+        with open(os.path.join(REPO_ROOT, "board", "manifest.json"),
+                  encoding="utf-8") as handle:
+            self.manifest = json.load(handle)
+
+    def test_the_declared_minima_are_what_the_layout_uses(self):
+        self.assertLessEqual(self.requirements["min_track_mm"],
+                             __import__("design.layout", fromlist=["layout"])
+                             .TRACK_WIDTH_MM)
+        layout = __import__("design.layout", fromlist=["layout"])
+        self.assertLessEqual(self.requirements["min_space_mm"],
+                             layout.CLEARANCE_MM)
+        self.assertLessEqual(self.requirements["min_drill_mm"],
+                             layout.VIA_DRILL_MM)
+        self.assertLessEqual(self.requirements["min_via_diameter_mm"],
+                             layout.VIA_DIAMETER_MM)
+
+    def test_the_selection_is_feasible_and_rejects_nothing(self):
+        with open(os.path.join(REPO_ROOT, "fab", "selection.json"),
+                  encoding="utf-8") as handle:
+            selection = json.load(handle)
+        self.assertTrue(selection["feasible"])
+        self.assertEqual(selection["rejections"], [])
+
+    def test_the_layer_count_matches_the_declared_stackup(self):
+        expected = self.manifest["stackup"]["expected"]
+        self.assertEqual(self.requirements["copper_layers"], len(expected))
+
+
+class DeclaredContracts(unittest.TestCase):
+    def setUp(self):
+        with open(os.path.join(REPO_ROOT, "board", "manifest.json"),
+                  encoding="utf-8") as handle:
+            self.manifest = json.load(handle)
+
+    def _pin_map(self, reference):
+        mapping = {}
+        for net, pins in netlist.NETS.items():
+            for pin_ref in pins:
+                if pin_ref.startswith(reference + "."):
+                    mapping[pin_ref.split(".", 1)[1]] = net
+        for pin_ref in netlist.NO_CONNECT:
+            if pin_ref.startswith(reference + "."):
+                mapping[pin_ref.split(".", 1)[1]] = None
+        return mapping
+
+    def test_every_connector_contract_matches_the_netlist(self):
+        contracts = self.manifest["connector_contracts"]
+        self.assertTrue(contracts)
+        for contract in contracts:
+            reference = contract["reference"]
+            expected = self._pin_map(reference)
+            self.assertEqual(contract["pin_map"], expected, reference)
+            self.assertEqual(contract["required_positions"], len(expected),
+                             reference)
+
+    def test_the_routing_acceptance_set_excludes_release_artifact_gates(self):
+        accepted = set(self.manifest["routing"]["acceptance_gates"])
+        for gate in ("ARCH.CONTENTS", "ARCH.PROVENANCE", "BOM.NATIVE_PARITY",
+                     "CPL.NATIVE_PARITY", "STACK.GERBER_PARITY",
+                     "PROV.REPORT_FRESHNESS"):
+            self.assertNotIn(gate, accepted)
+
+    def test_every_mandatory_gate_is_one_the_last_validation_passed(self):
+        with open(os.path.join(REPO_ROOT, "generated", "release",
+                               "validation.json"), encoding="utf-8") as handle:
+            validation = json.load(handle)
+        passed = {entry["gate"] for entry in validation["gates"]
+                  if entry["status"] == "PASS"}
+        self.assertTrue(
+            set(self.manifest["release_profile"]["mandatory_gates"]) <= passed)
+
+    def test_the_reference_gap_limit_is_electrically_short(self):
+        result = rules.evaluate_reference_gap_limit(rules.load_parameters())
+        self.assertEqual(result["violations"], [])
+
+
+if __name__ == "__main__":
+    unittest.main()
