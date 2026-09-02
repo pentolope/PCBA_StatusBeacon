@@ -631,8 +631,23 @@ def _route_connector(board, footprints, nets):
             pad_xy(footprints["D15"], "2")])
 
 
+def fill_zones(board):
+    """Cache the pour in the file, so the board describes its own copper.
+
+    KiCad refills before plotting and before DRC, so an unfilled board
+    still fabricates correctly - but nothing reading the saved file can
+    see plane copper, and reference-plane coverage is measured from the
+    filled areas.
+    """
+    filler = pcbnew.ZONE_FILLER(board)
+    filler.Fill(board.Zones())
+    board.BuildConnectivity()
+    return board
+
+
 def write():
     board, _ = build()
+    fill_zones(board)
     pcbnew.SaveBoard(BOARD_PATH, board)
     return BOARD_PATH
 

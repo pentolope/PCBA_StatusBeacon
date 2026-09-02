@@ -1,0 +1,107 @@
+{
+  "analyses": [
+    {
+      "kind": "tran",
+      "step_s": 1e-06,
+      "stop_s": 0.003
+    }
+  ],
+  "assumptions": {
+    "CFILTER": {
+      "accepted_for_design_decision": true,
+      "stands_in_for": "the debounce capacitance as an ideal capacitor, with no ESR and no DC bias derating"
+    },
+    "CPIN": {
+      "accepted_for_design_decision": true,
+      "stands_in_for": "the MCU input pin's capacitance and the ESD clamp's off-state loading"
+    },
+    "RAIL": {
+      "accepted_for_design_decision": true,
+      "stands_in_for": "the switch contact held closed long enough for the filter capacitor to reach the reference node, then opening at t=0; stepping the pull-up's source is the same waveform as releasing the contact"
+    },
+    "RPULLUP": {
+      "accepted_for_design_decision": true,
+      "stands_in_for": "the pull-up resistor at its nominal value, with no tolerance and no temperature coefficient"
+    },
+    "RSERIES": {
+      "accepted_for_design_decision": true,
+      "stands_in_for": "the series protection resistor at its nominal value"
+    }
+  },
+  "elements": [
+    {
+      "kind": "vsource_pulse",
+      "name": "RAIL",
+      "nodes": [
+        "rail",
+        "0"
+      ],
+      "pulse": {
+        "delay_s": 0.0,
+        "fall_s": 1e-09,
+        "period_s": 0.006,
+        "rise_s": 1e-09,
+        "v1": 0.0,
+        "v2": 5.25,
+        "width_s": 0.003
+      }
+    },
+    {
+      "kind": "resistor",
+      "name": "RPULLUP",
+      "nodes": [
+        "rail",
+        "btn"
+      ],
+      "value": 10000.0
+    },
+    {
+      "kind": "capacitor",
+      "name": "CFILTER",
+      "nodes": [
+        "btn",
+        "0"
+      ],
+      "value": 1.0000000000000001e-07
+    },
+    {
+      "kind": "resistor",
+      "name": "RSERIES",
+      "nodes": [
+        "btn",
+        "mcu"
+      ],
+      "value": 1000.0
+    },
+    {
+      "kind": "capacitor",
+      "name": "CPIN",
+      "nodes": [
+        "mcu",
+        "0"
+      ],
+      "value": 5e-12
+    }
+  ],
+  "measurements": [
+    {
+      "assertion": {
+        "op": ">=",
+        "value": 3.675
+      },
+      "kind": "tran_final_voltage",
+      "name": "mcu_input_at_deadline",
+      "node": "mcu"
+    },
+    {
+      "assertion": {
+        "op": "<=",
+        "value": 5.5
+      },
+      "kind": "tran_max_voltage",
+      "name": "mcu_input_peak",
+      "node": "mcu"
+    }
+  ],
+  "name": "button_release_detection"
+}

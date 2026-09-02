@@ -156,7 +156,24 @@
       "forbid_net_crossings": true,
       "forbid_dangling": true
     },
-    "provenance": "generated/routing.json"
+    "provenance": "generated/routing.json",
+    "acceptance_gates": [
+      "ERC.AUTHORITATIVE",
+      "DRC.AUTHORITATIVE",
+      "DRC.NO_SUPPRESSED_RULES",
+      "DRC.CONSTRAINT_FLOOR",
+      "NET.TOPOLOGY",
+      "ROUTE.GEOMETRY_HYGIENE",
+      "ROUTE.TINY_SEGMENTS",
+      "ROUTE.PROVENANCE",
+      "CONTRACT.PLACEMENT",
+      "STACK.NATIVE_VS_MANIFEST",
+      "VIA.ANNULUS_MASK_OVERLAP",
+      "VIA.IN_PAD_CONTACT",
+      "SIM.SCENARIOS",
+      "SIM.STAGE_COVERAGE",
+      "SIM.MODEL_PROVENANCE"
+    ]
   },
   "via_mask": {
     "pad_contact": {
@@ -440,8 +457,12 @@
       "ROUTE.GEOMETRY_HYGIENE",
       "ROUTE.PROVENANCE",
       "ROUTE.TINY_SEGMENTS",
+      "SIM.MODEL_PROVENANCE",
+      "SIM.SCENARIOS",
+      "SIM.STAGE_COVERAGE",
       "STACK.GERBER_PARITY",
       "STACK.NATIVE_VS_MANIFEST",
+      "TIMING.PATH_INTEGRITY",
       "VIA.ANNULUS_MASK_OVERLAP",
       "VIA.IN_PAD_CONTACT"
     ],
@@ -449,5 +470,65 @@
       "generated/routing.json",
       "evidence/index.json"
     ]
+  },
+  "simulation": {
+    "models": "sim/models.json",
+    "stages": {
+      "pre_layout": [
+        "sim/pre_layout_rail_droop.json",
+        "sim/pre_layout_button_release.json",
+        "sim/pre_layout_led_data_edge.json"
+      ],
+      "post_layout": [
+        "sim/post_layout_led_data_edge.json"
+      ]
+    },
+    "required_stages": [
+      "pre_layout",
+      "post_layout"
+    ]
+  },
+  "timing": {
+    "physical_stackup": {
+      "reference_nets": [
+        "GND",
+        "+5V"
+      ],
+      "require_complete": false
+    },
+    "interfaces": {
+      "led_data": {
+        "expected_path_count": 1,
+        "required_component_crossings": 1,
+        "max_unreferenced_mm": 10.0,
+        "routes": {
+          "paths": [
+            {
+              "id": "mcu_to_first_led",
+              "steps": [
+                {
+                  "kind": "copper",
+                  "net": "LED_DATA",
+                  "from": "U1.20",
+                  "to": "R4.1"
+                },
+                {
+                  "kind": "component",
+                  "reference": "R4",
+                  "from_pad": "1",
+                  "to_pad": "2"
+                },
+                {
+                  "kind": "copper",
+                  "net": "LED_CH0",
+                  "from": "R4.2",
+                  "to": "D1.4"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
   }
 }

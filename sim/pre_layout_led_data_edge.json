@@ -1,0 +1,81 @@
+{
+  "analyses": [
+    {
+      "kind": "tran",
+      "step_s": 1e-10,
+      "stop_s": 4e-07
+    }
+  ],
+  "assumptions": {
+    "CDIN": {
+      "accepted_for_design_decision": true,
+      "stands_in_for": "the LED data input's capacitance and the ESD clamp's off-state loading"
+    },
+    "DRIVER": {
+      "accepted_for_design_decision": true,
+      "stands_in_for": "the MCU output as an ideal source stepping to its worst-case output high level, with no output impedance and no package parasitics"
+    },
+    "RSERIES": {
+      "accepted_for_design_decision": true,
+      "stands_in_for": "the series termination resistor at its nominal value"
+    }
+  },
+  "elements": [
+    {
+      "kind": "vsource_pulse",
+      "name": "DRIVER",
+      "nodes": [
+        "rin",
+        "0"
+      ],
+      "pulse": {
+        "delay_s": 0.0,
+        "fall_s": 1e-09,
+        "period_s": 8e-07,
+        "rise_s": 1e-09,
+        "v1": 0.0,
+        "v2": 4.85,
+        "width_s": 4e-07
+      }
+    },
+    {
+      "kind": "resistor",
+      "name": "RSERIES",
+      "nodes": [
+        "rin",
+        "din"
+      ],
+      "value": 33.0
+    },
+    {
+      "kind": "capacitor",
+      "name": "CDIN",
+      "nodes": [
+        "din",
+        "0"
+      ],
+      "value": 1e-11
+    }
+  ],
+  "measurements": [
+    {
+      "assertion": {
+        "op": ">=",
+        "value": 3.675
+      },
+      "kind": "tran_final_voltage",
+      "name": "din_at_shortest_high_end",
+      "node": "din"
+    },
+    {
+      "assertion": {
+        "op": "<=",
+        "value": 5.3
+      },
+      "kind": "tran_max_voltage",
+      "name": "din_peak",
+      "node": "din"
+    }
+  ],
+  "name": "led_data_edge_over_ideal_interconnect"
+}

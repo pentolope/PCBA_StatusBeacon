@@ -1,0 +1,108 @@
+{
+  "analyses": [
+    {
+      "kind": "tran",
+      "step_s": 1e-10,
+      "stop_s": 4e-07
+    }
+  ],
+  "assumptions": {
+    "CDIN": {
+      "accepted_for_design_decision": true,
+      "stands_in_for": "the LED data input's capacitance and the ESD clamp's off-state loading"
+    },
+    "DRIVER": {
+      "accepted_for_design_decision": true,
+      "stands_in_for": "the MCU output as an ideal source stepping to its worst-case output high level, with no output impedance and no package parasitics"
+    },
+    "RSERIES": {
+      "accepted_for_design_decision": true,
+      "stands_in_for": "the series termination resistor at its nominal value"
+    }
+  },
+  "elements": [
+    {
+      "kind": "vsource_pulse",
+      "name": "DRIVER",
+      "nodes": [
+        "drv",
+        "0"
+      ],
+      "pulse": {
+        "delay_s": 0.0,
+        "fall_s": 1e-09,
+        "period_s": 8e-07,
+        "rise_s": 1e-09,
+        "v1": 0.0,
+        "v2": 4.85,
+        "width_s": 4e-07
+      }
+    },
+    {
+      "kind": "model_instance",
+      "model": "path:LED_DATA:U1.20->R4.1@880fd457fe51+phys:4eceeee7ec0a",
+      "name": "COPPER",
+      "nodes": [
+        "drv",
+        "rin"
+      ]
+    },
+    {
+      "kind": "resistor",
+      "name": "RSERIES",
+      "nodes": [
+        "rin",
+        "din"
+      ],
+      "value": 33.0
+    },
+    {
+      "kind": "capacitor",
+      "name": "CDIN",
+      "nodes": [
+        "din",
+        "0"
+      ],
+      "value": 1e-11
+    }
+  ],
+  "measurements": [
+    {
+      "assertion": {
+        "op": "<=",
+        "value": 5.3
+      },
+      "kind": "tran_max_voltage",
+      "knowledge": {
+        "basis": {
+          "detail": "the extracted copper resistance is a lower bound - via barrel resistance is omitted by the extraction - and the node voltage falls monotonically with series resistance, so the simulated value bounds the true one from above",
+          "kind": "assumed"
+        },
+        "kind": "upper_bound"
+      },
+      "name": "din_peak",
+      "node": "din"
+    },
+    {
+      "kind": "tran_final_voltage",
+      "knowledge": {
+        "basis": {
+          "detail": "the extracted copper resistance is a lower bound - via barrel resistance is omitted by the extraction - and the node voltage falls monotonically with series resistance, so the simulated value bounds the true one from above",
+          "kind": "assumed"
+        },
+        "kind": "upper_bound"
+      },
+      "name": "din_at_shortest_high_end",
+      "node": "din"
+    }
+  ],
+  "name": "led_data_edge_over_extracted_copper",
+  "required_coverage": {
+    "interconnect_dc": [
+      "geometry-derived",
+      "quasi-static-extracted",
+      "full-wave-extracted",
+      "measured"
+    ]
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "analyses": [
+    {
+      "kind": "tran",
+      "step_s": 1e-07,
+      "stop_s": 0.0011
+    }
+  ],
+  "assumptions": {
+    "CBULK": {
+      "accepted_for_design_decision": true,
+      "stands_in_for": "every bulk and decoupling capacitance on the rail as one ideal capacitor, with no ESR, no ESL and no DC bias derating"
+    },
+    "RLED": {
+      "accepted_for_design_decision": true,
+      "stands_in_for": "the LED array's aggregate draw as a fixed resistance at its worst-case current; a constant-current load droops no further than this"
+    },
+    "RPATH": {
+      "accepted_for_design_decision": true,
+      "stands_in_for": "the series resistance of the cable, the receptacle contacts and the board copper between the receptacle and the LED ring, as a design budget"
+    },
+    "SRC": {
+      "accepted_for_design_decision": true,
+      "stands_in_for": "the USB-C source as an ideal voltage source held at vSafe5V minimum, with no output impedance of its own"
+    },
+    "SWITCH": {
+      "accepted_for_design_decision": true,
+      "stands_in_for": "the instant at which firmware turns the whole ring on, as an ideal switch with no on-resistance"
+    }
+  },
+  "elements": [
+    {
+      "kind": "vsource_dc",
+      "name": "SRC",
+      "nodes": [
+        "src",
+        "0"
+      ],
+      "value": 4.75
+    },
+    {
+      "kind": "resistor",
+      "name": "RPATH",
+      "nodes": [
+        "src",
+        "rail"
+      ],
+      "value": 0.1
+    },
+    {
+      "kind": "capacitor",
+      "name": "CBULK",
+      "nodes": [
+        "rail",
+        "0"
+      ],
+      "value": 5.9999999999999985e-06
+    },
+    {
+      "kind": "resistor",
+      "name": "RLED",
+      "nodes": [
+        "rail",
+        "sink"
+      ],
+      "value": 10.14957264957265
+    },
+    {
+      "kind": "vsource_pulse",
+      "name": "SWITCH",
+      "nodes": [
+        "sink",
+        "0"
+      ],
+      "pulse": {
+        "delay_s": 0.0001,
+        "fall_s": 1e-09,
+        "period_s": 0.002,
+        "rise_s": 1e-09,
+        "v1": 4.75,
+        "v2": 0.0,
+        "width_s": 0.001
+      }
+    }
+  ],
+  "measurements": [
+    {
+      "assertion": {
+        "op": ">=",
+        "value": 4.5
+      },
+      "kind": "tran_min_voltage",
+      "name": "rail_excursion_min",
+      "node": "rail"
+    },
+    {
+      "assertion": {
+        "op": "<=",
+        "value": 5.3
+      },
+      "kind": "tran_max_voltage",
+      "name": "rail_excursion_max",
+      "node": "rail"
+    }
+  ],
+  "name": "rail_droop_on_led_turn_on"
+}

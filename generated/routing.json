@@ -1,6 +1,6 @@
 {
   "accepted_attempt": 1,
-  "adopted_sha256": "2c405d0c1af37146d4a8246652c862d5db1feeb6bfc051b6e9c30a1d1a03a715",
+  "adopted_sha256": "880fd457fe514b5c2ec0404ff13fac4d6773a48691260483b596446f32451803",
   "attempts": [
     {
       "accepted": true,
@@ -13,7 +13,7 @@
           "finalize_excluded_nets": [
             "GND"
           ],
-          "main_loop_time_s": 0.37,
+          "main_loop_time_s": 0.38,
           "min_clearance_used": 0.15,
           "multipoint_deficit": 0,
           "open_single": [],
@@ -27,26 +27,27 @@
           "vias": 10
         }
       },
-      "source_sha256": "a5e5b6e3d950925b94f80eb610622fff4ddd100befbe3da0a50d6e60299c9a2f",
+      "source_sha256": "84e031b704c75a062b5612866b53c3ef5dfa210142dc53a2dafc5d0c5f8b818a",
       "stages": [
         {
           "produced_by": "router",
-          "sha256": "66f92e586d78e4f53f2cea927d76b26f0a6aa51882d6d2090df6b2c6edb34235",
+          "sha256": "bd52f162b05df488900ff2bb4134b2c61214aab2201fe1442fc9ceda8321ac36",
           "stage": "routed"
         },
         {
           "effects": {
             "dangling_tracks_removed": 1,
-            "endpoints_snapped": 4
+            "endpoints_snapped": 4,
+            "zones_refilled": 2
           },
           "parameters": {
             "snap_tolerance_mm": 0.25,
             "touch_tolerance_mm": 0.01
           },
           "produced_by": "transform",
-          "sha256": "2c405d0c1af37146d4a8246652c862d5db1feeb6bfc051b6e9c30a1d1a03a715",
+          "sha256": "880fd457fe514b5c2ec0404ff13fac4d6773a48691260483b596446f32451803",
           "stage": "tidied",
-          "transform": "snap track endpoints onto same-net via centres; prune dangling track ends, keeping any removal only while connectivity is unchanged"
+          "transform": "snap track endpoints onto same-net via centres; prune dangling track ends, keeping any removal only while connectivity is unchanged; refill the zones so the pour is knocked out around the copper the router added"
         }
       ]
     }
@@ -108,5 +109,5 @@
     }
   },
   "kind": "routing-run",
-  "source_sha256": "a5e5b6e3d950925b94f80eb610622fff4ddd100befbe3da0a50d6e60299c9a2f"
+  "source_sha256": "84e031b704c75a062b5612866b53c3ef5dfa210142dc53a2dafc5d0c5f8b818a"
 }

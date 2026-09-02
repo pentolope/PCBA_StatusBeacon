@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generated_utc": "2026-09-02T03:55:28.577566+00:00",
-  "source_closure_sha256": "eb8af0b797faae35235dfab09d9f268a78aa4b3d21485681cf212b29bec0d544",
+  "generated_utc": "2026-09-02T04:18:36.783215+00:00",
+  "source_closure_sha256": "9da35c2f8e9206a2c2d60279be29b9ce6dc72df3a48beb054038f693920f2966",
   "manifest": {
     "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/board/manifest.json",
-    "sha256": "bfe1bbf3f5ed8f03c6cec9475551614d70b6b26d346c819f007d67360ae78339",
+    "sha256": "1119ad36c26d6e15dafe66fc512b85681a8f24e007bcc0498e9ebbdc683d409d",
     "board_id": "status_beacon",
     "constraint_version": "schematic-stage-2026-09-01"
   },
@@ -14,7 +14,7 @@
     "validation_implementation": {
       "toolkit_root": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/tooling/PCBA_AutoDesignAndTest",
       "commit": "d14f53c5efd8e03e5eaf2ad52bc91e2868610584",
-      "working_tree_dirty": false,
+      "working_tree_dirty": true,
       "detail": "git HEAD of the toolkit checkout that executed this validation"
     },
     "kicad_version": "10.0.5",
@@ -52,8 +52,8 @@
   },
   "summary": {
     "counts": {
-      "PASS": 18,
-      "NOT_APPLICABLE": 15
+      "PASS": 22,
+      "NOT_APPLICABLE": 14
     },
     "blocking": [],
     "verdict": "ACCEPTED"
@@ -143,7 +143,7 @@
           "units": "file function",
           "kind": "policy",
           "manifest_key": "archive.allow",
-          "provenance": "manifest.json#archive.allow@bfe1bbf3f5ed"
+          "provenance": "manifest.json#archive.allow@1119ad36c26d"
         }
       },
       "finding_count": 0,
@@ -152,7 +152,7 @@
         {
           "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/generated/release/status_beacon-fabrication.zip",
           "name": "status_beacon-fabrication.zip",
-          "sha256": "1ab83ea5f32ebe9e2adf43b0671ebee538cde369ca480354ee0b45940334200e"
+          "sha256": "3519e6ae2f9d216cdadcb4bb1be4fd2a41affa2bc3e18cc353e628549386f708"
         }
       ]
     },
@@ -165,8 +165,8 @@
         "fabrication_manifest": "fabrication.json",
         "artifacts_recorded": 16,
         "artifacts_present": 16,
-        "source_closure_sha256": "eb8af0b797faae35235dfab09d9f268a78aa4b3d21485681cf212b29bec0d544",
-        "recorded_source_closure_sha256": "eb8af0b797faae35235dfab09d9f268a78aa4b3d21485681cf212b29bec0d544"
+        "source_closure_sha256": "9da35c2f8e9206a2c2d60279be29b9ce6dc72df3a48beb054038f693920f2966",
+        "recorded_source_closure_sha256": "9da35c2f8e9206a2c2d60279be29b9ce6dc72df3a48beb054038f693920f2966"
       },
       "limits": {},
       "finding_count": 0,
@@ -175,7 +175,7 @@
         {
           "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/generated/release/fabrication.json",
           "name": "fabrication.json",
-          "sha256": "6f83e29aa5efca30e4004a6180b2da448c6c3f292c7a4b44a68fc605846b7c8e"
+          "sha256": "3b3fb0a8cdfa8d4ecc26f1da5556307f66dd40f9b9f551a477574bd8de0a8f1b"
         }
       ]
     },
@@ -223,7 +223,7 @@
           "units": "field name",
           "kind": "policy",
           "manifest_key": "assembly.required_part_fields",
-          "provenance": "manifest.json#assembly.required_part_fields@bfe1bbf3f5ed"
+          "provenance": "manifest.json#assembly.required_part_fields@1119ad36c26d"
         },
         "assembly.compared_part_fields": {
           "id": "assembly.compared_part_fields",
@@ -235,7 +235,7 @@
           "units": "field name",
           "kind": "policy",
           "manifest_key": "assembly.compared_part_fields",
-          "provenance": "manifest.json#assembly.compared_part_fields@bfe1bbf3f5ed"
+          "provenance": "manifest.json#assembly.compared_part_fields@1119ad36c26d"
         }
       },
       "finding_count": 0,
@@ -309,7 +309,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "artifacts.position_tolerance_mm",
-          "provenance": "manifest.json#artifacts.position_tolerance_mm@bfe1bbf3f5ed"
+          "provenance": "manifest.json#artifacts.position_tolerance_mm@1119ad36c26d"
         },
         "geometry.rotation_match_deg": {
           "id": "geometry.rotation_match_deg",
@@ -317,7 +317,7 @@
           "units": "deg",
           "kind": "tolerance",
           "manifest_key": "geometry_profile.tolerances.rotation_match_deg.value",
-          "provenance": "manifest.json#geometry_profile.tolerances.rotation_match_deg.value@bfe1bbf3f5ed"
+          "provenance": "manifest.json#geometry_profile.tolerances.rotation_match_deg.value@1119ad36c26d"
         },
         "artifacts.cpl_origin": {
           "id": "artifacts.cpl_origin",
@@ -331,7 +331,7 @@
           "units": "frame",
           "kind": "policy",
           "manifest_key": "artifacts.cpl_origin",
-          "provenance": "manifest.json#artifacts.cpl_origin@bfe1bbf3f5ed"
+          "provenance": "manifest.json#artifacts.cpl_origin@1119ad36c26d"
         }
       },
       "finding_count": 0,
@@ -359,7 +359,7 @@
       "gate": "DRC.AUTHORITATIVE",
       "title": "Fresh DRC on the exact final board",
       "status": "PASS",
-      "reason": "DRC clean: exit 0, schema https://schemas.kicad.org/drc.v1.json validated, no ignored checks, severities ['error', 'warning', 'exclusion'], all 7 required options used, source 2c405d0c1af3",
+      "reason": "DRC clean: exit 0, schema https://schemas.kicad.org/drc.v1.json validated, no ignored checks, severities ['error', 'warning', 'exclusion'], all 7 required options used, source 880fd457fe51",
       "measurements": {
         "command": "kicad-cli pcb drc --format json -o drc_authoritative.json --severity-all --severity-exclusions --all-track-errors --schematic-parity --refill-zones --save-board --exit-code-violations status_beacon.kicad_pcb",
         "command_sha256": "97df328d564dc261c244b468c4fcafadc1dc4fb822800899ce30c5d91fba8244",
@@ -375,15 +375,15 @@
         "exit_status": 0,
         "violations_exit_code": 5,
         "source": "status_beacon.kicad_pcb",
-        "source_sha256": "2c405d0c1af37146d4a8246652c862d5db1feeb6bfc051b6e9c30a1d1a03a715",
-        "checked_copy_sha256": "b444ea5e7156bf9c942b279e860fdc9d144fc5382470634d4b75f02e9406c318",
+        "source_sha256": "880fd457fe514b5c2ec0404ff13fac4d6773a48691260483b596446f32451803",
+        "checked_copy_sha256": "70e1653022ca2cc83617b8201ffe15351845956f6ceea94d22f0122a679a66d0",
         "rules_sha256": "86dbe5cee6469f5c2a5fcaefb0964cb190d4f714345a825139e472f4f3f805a9",
-        "constraint_manifest_sha256": "bfe1bbf3f5ed8f03c6cec9475551614d70b6b26d346c819f007d67360ae78339",
+        "constraint_manifest_sha256": "1119ad36c26d6e15dafe66fc512b85681a8f24e007bcc0498e9ebbdc683d409d",
         "kicad_version": "10.0.5",
-        "generated_utc": "2026-09-02T03:55:23.629185+00:00",
+        "generated_utc": "2026-09-02T04:18:31.461095+00:00",
         "report_meta": {
           "schema": "https://schemas.kicad.org/drc.v1.json",
-          "date": "2026-09-01T21:55:23",
+          "date": "2026-09-01T22:18:31",
           "kicad_version": "10.0.5",
           "source": "status_beacon.kicad_pcb",
           "ignored_checks": [],
@@ -410,16 +410,16 @@
           "units": "mm",
           "kind": "tolerance",
           "manifest_key": "geometry_profile.tolerances.waiver_location_mm.value",
-          "provenance": "manifest.json#geometry_profile.tolerances.waiver_location_mm.value@bfe1bbf3f5ed"
+          "provenance": "manifest.json#geometry_profile.tolerances.waiver_location_mm.value@1119ad36c26d"
         }
       },
       "finding_count": 0,
       "findings": [],
       "evidence": [
         {
-          "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260902T035520Z-66c3785b/work/drc_authoritative.json",
+          "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260902T041827Z-e0599bae/work/drc_authoritative.json",
           "name": "drc_authoritative.json",
-          "sha256": "de20019eaa4626ee4afe0b68d4108c77f633a97c8ad25c2a7c394a91bc8fec7c"
+          "sha256": "995550c85e83fc23808ec1f45d4cf6a2a3c31300bf1f0e13909eb6b801092646"
         }
       ]
     },
@@ -439,7 +439,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.rules.min_clearance",
-          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_clearance@bfe1bbf3f5ed"
+          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_clearance@1119ad36c26d"
         },
         "drc.floor.min_copper_edge_clearance": {
           "id": "drc.floor.min_copper_edge_clearance",
@@ -447,7 +447,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.rules.min_copper_edge_clearance",
-          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_copper_edge_clearance@bfe1bbf3f5ed"
+          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_copper_edge_clearance@1119ad36c26d"
         },
         "drc.floor.min_hole_clearance": {
           "id": "drc.floor.min_hole_clearance",
@@ -455,7 +455,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.rules.min_hole_clearance",
-          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_hole_clearance@bfe1bbf3f5ed"
+          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_hole_clearance@1119ad36c26d"
         },
         "drc.floor.min_hole_to_hole": {
           "id": "drc.floor.min_hole_to_hole",
@@ -463,7 +463,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.rules.min_hole_to_hole",
-          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_hole_to_hole@bfe1bbf3f5ed"
+          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_hole_to_hole@1119ad36c26d"
         },
         "drc.floor.min_through_hole_diameter": {
           "id": "drc.floor.min_through_hole_diameter",
@@ -471,7 +471,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.rules.min_through_hole_diameter",
-          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_through_hole_diameter@bfe1bbf3f5ed"
+          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_through_hole_diameter@1119ad36c26d"
         },
         "drc.floor.min_track_width": {
           "id": "drc.floor.min_track_width",
@@ -479,7 +479,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.rules.min_track_width",
-          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_track_width@bfe1bbf3f5ed"
+          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_track_width@1119ad36c26d"
         },
         "drc.floor.min_via_annular_width": {
           "id": "drc.floor.min_via_annular_width",
@@ -487,7 +487,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.rules.min_via_annular_width",
-          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_via_annular_width@bfe1bbf3f5ed"
+          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_via_annular_width@1119ad36c26d"
         },
         "drc.floor.min_via_diameter": {
           "id": "drc.floor.min_via_diameter",
@@ -495,7 +495,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.rules.min_via_diameter",
-          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_via_diameter@bfe1bbf3f5ed"
+          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_via_diameter@1119ad36c26d"
         },
         "drc.floor.Default.clearance": {
           "id": "drc.floor.Default.clearance",
@@ -503,7 +503,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.net_classes.Default.clearance",
-          "provenance": "manifest.json#checks.drc.constraint_floor.net_classes.Default.clearance@bfe1bbf3f5ed"
+          "provenance": "manifest.json#checks.drc.constraint_floor.net_classes.Default.clearance@1119ad36c26d"
         },
         "drc.floor.Default.track_width": {
           "id": "drc.floor.Default.track_width",
@@ -511,7 +511,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.net_classes.Default.track_width",
-          "provenance": "manifest.json#checks.drc.constraint_floor.net_classes.Default.track_width@bfe1bbf3f5ed"
+          "provenance": "manifest.json#checks.drc.constraint_floor.net_classes.Default.track_width@1119ad36c26d"
         },
         "drc.floor.Default.via_diameter": {
           "id": "drc.floor.Default.via_diameter",
@@ -519,7 +519,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.net_classes.Default.via_diameter",
-          "provenance": "manifest.json#checks.drc.constraint_floor.net_classes.Default.via_diameter@bfe1bbf3f5ed"
+          "provenance": "manifest.json#checks.drc.constraint_floor.net_classes.Default.via_diameter@1119ad36c26d"
         },
         "drc.floor.Default.via_drill": {
           "id": "drc.floor.Default.via_drill",
@@ -527,7 +527,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.net_classes.Default.via_drill",
-          "provenance": "manifest.json#checks.drc.constraint_floor.net_classes.Default.via_drill@bfe1bbf3f5ed"
+          "provenance": "manifest.json#checks.drc.constraint_floor.net_classes.Default.via_drill@1119ad36c26d"
         }
       },
       "finding_count": 0,
@@ -554,7 +554,7 @@
           "units": "severity",
           "kind": "policy",
           "manifest_key": "checks.drc.forbidden_severities",
-          "provenance": "manifest.json#checks.drc.forbidden_severities@bfe1bbf3f5ed"
+          "provenance": "manifest.json#checks.drc.forbidden_severities@1119ad36c26d"
         }
       },
       "finding_count": 0,
@@ -586,12 +586,12 @@
         "source_sha256": "8c2791e844b58e694e68e81d46429cb25764257f5ffd96d528f71931094e0d9f",
         "checked_copy_sha256": "8c2791e844b58e694e68e81d46429cb25764257f5ffd96d528f71931094e0d9f",
         "rules_sha256": "86dbe5cee6469f5c2a5fcaefb0964cb190d4f714345a825139e472f4f3f805a9",
-        "constraint_manifest_sha256": "bfe1bbf3f5ed8f03c6cec9475551614d70b6b26d346c819f007d67360ae78339",
+        "constraint_manifest_sha256": "1119ad36c26d6e15dafe66fc512b85681a8f24e007bcc0498e9ebbdc683d409d",
         "kicad_version": "10.0.5",
-        "generated_utc": "2026-09-02T03:55:25.242156+00:00",
+        "generated_utc": "2026-09-02T04:18:33.224616+00:00",
         "report_meta": {
           "schema": "https://schemas.kicad.org/erc.v1.json",
-          "date": "2026-09-01T21:55:25",
+          "date": "2026-09-01T22:18:33",
           "kicad_version": "10.0.5",
           "source": "status_beacon.kicad_sch",
           "ignored_checks": [],
@@ -618,16 +618,16 @@
           "units": "mm",
           "kind": "tolerance",
           "manifest_key": "geometry_profile.tolerances.waiver_location_mm.value",
-          "provenance": "manifest.json#geometry_profile.tolerances.waiver_location_mm.value@bfe1bbf3f5ed"
+          "provenance": "manifest.json#geometry_profile.tolerances.waiver_location_mm.value@1119ad36c26d"
         }
       },
       "finding_count": 0,
       "findings": [],
       "evidence": [
         {
-          "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260902T035520Z-66c3785b/work/erc_authoritative.json",
+          "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260902T041827Z-e0599bae/work/erc_authoritative.json",
           "name": "erc_authoritative.json",
-          "sha256": "f55018291252fd975637aaf3d756f645cb6f44ad30d98830b6d42777f794efc6"
+          "sha256": "7d8301057ce6b6d8f271636f0a608faf22295e60f3ccb2586ff85dac27c474f7"
         }
       ]
     },
@@ -783,7 +783,7 @@
           "units": "mm",
           "kind": "tolerance",
           "manifest_key": "geometry_profile.tolerances.polygon_chord_error_mm.value",
-          "provenance": "manifest.json#geometry_profile.tolerances.polygon_chord_error_mm.value@bfe1bbf3f5ed"
+          "provenance": "manifest.json#geometry_profile.tolerances.polygon_chord_error_mm.value@1119ad36c26d"
         },
         "net_topology.LED_CHAIN.max_vias_per_net": {
           "id": "net_topology.LED_CHAIN.max_vias_per_net",
@@ -791,7 +791,7 @@
           "units": "vias",
           "kind": "policy",
           "manifest_key": "net_topology.rules.0.max_vias_per_net",
-          "provenance": "manifest.json#net_topology.rules.0.max_vias_per_net@bfe1bbf3f5ed"
+          "provenance": "manifest.json#net_topology.rules.0.max_vias_per_net@1119ad36c26d"
         }
       },
       "finding_count": 0,
@@ -816,9 +816,9 @@
       "reason": "all 2 committed report(s) bind the canonical digest of all 5 source inputs, and every one still matches",
       "measurements": {
         "source_closure_files": 5,
-        "source_closure_sha256": "eb8af0b797faae35235dfab09d9f268a78aa4b3d21485681cf212b29bec0d544",
+        "source_closure_sha256": "9da35c2f8e9206a2c2d60279be29b9ce6dc72df3a48beb054038f693920f2966",
         "source_sha256": {
-          "pcb": "2c405d0c1af37146",
+          "pcb": "880fd457fe514b5c",
           "schematic": "8c2791e844b58e69"
         },
         "reports_required": [],
@@ -839,7 +839,7 @@
           "units": "path glob",
           "kind": "policy",
           "manifest_key": "reports.source_closure",
-          "provenance": "manifest.json#reports.source_closure@bfe1bbf3f5ed"
+          "provenance": "manifest.json#reports.source_closure@1119ad36c26d"
         }
       },
       "finding_count": 0,
@@ -888,7 +888,7 @@
       "reason": "the adopted board is the accepted candidate of 1 recorded attempt(s), every attempt started from the same declared source, and each of the 1 post-router transform(s) states what it changed",
       "measurements": {
         "record": "generated/routing.json",
-        "board_sha256": "2c405d0c1af37146d4a8246652c862d5db1feeb6bfc051b6e9c30a1d1a03a715",
+        "board_sha256": "880fd457fe514b5c2ec0404ff13fac4d6773a48691260483b596446f32451803",
         "attempts": 1,
         "accepted_attempt": 1,
         "post_router_transforms": [
@@ -918,7 +918,70 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "routing.min_segment_mm",
-          "provenance": "manifest.json#routing.min_segment_mm@bfe1bbf3f5ed"
+          "provenance": "manifest.json#routing.min_segment_mm@1119ad36c26d"
+        }
+      },
+      "finding_count": 0,
+      "findings": [],
+      "evidence": []
+    },
+    {
+      "gate": "SIM.MODEL_PROVENANCE",
+      "title": "Board-derived simulation models describe the board being validated",
+      "status": "PASS",
+      "reason": "all 1 board-derived model(s) were extracted from this exact board",
+      "measurements": {
+        "models": 1,
+        "board_derived_models": 1,
+        "board_sha256": "880fd457fe514b5c2ec0404ff13fac4d6773a48691260483b596446f32451803"
+      },
+      "limits": {},
+      "finding_count": 0,
+      "findings": [],
+      "evidence": []
+    },
+    {
+      "gate": "SIM.SCENARIOS",
+      "title": "Declared circuit simulations run and their assertions hold",
+      "status": "PASS",
+      "reason": "4 scenario(s) ran and all 7 declared assertion(s) hold",
+      "measurements": {
+        "scenarios_executed": 4,
+        "assertions_evaluated": 7,
+        "assertions_met": 7
+      },
+      "limits": {},
+      "finding_count": 0,
+      "findings": [],
+      "evidence": []
+    },
+    {
+      "gate": "SIM.STAGE_COVERAGE",
+      "title": "Every design stage the board requires simulation for is covered",
+      "status": "PASS",
+      "reason": "all 2 required stage(s) are covered by a scenario that ran and asserted",
+      "measurements": {
+        "required_stages": 2,
+        "declared_stages": [
+          "post_layout",
+          "pre_layout"
+        ],
+        "scenarios_per_stage": {
+          "post_layout": 1,
+          "pre_layout": 3
+        }
+      },
+      "limits": {
+        "simulation.required_stages": {
+          "id": "simulation.required_stages",
+          "value": [
+            "pre_layout",
+            "post_layout"
+          ],
+          "units": "stage name",
+          "kind": "policy",
+          "manifest_key": "simulation.required_stages",
+          "provenance": "manifest.json#simulation.required_stages@1119ad36c26d"
         }
       },
       "finding_count": 0,
@@ -931,7 +994,7 @@
       "status": "PASS",
       "reason": "2 shipped copper layers match a fresh export by geometric symmetric difference (limit 0.05 mm2)",
       "measurements": {
-        "fresh_export_command": "pcb export gerbers --output /home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260902T035520Z-66c3785b/work/fresh_gerbers --layers F.Cu,B.Cu,F.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts --no-protel-ext --use-drill-file-origin --subtract-soldermask /home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260902T035520Z-66c3785b/work/design/status_beacon.kicad_pcb",
+        "fresh_export_command": "pcb export gerbers --output /home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260902T041827Z-e0599bae/work/fresh_gerbers --layers F.Cu,B.Cu,F.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts --no-protel-ext --use-drill-file-origin --subtract-soldermask /home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260902T041827Z-e0599bae/work/design/status_beacon.kicad_pcb",
         "fresh_export_exit": 0,
         "shipped_copper_layers": [
           "copper,l1,top",
@@ -969,7 +1032,7 @@
           "units": "cli option",
           "kind": "policy",
           "manifest_key": "artifacts.gerber_export_flags",
-          "provenance": "manifest.json#artifacts.gerber_export_flags@bfe1bbf3f5ed"
+          "provenance": "manifest.json#artifacts.gerber_export_flags@1119ad36c26d"
         },
         "geometry.layer_symmetric_difference_mm2": {
           "id": "geometry.layer_symmetric_difference_mm2",
@@ -977,7 +1040,7 @@
           "units": "mm2",
           "kind": "tolerance",
           "manifest_key": "geometry_profile.tolerances.layer_symmetric_difference_mm2.value",
-          "provenance": "manifest.json#geometry_profile.tolerances.layer_symmetric_difference_mm2.value@bfe1bbf3f5ed"
+          "provenance": "manifest.json#geometry_profile.tolerances.layer_symmetric_difference_mm2.value@1119ad36c26d"
         }
       },
       "finding_count": 0,
@@ -1026,7 +1089,7 @@
           "units": "layer roles",
           "kind": "policy",
           "manifest_key": "stackup.expected",
-          "provenance": "manifest.json#stackup.expected@bfe1bbf3f5ed"
+          "provenance": "manifest.json#stackup.expected@1119ad36c26d"
         }
       },
       "finding_count": 0,
@@ -1051,7 +1114,7 @@
           "units": "mm",
           "kind": "tolerance",
           "manifest_key": "geometry_profile.tolerances.contact_mm.value",
-          "provenance": "manifest.json#geometry_profile.tolerances.contact_mm.value@bfe1bbf3f5ed"
+          "provenance": "manifest.json#geometry_profile.tolerances.contact_mm.value@1119ad36c26d"
         },
         "geometry.polygon_chord_error_mm": {
           "id": "geometry.polygon_chord_error_mm",
@@ -1059,7 +1122,7 @@
           "units": "mm",
           "kind": "tolerance",
           "manifest_key": "geometry_profile.tolerances.polygon_chord_error_mm.value",
-          "provenance": "manifest.json#geometry_profile.tolerances.polygon_chord_error_mm.value@bfe1bbf3f5ed"
+          "provenance": "manifest.json#geometry_profile.tolerances.polygon_chord_error_mm.value@1119ad36c26d"
         }
       },
       "finding_count": 0,
@@ -1089,7 +1152,7 @@
           "units": "pad attribute",
           "kind": "policy",
           "manifest_key": "via_mask.pad_contact.populated_pad_attributes",
-          "provenance": "manifest.json#via_mask.pad_contact.populated_pad_attributes@bfe1bbf3f5ed"
+          "provenance": "manifest.json#via_mask.pad_contact.populated_pad_attributes@1119ad36c26d"
         },
         "via_mask.mask_dam_rule": {
           "id": "via_mask.mask_dam_rule",
@@ -1097,7 +1160,7 @@
           "units": "policy",
           "kind": "policy",
           "manifest_key": "via_mask.mask_dam_rule",
-          "provenance": "manifest.json#via_mask.mask_dam_rule@bfe1bbf3f5ed"
+          "provenance": "manifest.json#via_mask.mask_dam_rule@1119ad36c26d"
         }
       },
       "finding_count": 0,
@@ -1141,20 +1204,169 @@
       "gate": "STACK.PHYSICAL",
       "title": "The physical stackup supports the analysis this board asks for",
       "status": "NOT_APPLICABLE",
-      "reason": "manifest does not declare timing.physical_stackup; this board does not opt in to this gate",
-      "measurements": {},
-      "limits": {},
-      "finding_count": 0,
-      "findings": [],
+      "reason": "this board does not require a complete physical stackup, and the one available (native_kicad_board) does not state 1 field(s) that its declared analyses read; propagation delay is therefore not derivable and every gate that needs it says so rather than substituting a material",
+      "measurements": {
+        "physical_stackup": {
+          "source": "native_kicad_board",
+          "layers": [],
+          "copper_layers": [],
+          "board_copper_layers": [
+            "F.Cu",
+            "B.Cu"
+          ],
+          "summed_thickness_mm": null,
+          "declared_total_thickness_mm": 1.6,
+          "notes": [
+            "the board file carries no (setup (stackup ...)) block, so KiCad holds no physical stackup for this design"
+          ]
+        },
+        "reference_plane_layers": [
+          "B.Cu",
+          "F.Cu"
+        ],
+        "reference_copper_layers": [
+          "B.Cu",
+          "F.Cu"
+        ],
+        "reference_layers_not_filled": [],
+        "layers_in_use": [
+          "B.Cu",
+          "F.Cu"
+        ],
+        "fields_required_by_declared_analyses": [
+          "dielectric_thickness",
+          "epsilon_r"
+        ],
+        "insufficient_fields": [
+          {
+            "issue": "no physical stackup is available at all",
+            "needed_for": "every analysis",
+            "detail": "the board file carries no (stackup ...) block and no supplemental declaration was provided"
+          }
+        ],
+        "full_inventory_gaps": [
+          {
+            "issue": "no physical stackup is available at all",
+            "needed_for": "every analysis",
+            "detail": "the board file carries no (stackup ...) block and no supplemental declaration was provided"
+          }
+        ],
+        "contradictions": []
+      },
+      "limits": {
+        "timing.physical_stackup.require_complete": {
+          "id": "timing.physical_stackup.require_complete",
+          "value": false,
+          "units": "policy",
+          "kind": "policy",
+          "manifest_key": "timing.physical_stackup.require_complete",
+          "provenance": "manifest.json#timing.physical_stackup.require_complete@1119ad36c26d"
+        }
+      },
+      "finding_count": 1,
+      "findings": [
+        {
+          "issue": "no physical stackup is available at all",
+          "needed_for": "every analysis",
+          "detail": "the board file carries no (stackup ...) block and no supplemental declaration was provided"
+        }
+      ],
       "evidence": []
     },
     {
       "gate": "TIMING.PATH_INTEGRITY",
       "title": "Declared electrical paths exist, end to end, across every component",
-      "status": "NOT_APPLICABLE",
-      "reason": "manifest does not declare timing.interfaces; this board does not opt in to this gate",
-      "measurements": {},
-      "limits": {},
+      "status": "PASS",
+      "reason": "all 1 declared electrical path(s) across 1 interface(s) resolve end to end, each crossing the series component(s) it declares",
+      "measurements": {
+        "worst_path_unreferenced_mm": 3.11,
+        "worst_unreferenced_path": "mcu_to_first_led->D1.4",
+        "unreferenced_mm_by_path": {
+          "mcu_to_first_led->D1.4": 3.11
+        },
+        "reference_layers_not_filled": [],
+        "interfaces": {
+          "led_data": {
+            "description": null,
+            "declared_routes": 1,
+            "resolved_paths": 1,
+            "paths": [
+              {
+                "path": "mcu_to_first_led",
+                "source": "U1.20",
+                "destination": "D1.4",
+                "nets": [
+                  "LED_DATA",
+                  "LED_CH0"
+                ],
+                "crosses": [
+                  "R4"
+                ],
+                "copper_length_mm": 15.754,
+                "length_by_layer_mm": {
+                  "B.Cu": 4.765685,
+                  "F.Cu": 10.988299
+                },
+                "via_transitions": 2,
+                "steps": [
+                  {
+                    "kind": "copper",
+                    "net": "LED_DATA",
+                    "reference": null,
+                    "from": "U1.20",
+                    "to": "R4.1",
+                    "length_mm": 6.5358
+                  },
+                  {
+                    "kind": "component",
+                    "net": null,
+                    "reference": "R4",
+                    "from": "1",
+                    "to": "2",
+                    "length_mm": 0.0
+                  },
+                  {
+                    "kind": "copper",
+                    "net": "LED_CH0",
+                    "reference": null,
+                    "from": "R4.2",
+                    "to": "D1.4",
+                    "length_mm": 9.2182
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "paths_resolved": 1,
+        "scope": "geometry and connectivity only; independent of the physical stackup, the propagation model and any solver"
+      },
+      "limits": {
+        "timing.led_data.expected_path_count": {
+          "id": "timing.led_data.expected_path_count",
+          "value": 1,
+          "units": "paths",
+          "kind": "policy",
+          "manifest_key": "timing.interfaces.led_data.expected_path_count",
+          "provenance": "manifest.json#timing.interfaces.led_data.expected_path_count@1119ad36c26d"
+        },
+        "timing.led_data.required_component_crossings": {
+          "id": "timing.led_data.required_component_crossings",
+          "value": 1,
+          "units": "component crossings per path",
+          "kind": "policy",
+          "manifest_key": "timing.interfaces.led_data.required_component_crossings",
+          "provenance": "manifest.json#timing.interfaces.led_data.required_component_crossings@1119ad36c26d"
+        },
+        "timing.led_data.max_unreferenced_mm": {
+          "id": "timing.led_data.max_unreferenced_mm",
+          "value": 10.0,
+          "units": "mm",
+          "kind": "policy",
+          "manifest_key": "timing.interfaces.led_data.max_unreferenced_mm",
+          "provenance": "manifest.json#timing.interfaces.led_data.max_unreferenced_mm@1119ad36c26d"
+        }
+      },
       "finding_count": 0,
       "findings": [],
       "evidence": []
@@ -1163,19 +1375,163 @@
       "gate": "TIMING.INTERCONNECT_DELAY",
       "title": "Passive PCB propagation delay of each declared path is within its limit",
       "status": "NOT_APPLICABLE",
-      "reason": "manifest does not declare timing.interfaces; this board does not opt in to this gate",
-      "measurements": {},
+      "reason": "no timing interface declares a maximum interconnect delay, so there is nothing to compare the 1 measured path(s) against; the measurements are recorded",
+      "measurements": {
+        "scope": "passive PCB interconnect only: copper propagation and, where a model is declared, via vertical transit. Excludes driver output delay and output-to-output skew, package delay, receiver threshold behaviour and PVT variation.",
+        "paths": [
+          {
+            "interface": "led_data",
+            "path": "mcu_to_first_led",
+            "source": "U1.20",
+            "destination": "D1.4",
+            "copper_length_mm": 15.753985,
+            "length_by_layer_mm": {
+              "B.Cu": 4.765685,
+              "F.Cu": 10.988299
+            },
+            "modelled_delay_ps": null,
+            "claim": {
+              "kind": "claim",
+              "scope": {
+                "level": "path",
+                "identity": "mcu_to_first_led"
+              },
+              "units": "ps",
+              "knowledge": "unknown",
+              "quantity": {},
+              "evidence": {
+                "phenomenon": "propagation_delay",
+                "evidence_class": null,
+                "provenance": {
+                  "source": "native_kicad_board",
+                  "model": "hammerstad"
+                },
+                "applicability": {
+                  "status": "unsupported",
+                  "detail": "one or more path portions are outside the implemented propagation models"
+                },
+                "assumptions": [],
+                "omitted_contributions": []
+              },
+              "knowledge_basis": null,
+              "requirement": null,
+              "significance": "no propagation-delay conclusion is available"
+            },
+            "delay_lower_ps": null,
+            "delay_upper_ps": null,
+            "geometric_uncertainty_ps": null,
+            "length_uncertainty_mm": 0.0,
+            "assumptions": [],
+            "evidence_class": null,
+            "crosses": [
+              "R4"
+            ],
+            "component_traversals": [
+              {
+                "reference": "R4",
+                "from_net": "LED_DATA",
+                "to_net": "LED_CH0",
+                "claim": {
+                  "kind": "claim",
+                  "scope": {
+                    "level": "traversal",
+                    "identity": "R4.1"
+                  },
+                  "units": "ps",
+                  "knowledge": "lower_bound",
+                  "quantity": {
+                    "value": 0.0
+                  },
+                  "evidence": {
+                    "phenomenon": "propagation_delay",
+                    "evidence_class": "unmodelled-contribution",
+                    "provenance": {
+                      "source": "manifest: no component delay_model"
+                    },
+                    "applicability": {
+                      "status": "applicable",
+                      "detail": "model applies to this scope"
+                    },
+                    "assumptions": [],
+                    "omitted_contributions": [
+                      {
+                        "detail": "no delay model is declared for R4.1, so no delay is attributed; passivity establishes only a non-negative lower bound"
+                      }
+                    ]
+                  },
+                  "knowledge_basis": {
+                    "kind": "derived",
+                    "detail": "a passive traversal cannot have negative delay"
+                  },
+                  "requirement": null,
+                  "significance": "no delay model is declared for R4.1, so no delay is attributed; passivity establishes only a non-negative lower bound"
+                }
+              }
+            ],
+            "vias": 2,
+            "insufficient": [
+              {
+                "portion": "conductor",
+                "layer": "B.Cu",
+                "width_mm": 0.25,
+                "length_mm": 4.765685,
+                "issue": "layer 'B.Cu': the physical stackup describes no layer by this name"
+              },
+              {
+                "portion": "conductor",
+                "layer": "F.Cu",
+                "width_mm": 0.25,
+                "length_mm": 10.988299,
+                "issue": "layer 'F.Cu': the physical stackup describes no layer by this name"
+              }
+            ]
+          }
+        ],
+        "evidence_classes": [],
+        "physical_stackup_source": "native_kicad_board",
+        "propagation_model": "hammerstad",
+        "via_delay_model": "none",
+        "paths_without_derivable_delay": 1,
+        "paths_with_bounded_or_incomplete_delay": 1
+      },
       "limits": {},
-      "finding_count": 0,
-      "findings": [],
+      "finding_count": 1,
+      "findings": [
+        {
+          "interface": "led_data",
+          "path": "mcu_to_first_led",
+          "destination": "D1.4",
+          "insufficient": [
+            {
+              "portion": "conductor",
+              "layer": "B.Cu",
+              "width_mm": 0.25,
+              "length_mm": 4.765685,
+              "issue": "layer 'B.Cu': the physical stackup describes no layer by this name"
+            },
+            {
+              "portion": "conductor",
+              "layer": "F.Cu",
+              "width_mm": 0.25,
+              "length_mm": 10.988299,
+              "issue": "layer 'F.Cu': the physical stackup describes no layer by this name"
+            }
+          ]
+        }
+      ],
       "evidence": []
     },
     {
       "gate": "TIMING.INTERCONNECT_SKEW",
       "title": "Passive PCB arrival spread within each declared endpoint group",
       "status": "NOT_APPLICABLE",
-      "reason": "manifest does not declare timing.interfaces; this board does not opt in to this gate",
-      "measurements": {},
+      "reason": "no endpoint group declares a skew or length-spread limit, so there is nothing to compare the 0 measured group(s) against; the measurements are recorded",
+      "measurements": {
+        "scope": "passive PCB interconnect only. This is NOT total clock arrival skew: it excludes driver output-to-output skew, driver and receiver package delay, receiver threshold behaviour and PVT variation.",
+        "groups": [],
+        "physical_stackup_source": "native_kicad_board",
+        "propagation_model": "hammerstad"
+      },
       "limits": {},
       "finding_count": 0,
       "findings": [],

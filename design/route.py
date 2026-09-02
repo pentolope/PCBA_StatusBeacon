@@ -9,7 +9,7 @@ import sys
 
 import pcbnew
 
-from . import build, layout, netlist
+from . import build, layout, netlist, simulation
 
 sys.path.insert(0, os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
@@ -86,7 +86,9 @@ def _route_once(krt, resolved, candidate, attempt, placed_pcb):
              "sha256": krt_digest(tidied_pcb),
              "transform": "snap track endpoints onto same-net via centres; "
                           "prune dangling track ends, keeping any removal "
-                          "only while connectivity is unchanged",
+                          "only while connectivity is unchanged; refill the "
+                          "zones so the pour is knocked out around the "
+                          "copper the router added",
              "effects": transform,
              "parameters": {"snap_tolerance_mm": SNAP_TOLERANCE_MM,
                             "touch_tolerance_mm": TOUCH_TOLERANCE_MM}},
@@ -97,9 +99,23 @@ def _route_once(krt, resolved, candidate, attempt, placed_pcb):
     }
 
 
+def _acceptance_gates():
+    with open(MANIFEST, encoding="utf-8") as handle:
+        return json.load(handle)["routing"]["acceptance_gates"]
+
+
 def _gates_pass():
+    """Judge the design, not the release artifacts.
+
+    The fabrication outputs are generated FROM the board a search has not
+    finished choosing, so gates over those artifacts are stale by
+    construction during routing and would reject every candidate. The
+    manifest names the subset that judges the design itself; everything
+    else is judged once, afterwards, by a full validate.
+    """
     completed = subprocess.run(
-        [sys.executable, VALIDATOR, "validate", MANIFEST],
+        [sys.executable, VALIDATOR, "validate", MANIFEST,
+         "--only=" + ",".join(_acceptance_gates())],
         capture_output=True, text=True, cwd=REPO_ROOT)
     return completed.returncode == 0
 
@@ -148,6 +164,11 @@ def run():
         entry = {key: value for key, value in result.items() if key != "board"}
         shutil.copy(result["board"], layout.BOARD_PATH)
         build.write_project()
+        # Everything derived from the board is regenerated before the
+        # candidate is judged, so the acceptance run judges one coherent
+        # state rather than this candidate's copper beside the previous
+        # candidate's extracted models.
+        simulation.write()
         # The record must describe the board the gates are about to judge,
         # ROUTE.PROVENANCE included, so it is written before the judgement
         # and rewritten if the candidate is rejected.
@@ -163,6 +184,7 @@ def run():
     if accepted is None:
         shutil.copy(placed_pcb, layout.BOARD_PATH)
         build.write_project()
+        simulation.write()
         _write_record(placed_pcb, attempts, None, krt, resolved)
         raise RuntimeError(
             "no routing candidate passed the board gates in %d attempts; "
@@ -260,9 +282,13 @@ def tidy(path):
             break
         removed += 1
 
+    # The router adds copper the pour was not knocked out around, so the
+    # fill is recomputed here rather than left describing earlier copper.
+    layout.fill_zones(board)
     pcbnew.SaveBoard(path, board)
     return {"endpoints_snapped": snapped,
-            "dangling_tracks_removed": removed}
+            "dangling_tracks_removed": removed,
+            "zones_refilled": len(list(board.Zones()))}
 
 
 def krt_digest(path):

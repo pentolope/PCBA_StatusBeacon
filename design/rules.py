@@ -831,6 +831,50 @@ def evaluate_debug_contract(parameters):
     }
 
 
+#: Signal propagation in FR-4 microstrip, the slower (longer, and so more
+#: permissive of a discontinuity) end of the usual range; using the faster
+#: end would make the derived limit larger.
+MICROSTRIP_VELOCITY_MM_PER_S = 1.4e11
+
+#: A discontinuity below a tenth of the rise-time length is electrically
+#: short: the reflection it produces has not developed before the edge is
+#: over. The tenth is the customary engineering margin, not a measurement.
+ELECTRICALLY_SHORT_FRACTION = 0.1
+
+
+def evaluate_reference_gap_limit(parameters):
+    """Is the declared unreferenced-run limit electrically short?
+
+    A gap in the reference conductor forces the return current to detour.
+    Whether that matters is set by the edge, not by the trace: the limit
+    the board declares must be short against the length the fastest edge
+    occupies while it is rising. The rise time is the design's own - the
+    series resistor into the receiver's input capacitance - so this rule
+    reads the layout limit back against the parts that set it.
+    """
+    from . import simulation
+    manifest_path = os.path.join(REPO_ROOT, "board", "manifest.json")
+    with open(manifest_path, encoding="utf-8") as handle:
+        interfaces = json.load(handle)["timing"]["interfaces"]
+    rise_s = (2.2 * simulation._resistor_ohms("R4")
+              * simulation.LED_INPUT_CAPACITANCE_F)
+    allowed_mm = (ELECTRICALLY_SHORT_FRACTION * rise_s
+                  * MICROSTRIP_VELOCITY_MM_PER_S)
+    violations = []
+    for name, declared in sorted(interfaces.items()):
+        limit = declared.get("max_unreferenced_mm")
+        if limit is None or limit > allowed_mm:
+            violations.append((name, limit, allowed_mm))
+    return {
+        "id": "reference_gap_limit_is_electrically_short",
+        "identity": "led_data",
+        "violations": violations,
+        "claim": _structural_claim(
+            "led_data", "return_path_discontinuity", violations,
+            "declared_unreferenced_run_is_electrically_short"),
+    }
+
+
 def evaluate_all():
     parameters = load_parameters()
     results = []
@@ -847,6 +891,7 @@ def evaluate_all():
     results.extend(evaluate_contact_ratings(parameters))
     results.extend(evaluate_land_patterns(parameters))
     results.append(evaluate_debug_contract(parameters))
+    results.append(evaluate_reference_gap_limit(parameters))
     for result in results:
         result["verdict"] = claim.verdict(result["claim"])
     return results
