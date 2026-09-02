@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schemas.kicad.org/drc.v1.json",
+  "coordinate_units": "mm",
+  "date": "2026-09-01T21:55:18",
+  "ignored_checks": [],
+  "included_severities": [
+    "error",
+    "warning",
+    "exclusion"
+  ],
+  "kicad_version": "10.0.5",
+  "schematic_parity": [],
+  "source": "status_beacon.kicad_pcb",
+  "unconnected_items": [],
+  "violations": [],
+  "source_sha256": "2c405d0c1af37146d4a8246652c862d5db1feeb6bfc051b6e9c30a1d1a03a715",
+  "source_closure_sha256": "eb8af0b797faae35235dfab09d9f268a78aa4b3d21485681cf212b29bec0d544"
+}

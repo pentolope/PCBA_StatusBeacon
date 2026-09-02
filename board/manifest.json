@@ -67,6 +67,22 @@
       "coordinate_match_mm": {
         "value": 0.002,
         "units": "mm"
+      },
+      "rotation_match_deg": {
+        "value": 0.1,
+        "units": "deg"
+      },
+      "dimension_match_mm": {
+        "value": 0.002,
+        "units": "mm"
+      },
+      "clearance_match_mm": {
+        "value": 0.01,
+        "units": "mm"
+      },
+      "layer_symmetric_difference_mm2": {
+        "value": 0.05,
+        "units": "mm2"
       }
     }
   },
@@ -152,5 +168,286 @@
     "metric": "annulus_to_opening_mm",
     "contact_semantics": "annulus_contacts counts zero-distance tangency as contact; annulus_strict_overlaps counts positive shared area only",
     "mask_dam_rule": "contact"
+  },
+  "artifacts": {
+    "gerber_dir": "generated/release/gerbers",
+    "bom": "generated/release/bom.csv",
+    "cpl": "generated/release/cpl.csv",
+    "fabrication_manifest": "generated/release/fabrication.json",
+    "validation_report": "generated/release/validation.json",
+    "position_tolerance_mm": 0.01,
+    "cpl_fields": {
+      "designator": "Ref",
+      "x": "PosX",
+      "y": "PosY",
+      "side": "Side",
+      "rotation": "Rot"
+    },
+    "cpl_origin": {
+      "frame": "absolute page origin",
+      "offset_mm": [
+        0.0,
+        0.0
+      ]
+    },
+    "gerber_export_flags": [
+      "--layers",
+      "F.Cu,B.Cu,F.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts",
+      "--no-protel-ext",
+      "--use-drill-file-origin",
+      "--subtract-soldermask"
+    ],
+    "reports_dir": "generated/release/reports"
+  },
+  "archive": {
+    "zip": "generated/release/status_beacon-fabrication.zip",
+    "allow": [
+      {
+        "file_function": "Copper,L1,Top",
+        "require_payload": true,
+        "min_count": 1
+      },
+      {
+        "file_function": "Copper,L2,Bot",
+        "require_payload": true,
+        "min_count": 1
+      },
+      {
+        "file_function": "Soldermask,Top",
+        "require_payload": true,
+        "min_count": 1
+      },
+      {
+        "file_function": "Soldermask,Bot",
+        "require_payload": true,
+        "min_count": 1
+      },
+      {
+        "file_function": "Legend,Top",
+        "require_payload": true,
+        "min_count": 1
+      },
+      {
+        "file_function": "Legend,Bot",
+        "require_payload": false,
+        "min_count": 1
+      },
+      {
+        "file_function": "Paste,Top",
+        "require_payload": true,
+        "min_count": 1
+      },
+      {
+        "file_function": "Profile,NP",
+        "require_payload": true,
+        "min_count": 1
+      },
+      {
+        "file_function": "Drill/plated",
+        "require_payload": true,
+        "min_count": 1
+      },
+      {
+        "file_function": "Drill/nonplated",
+        "require_payload": true,
+        "min_count": 1
+      },
+      {
+        "file_function": "JobFile",
+        "require_payload": true,
+        "min_count": 1
+      }
+    ]
+  },
+  "assembly": {
+    "schematic_fields": [
+      "LCSC",
+      "MPN",
+      "Manufacturer"
+    ],
+    "required_part_fields": [
+      "LCSC"
+    ],
+    "bom_fields": {
+      "designators": "Designator",
+      "value": "Comment",
+      "footprint": "Footprint",
+      "quantity": "Quantity",
+      "LCSC": "LCSC Part #"
+    },
+    "schematic_export": {
+      "fields": [
+        "Reference",
+        "Value",
+        "Footprint",
+        "${DNP}",
+        "${EXCLUDE_FROM_BOM}",
+        "LCSC",
+        "MPN",
+        "Manufacturer"
+      ],
+      "labels": [
+        "Reference",
+        "Value",
+        "Footprint",
+        "DNP",
+        "ExcludeFromBOM",
+        "LCSC",
+        "MPN",
+        "Manufacturer"
+      ],
+      "flags": [],
+      "reference_label": "Reference",
+      "value_label": "Value",
+      "footprint_label": "Footprint",
+      "dnp_label": "DNP",
+      "exclude_label": "ExcludeFromBOM",
+      "true_tokens": [
+        "1",
+        "true",
+        "yes",
+        "x",
+        "dnp"
+      ]
+    },
+    "compared_part_fields": [
+      "LCSC",
+      "MPN",
+      "Manufacturer"
+    ]
+  },
+  "release_generation": {
+    "lock_file_globs": [
+      "*.lck",
+      "~*.lck",
+      ".#*",
+      "*-lock",
+      "*.kicad_prl-lock"
+    ],
+    "erc": {
+      "output": "erc.json"
+    },
+    "drc": {
+      "output": "drc.json"
+    },
+    "drill": {
+      "flags": [
+        "--format",
+        "excellon",
+        "--excellon-separate-th",
+        "--drill-origin",
+        "plot"
+      ]
+    },
+    "bom": {
+      "output": "bom.csv",
+      "fields": [
+        "${QUANTITY}",
+        "Reference",
+        "Value",
+        "Footprint",
+        "LCSC"
+      ],
+      "labels": [
+        "Quantity",
+        "Designator",
+        "Comment",
+        "Footprint",
+        "LCSC Part #"
+      ],
+      "group_by": [
+        "Value",
+        "Footprint",
+        "LCSC"
+      ],
+      "flags": [
+        "--exclude-dnp",
+        "--ref-range-delimiter",
+        ""
+      ],
+      "field_map": {
+        "designators": "Designator",
+        "value": "Comment",
+        "footprint": "Footprint",
+        "quantity": "Quantity",
+        "LCSC": "LCSC Part #"
+      }
+    },
+    "cpl": {
+      "output": "cpl.csv",
+      "flags": [
+        "--format",
+        "csv",
+        "--units",
+        "mm",
+        "--side",
+        "both",
+        "--exclude-dnp"
+      ],
+      "field_map": {
+        "designator": "Ref",
+        "x": "PosX",
+        "y": "PosY",
+        "side": "Side",
+        "rotation": "Rot"
+      },
+      "origin": {
+        "frame": "absolute page origin",
+        "offset_mm": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "archive": {
+      "zip": "status_beacon-fabrication.zip"
+    }
+  },
+  "reports": {
+    "files": [
+      "generated/release/reports/erc.json",
+      "generated/release/reports/drc.json"
+    ],
+    "source_field": "source",
+    "date_field": "date",
+    "require_source_hash": true,
+    "tolerance_seconds": 0,
+    "source_closure": [
+      "*.kicad_sch",
+      "*.kicad_pcb",
+      "*.kicad_pro"
+    ],
+    "source_hash_field": "source_sha256",
+    "closure_field": "source_closure_sha256"
+  },
+  "fixture": {
+    "attributes_file": ".gitattributes"
+  },
+  "release_profile": {
+    "id": "jlcpcb-2layer-assembled",
+    "mandatory_gates": [
+      "ARCH.CONTENTS",
+      "ARCH.PROVENANCE",
+      "BOM.NATIVE_PARITY",
+      "CONTRACT.PLACEMENT",
+      "CPL.NATIVE_PARITY",
+      "DRC.AUTHORITATIVE",
+      "DRC.CONSTRAINT_FLOOR",
+      "DRC.NO_SUPPRESSED_RULES",
+      "ERC.AUTHORITATIVE",
+      "NET.TOPOLOGY",
+      "PROV.REPORT_FRESHNESS",
+      "ROUTE.GEOMETRY_HYGIENE",
+      "ROUTE.PROVENANCE",
+      "ROUTE.TINY_SEGMENTS",
+      "STACK.GERBER_PARITY",
+      "STACK.NATIVE_VS_MANIFEST",
+      "VIA.ANNULUS_MASK_OVERLAP",
+      "VIA.IN_PAD_CONTACT"
+    ],
+    "required_evidence": [
+      "generated/routing.json",
+      "evidence/index.json"
+    ]
   }
 }

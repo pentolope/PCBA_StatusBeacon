@@ -132,6 +132,8 @@ def _symbol_instance(reference, part, origin, schematic_uuid, project_name,
     if part["manufacturer"]:
         node.append(_property("Manufacturer", part["manufacturer"], x, y,
                               True))
+    if part.get("lcsc"):
+        node.append(_property("LCSC", part["lcsc"], x, y, True))
     node.append(["instances",
                  ["project", sexpr.Quoted(project_name),
                   ["path", sexpr.Quoted("/" + str(schematic_uuid)),

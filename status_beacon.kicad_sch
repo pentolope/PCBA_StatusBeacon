@@ -3137,6 +3137,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C1779"
+			(at 228.6 38.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -3191,6 +3202,17 @@
 		(property
 			"Datasheet"
 			""
+			(at 292.1 38.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C1525"
 			(at 292.1 38.1 0)
 			(hide yes)
 			(effects
@@ -3261,6 +3283,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C1525"
+			(at 355.6 38.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -3315,6 +3348,17 @@
 		(property
 			"Datasheet"
 			""
+			(at 419.1 38.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C1525"
 			(at 419.1 38.1 0)
 			(hide yes)
 			(effects
@@ -3385,6 +3429,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C1525"
+			(at 482.6 38.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -3439,6 +3494,17 @@
 		(property
 			"Datasheet"
 			""
+			(at 546.1 38.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C1525"
 			(at 546.1 38.1 0)
 			(hide yes)
 			(effects
@@ -3509,6 +3575,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C1525"
+			(at 609.6 38.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -3563,6 +3640,17 @@
 		(property
 			"Datasheet"
 			""
+			(at 673.1 38.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C1525"
 			(at 673.1 38.1 0)
 			(hide yes)
 			(effects
@@ -3633,6 +3721,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C1525"
+			(at 736.6 38.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -3687,6 +3786,17 @@
 		(property
 			"Datasheet"
 			""
+			(at 38.1 101.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C1525"
 			(at 38.1 101.6 0)
 			(hide yes)
 			(effects
@@ -3757,6 +3867,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C1525"
+			(at 101.6 101.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -3811,6 +3932,17 @@
 		(property
 			"Datasheet"
 			""
+			(at 165.1 101.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C1525"
 			(at 165.1 101.6 0)
 			(hide yes)
 			(effects
@@ -3881,6 +4013,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C1525"
+			(at 228.6 101.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -3935,6 +4078,17 @@
 		(property
 			"Datasheet"
 			""
+			(at 292.1 101.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C1525"
 			(at 292.1 101.6 0)
 			(hide yes)
 			(effects
@@ -4005,6 +4159,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C1525"
+			(at 355.6 101.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -4059,6 +4224,17 @@
 		(property
 			"Datasheet"
 			""
+			(at 419.1 101.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C1525"
 			(at 419.1 101.6 0)
 			(hide yes)
 			(effects
@@ -4151,6 +4327,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C2761795"
+			(at 482.6 101.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -4227,6 +4414,17 @@
 		(property
 			"Manufacturer"
 			"Worldsemi"
+			(at 546.1 101.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C2761795"
 			(at 546.1 101.6 0)
 			(hide yes)
 			(effects
@@ -4319,6 +4517,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C2761795"
+			(at 609.6 101.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -4395,6 +4604,17 @@
 		(property
 			"Manufacturer"
 			"Worldsemi"
+			(at 673.1 101.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C2761795"
 			(at 673.1 101.6 0)
 			(hide yes)
 			(effects
@@ -4487,6 +4707,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C2761795"
+			(at 736.6 101.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -4563,6 +4794,17 @@
 		(property
 			"Manufacturer"
 			"Worldsemi"
+			(at 38.1 165.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C2761795"
 			(at 38.1 165.1 0)
 			(hide yes)
 			(effects
@@ -4655,6 +4897,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C2761795"
+			(at 101.6 165.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -4731,6 +4984,17 @@
 		(property
 			"Manufacturer"
 			"Worldsemi"
+			(at 165.1 165.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C2761795"
 			(at 165.1 165.1 0)
 			(hide yes)
 			(effects
@@ -4823,6 +5087,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C2761795"
+			(at 228.6 165.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -4899,6 +5174,17 @@
 		(property
 			"Manufacturer"
 			"Worldsemi"
+			(at 292.1 165.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C2761795"
 			(at 292.1 165.1 0)
 			(hide yes)
 			(effects
@@ -4991,6 +5277,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C2761795"
+			(at 355.6 165.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -5067,6 +5364,17 @@
 		(property
 			"Manufacturer"
 			"Worldsemi"
+			(at 419.1 165.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C2761795"
 			(at 419.1 165.1 0)
 			(hide yes)
 			(effects
@@ -5159,6 +5467,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C48260"
+			(at 482.6 165.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -5235,6 +5554,17 @@
 		(property
 			"Manufacturer"
 			"Texas Instruments"
+			(at 546.1 165.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C48260"
 			(at 546.1 165.1 0)
 			(hide yes)
 			(effects
@@ -5327,6 +5657,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C48260"
+			(at 609.6 165.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -5411,6 +5752,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C48260"
+			(at 673.1 165.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -5487,6 +5839,17 @@
 		(property
 			"Manufacturer"
 			"Korean Hroparts Elec"
+			(at 736.6 165.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C165948"
 			(at 736.6 165.1 0)
 			(hide yes)
 			(effects
@@ -5619,6 +5982,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C25905"
+			(at 101.6 228.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -5673,6 +6047,17 @@
 		(property
 			"Datasheet"
 			""
+			(at 165.1 228.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C25905"
 			(at 165.1 228.6 0)
 			(hide yes)
 			(effects
@@ -5743,6 +6128,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C17477"
+			(at 228.6 228.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -5797,6 +6193,17 @@
 		(property
 			"Datasheet"
 			""
+			(at 292.1 228.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C25105"
 			(at 292.1 228.6 0)
 			(hide yes)
 			(effects
@@ -5867,6 +6274,17 @@
 				)
 			)
 		)
+		(property
+			"LCSC"
+			"C11702"
+			(at 355.6 228.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project
 				"status_beacon"
@@ -5921,6 +6339,17 @@
 		(property
 			"Datasheet"
 			""
+			(at 419.1 228.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C25744"
 			(at 419.1 228.6 0)
 			(hide yes)
 			(effects
@@ -6005,6 +6434,17 @@
 		(property
 			"Manufacturer"
 			"Korean Hroparts Elec"
+			(at 482.6 228.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C92584"
 			(at 482.6 228.6 0)
 			(hide yes)
 			(effects
@@ -7143,6 +7583,17 @@
 		(property
 			"Manufacturer"
 			"Puya"
+			(at 101.6 355.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C5379864"
 			(at 101.6 355.6 0)
 			(hide yes)
 			(effects
