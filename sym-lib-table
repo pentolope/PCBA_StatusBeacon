@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "StatusBeacon")(type "KiCad")(uri "${KIPRJMOD}/library/StatusBeacon.kicad_sym")(options "")(descr ""))
+)

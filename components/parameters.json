@@ -1,0 +1,498 @@
+{
+  "schema_version": 2,
+  "parts": {
+    "WS2812B-B/T": {
+      "ground_pins": [
+        "3"
+      ],
+      "supply_pins": [
+        "1"
+      ],
+      "supply": {
+        "abs_max_v": {
+          "value": 5.3,
+          "document": "ws2812b_worldsemi",
+          "basis": "direct"
+        },
+        "abs_min_v": {
+          "value": 3.5,
+          "document": "ws2812b_worldsemi",
+          "basis": "direct"
+        },
+        "characterised_min_v": {
+          "value": 4.5,
+          "document": "ws2812b_worldsemi",
+          "basis": "direct"
+        },
+        "characterised_max_v": {
+          "value": 5.5,
+          "document": "ws2812b_worldsemi",
+          "basis": "direct"
+        }
+      },
+      "digital_inputs": {
+        "4": {
+          "vih_min": {
+            "factor_of_supply": 0.7,
+            "document": "ws2812b_worldsemi",
+            "basis": "direct"
+          },
+          "vil_max": {
+            "factor_of_supply": 0.3,
+            "document": "ws2812b_worldsemi",
+            "basis": "direct"
+          },
+          "input_current_max_a": 1e-06
+        }
+      },
+      "digital_outputs": {
+        "2": {
+          "voh_min": {
+            "knowledge": "unknown"
+          },
+          "vol_max": {
+            "knowledge": "unknown"
+          }
+        }
+      },
+      "supply_current_max_a": {
+        "value": 0.06,
+        "basis": "assumed"
+      },
+      "current_scales_with_brightness_limit": true
+    },
+    "PY32F003F18P6TU": {
+      "ground_pins": [
+        "7"
+      ],
+      "supply_pins": [
+        "9"
+      ],
+      "supply": {
+        "abs_max_v": {
+          "value": 6.25,
+          "document": "py32f003_puya",
+          "basis": "direct"
+        },
+        "abs_min_v": {
+          "value": -0.3,
+          "document": "py32f003_puya",
+          "basis": "direct"
+        },
+        "characterised_min_v": {
+          "value": 1.7,
+          "document": "py32f003_puya",
+          "basis": "direct"
+        },
+        "characterised_max_v": {
+          "value": 5.5,
+          "document": "py32f003_puya",
+          "basis": "direct"
+        }
+      },
+      "digital_inputs": {
+        "19": {
+          "vih_min": {
+            "factor_of_supply": 0.7,
+            "document": "py32f003_puya",
+            "basis": "direct"
+          },
+          "vil_max": {
+            "factor_of_supply": 0.3,
+            "document": "py32f003_puya",
+            "basis": "direct"
+          },
+          "input_current_max_a": 1e-06
+        }
+      },
+      "digital_outputs": {
+        "20": {
+          "reference_supply_pin": "9",
+          "voh_min": {
+            "offset_from_supply": -0.4,
+            "valid_supply_min_v": 2.7,
+            "ioh_max_a": 0.008,
+            "document": "py32f003_puya",
+            "basis": "direct"
+          },
+          "vol_max": {
+            "value": 0.4,
+            "valid_supply_min_v": 2.7,
+            "iol_max_a": 0.008,
+            "document": "py32f003_puya",
+            "basis": "direct"
+          }
+        }
+      },
+      "supply_current_max_a": {
+        "value": 0.01,
+        "basis": "assumed"
+      },
+      "land_pattern": {
+        "document": "py32f003_puya",
+        "pad_count": 20,
+        "pitch_mm": 0.65
+      }
+    },
+    "TPD1E10B06DPYR": {
+      "ground_pins": [],
+      "supply_pins": [],
+      "supply": {},
+      "digital_inputs": {},
+      "digital_outputs": {},
+      "reverse_standoff_v": {
+        "value": 5.5,
+        "document": "tpd1e10b06_ti",
+        "basis": "direct"
+      },
+      "leakage_current_max_a": {
+        "value": 1e-07,
+        "document": "tpd1e10b06_ti",
+        "basis": "direct"
+      },
+      "supply_current_max_a": {
+        "value": 1e-07,
+        "document": "tpd1e10b06_ti",
+        "basis": "direct"
+      },
+      "land_pattern": {
+        "document": "tpd1e10b06_ti",
+        "pad_count": 2,
+        "pad_size_mm": [
+          0.3,
+          0.5
+        ],
+        "pad_centres_mm": [
+          [
+            -0.35,
+            0.0
+          ],
+          [
+            0.35,
+            0.0
+          ]
+        ]
+      }
+    },
+    "K2-1187SQ-A4SW-06": {
+      "ground_pins": [],
+      "supply_pins": [],
+      "supply": {},
+      "digital_inputs": {},
+      "digital_outputs": {},
+      "contact_voltage_max_v": {
+        "value": 12.0,
+        "document": "k2_1187sq_hro",
+        "basis": "direct"
+      },
+      "contact_current_max_a": {
+        "value": 0.05,
+        "document": "k2_1187sq_hro",
+        "basis": "direct"
+      },
+      "mating_cycles": {
+        "value": 100000,
+        "document": "k2_1187sq_hro",
+        "basis": "direct"
+      },
+      "supply_current_max_a": {
+        "value": 0.0,
+        "basis": "direct"
+      },
+      "land_pattern": {
+        "document": "k2_1187sq_hro",
+        "pad_count": 4,
+        "pad_size_mm": [
+          1.8,
+          1.1
+        ],
+        "pad_centres_mm": [
+          [
+            -3.1,
+            -1.85
+          ],
+          [
+            -3.1,
+            1.85
+          ],
+          [
+            3.1,
+            -1.85
+          ],
+          [
+            3.1,
+            1.85
+          ]
+        ]
+      }
+    },
+    "TYPE-C-31-M-12": {
+      "ground_pins": [],
+      "supply_pins": [],
+      "supply": {},
+      "digital_inputs": {},
+      "digital_outputs": {},
+      "contact_current_max_a": {
+        "value": 5.0,
+        "document": "typec31m12_hro",
+        "basis": "direct"
+      },
+      "contact_voltage_max_v": {
+        "value": 20.0,
+        "document": "typec31m12_hro",
+        "basis": "direct"
+      },
+      "dielectric_withstand_vac": {
+        "value": 100.0,
+        "document": "typec31m12_hro",
+        "basis": "direct"
+      },
+      "mating_cycles": {
+        "value": 10000,
+        "document": "typec31m12_hro",
+        "basis": "direct"
+      },
+      "supply_current_max_a": {
+        "value": 0.0,
+        "basis": "direct"
+      },
+      "contact_assignment": {
+        "document": "typec31m12_hro",
+        "map": {
+          "A1": "GND",
+          "A4": "VBUS",
+          "A5": "CC1",
+          "A6": "D+",
+          "A7": "D-",
+          "A8": "SBU1",
+          "A9": "VBUS",
+          "A12": "GND",
+          "B1": "GND",
+          "B4": "VBUS",
+          "B5": "CC2",
+          "B6": "D+",
+          "B7": "D-",
+          "B8": "SBU2",
+          "B9": "VBUS",
+          "B12": "GND",
+          "SH": "SHIELD"
+        }
+      },
+      "land_pattern": {
+        "document": "typec31m12_lcsc_landpattern",
+        "corroborating_document": "typec31m12_hro",
+        "unit_mm_per_easyeda_unit": 0.254,
+        "pad_count": 22,
+        "pads": [
+          {
+            "number": "A1",
+            "x": -3.2004,
+            "y": 0.0,
+            "w": 0.6,
+            "h": 1.3,
+            "kind": "smd"
+          },
+          {
+            "number": "B12",
+            "x": -3.2004,
+            "y": 0.0,
+            "w": 0.6,
+            "h": 1.3,
+            "kind": "smd"
+          },
+          {
+            "number": "A4",
+            "x": -2.4003,
+            "y": 0.0,
+            "w": 0.6,
+            "h": 1.3,
+            "kind": "smd"
+          },
+          {
+            "number": "B9",
+            "x": -2.4003,
+            "y": 0.0,
+            "w": 0.6,
+            "h": 1.3,
+            "kind": "smd"
+          },
+          {
+            "number": "B8",
+            "x": -1.7501,
+            "y": 0.0,
+            "w": 0.3,
+            "h": 1.3,
+            "kind": "smd"
+          },
+          {
+            "number": "A5",
+            "x": -1.2497,
+            "y": 0.0,
+            "w": 0.3,
+            "h": 1.3,
+            "kind": "smd"
+          },
+          {
+            "number": "B7",
+            "x": -0.7493,
+            "y": 0.0,
+            "w": 0.3,
+            "h": 1.3,
+            "kind": "smd"
+          },
+          {
+            "number": "A6",
+            "x": -0.2489,
+            "y": 0.0,
+            "w": 0.3,
+            "h": 1.3,
+            "kind": "smd"
+          },
+          {
+            "number": "A7",
+            "x": 0.2489,
+            "y": 0.0,
+            "w": 0.3,
+            "h": 1.3,
+            "kind": "smd"
+          },
+          {
+            "number": "B6",
+            "x": 0.7493,
+            "y": 0.0,
+            "w": 0.3,
+            "h": 1.3,
+            "kind": "smd"
+          },
+          {
+            "number": "A8",
+            "x": 1.2497,
+            "y": 0.0,
+            "w": 0.3,
+            "h": 1.3,
+            "kind": "smd"
+          },
+          {
+            "number": "B5",
+            "x": 1.7501,
+            "y": 0.0,
+            "w": 0.3,
+            "h": 1.3,
+            "kind": "smd"
+          },
+          {
+            "number": "B4",
+            "x": 2.4003,
+            "y": 0.0,
+            "w": 0.6,
+            "h": 1.3,
+            "kind": "smd"
+          },
+          {
+            "number": "A9",
+            "x": 2.4003,
+            "y": 0.0,
+            "w": 0.6,
+            "h": 1.3,
+            "kind": "smd"
+          },
+          {
+            "number": "B1",
+            "x": 3.2004,
+            "y": 0.0,
+            "w": 0.6,
+            "h": 1.3,
+            "kind": "smd"
+          },
+          {
+            "number": "A12",
+            "x": 3.2004,
+            "y": 0.0,
+            "w": 0.6,
+            "h": 1.3,
+            "kind": "smd"
+          },
+          {
+            "number": "SH",
+            "x": -4.3256,
+            "y": 0.76708,
+            "w": 1.2,
+            "h": 2.0,
+            "kind": "thru_hole",
+            "drill": [
+              0.8,
+              1.5
+            ]
+          },
+          {
+            "number": "SH",
+            "x": 4.3256,
+            "y": 0.76708,
+            "w": 1.2,
+            "h": 2.0,
+            "kind": "thru_hole",
+            "drill": [
+              0.8,
+              1.5
+            ]
+          },
+          {
+            "number": "SH",
+            "x": -4.3256,
+            "y": 4.94792,
+            "w": 1.2,
+            "h": 1.8,
+            "kind": "thru_hole",
+            "drill": [
+              0.8,
+              1.2
+            ]
+          },
+          {
+            "number": "SH",
+            "x": 4.3256,
+            "y": 4.94792,
+            "w": 1.2,
+            "h": 1.8,
+            "kind": "thru_hole",
+            "drill": [
+              0.8,
+              1.2
+            ]
+          },
+          {
+            "number": "",
+            "x": -2.9007,
+            "y": 1.26746,
+            "w": 0.6,
+            "h": 0.6,
+            "kind": "np_thru_hole",
+            "drill": [
+              0.6,
+              0.6
+            ]
+          },
+          {
+            "number": "",
+            "x": 2.9007,
+            "y": 1.26746,
+            "w": 0.6,
+            "h": 0.6,
+            "kind": "np_thru_hole",
+            "drill": [
+              0.6,
+              0.6
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "usb": {
+    "sink_cc_termination_ohms": 5100,
+    "sink_cc_termination_tolerance": 0.2,
+    "vbus_bypass_capacitance_limit_f": 1e-05,
+    "vsafe5v_min_v": 4.75,
+    "vsafe5v_max_v": 5.5
+  }
+}

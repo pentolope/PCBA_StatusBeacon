@@ -1,0 +1,112 @@
+{
+  "accepted_attempt": 1,
+  "adopted_sha256": "2c405d0c1af37146d4a8246652c862d5db1feeb6bfc051b6e9c30a1d1a03a715",
+  "attempts": [
+    {
+      "accepted": true,
+      "attempt": 1,
+      "context": {
+        "ordering": "mps",
+        "router_summary": {
+          "failed": 0,
+          "failed_single": [],
+          "finalize_excluded_nets": [
+            "GND"
+          ],
+          "main_loop_time_s": 0.37,
+          "min_clearance_used": 0.15,
+          "multipoint_deficit": 0,
+          "open_single": [],
+          "pad_pairs_open": {
+            "count": 0,
+            "nets": []
+          },
+          "routed": 7,
+          "scope": "merged",
+          "terminal_restores_broken": [],
+          "vias": 10
+        }
+      },
+      "source_sha256": "a5e5b6e3d950925b94f80eb610622fff4ddd100befbe3da0a50d6e60299c9a2f",
+      "stages": [
+        {
+          "produced_by": "router",
+          "sha256": "66f92e586d78e4f53f2cea927d76b26f0a6aa51882d6d2090df6b2c6edb34235",
+          "stage": "routed"
+        },
+        {
+          "effects": {
+            "dangling_tracks_removed": 1,
+            "endpoints_snapped": 4
+          },
+          "parameters": {
+            "snap_tolerance_mm": 0.25,
+            "touch_tolerance_mm": 0.01
+          },
+          "produced_by": "transform",
+          "sha256": "2c405d0c1af37146d4a8246652c862d5db1feeb6bfc051b6e9c30a1d1a03a715",
+          "stage": "tidied",
+          "transform": "snap track endpoints onto same-net via centres; prune dangling track ends, keeping any removal only while connectivity is unchanged"
+        }
+      ]
+    }
+  ],
+  "context": {
+    "options": [
+      "--track-width",
+      "0.25",
+      "--clearance",
+      "0.15",
+      "--via-size",
+      "0.6",
+      "--via-drill",
+      "0.3",
+      "--board-edge-clearance",
+      "0.45",
+      "--hole-to-hole-clearance",
+      "0.3",
+      "--same-net-pad-clearance",
+      "0.3"
+    ],
+    "reproducibility": "the router is not bit-reproducible; candidates are generated until one passes the board gates and every attempt is recorded here",
+    "resolution": {
+      "origin": "vendored submodule",
+      "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/toolkit/PCBA_AutoDesignAndTest/tooling/KiCadRoutingTools"
+    },
+    "routed_nets": [
+      "VBUS",
+      "+5V",
+      "LED_DATA",
+      "NRST",
+      "SWDIO",
+      "SWCLK",
+      "BTN_SW",
+      "BTN_MCU"
+    ],
+    "router": {
+      "git": {
+        "dirty": false,
+        "sha": "3fb9c05f182db88fe1fccfaa515bc5c466169dd4",
+        "upstream_base": null
+      },
+      "grid_router": {
+        "kind": "native-binary",
+        "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/toolkit/PCBA_AutoDesignAndTest/tooling/KiCadRoutingTools/rust_router/grid_router.so",
+        "sha256": "bac20f431312bdf6ab2e585295cb320e2b634a9f28a0c6286b6ae170a51b3cf2",
+        "version": "0.21.4"
+      },
+      "kicad_cli": "/usr/bin/kicad-cli",
+      "kicad_version": "10.0.5",
+      "kind": "krt-provenance",
+      "meaning": "the routing implementation identity for this run; a different sha, dirty state or native hash is a different router, and downstream routing-derived artifacts must go stale with it",
+      "python": {
+        "executable": "/usr/bin/python3",
+        "version": "3.12.3"
+      },
+      "source_path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/toolkit/PCBA_AutoDesignAndTest/tooling/KiCadRoutingTools",
+      "version": "0.21.5"
+    }
+  },
+  "kind": "routing-run",
+  "source_sha256": "a5e5b6e3d950925b94f80eb610622fff4ddd100befbe3da0a50d6e60299c9a2f"
+}

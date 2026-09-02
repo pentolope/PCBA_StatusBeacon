@@ -1,0 +1,156 @@
+{
+  "schema_version": 2,
+  "board_id": "status_beacon",
+  "constraint_version": "schematic-stage-2026-09-01",
+  "project_root": "..",
+  "tools": {
+    "kicad_cli": "kicad-cli"
+  },
+  "sources": {
+    "schematic": "status_beacon.kicad_sch",
+    "project": "status_beacon.kicad_pro",
+    "pcb": "status_beacon.kicad_pcb"
+  },
+  "board_origin_mm": [
+    100.0,
+    100.0
+  ],
+  "documentation_globs": [],
+  "checks": {
+    "erc": {
+      "extra_flags": []
+    },
+    "drc": {
+      "extra_flags": [],
+      "forbidden_severities": [
+        "ignore"
+      ],
+      "permitted_ignored_rules": [],
+      "constraint_floor": {
+        "rules": {
+          "min_clearance": 0.15,
+          "min_track_width": 0.15,
+          "min_via_diameter": 0.45,
+          "min_via_annular_width": 0.1,
+          "min_through_hole_diameter": 0.25,
+          "min_hole_clearance": 0.25,
+          "min_hole_to_hole": 0.25,
+          "min_copper_edge_clearance": 0.3
+        },
+        "net_classes": {
+          "Default": {
+            "clearance": 0.15,
+            "track_width": 0.25,
+            "via_diameter": 0.6,
+            "via_drill": 0.3
+          }
+        }
+      }
+    }
+  },
+  "waivers": [],
+  "geometry_profile": {
+    "version": "geom-1",
+    "tolerances": {
+      "waiver_location_mm": {
+        "value": 0.001,
+        "units": "mm"
+      },
+      "polygon_chord_error_mm": {
+        "value": 0.001,
+        "units": "mm"
+      },
+      "contact_mm": {
+        "value": 1e-06,
+        "units": "mm"
+      },
+      "coordinate_match_mm": {
+        "value": 0.002,
+        "units": "mm"
+      }
+    }
+  },
+  "stackup": {
+    "expected": [
+      {
+        "role": "plane",
+        "plane_net": "+5V"
+      },
+      {
+        "role": "plane",
+        "plane_net": "GND"
+      }
+    ]
+  },
+  "placement_rules": [
+    {
+      "id": "LED_RING",
+      "reference_regex": "^D([1-9]|1[0-2])$",
+      "count": 12,
+      "polar": {
+        "radius_mm": 17.0,
+        "angular_pitch_deg": 30.0,
+        "tolerance_mm": 0.05,
+        "angle_tolerance_deg": 0.05
+      },
+      "rotation": {
+        "mode": "radial",
+        "offset_deg": 90.0,
+        "tolerance_deg": 0.1
+      }
+    },
+    {
+      "id": "LED_DECOUPLING",
+      "reference_regex": "^C([5-9]|1[0-6])$",
+      "count": 12,
+      "polar": {
+        "radius_mm": 12.5,
+        "angular_pitch_deg": 30.0,
+        "tolerance_mm": 0.05,
+        "angle_tolerance_deg": 0.05
+      },
+      "rotation": {
+        "mode": "radial",
+        "offset_deg": 90.0,
+        "tolerance_deg": 0.1
+      }
+    }
+  ],
+  "net_topology": {
+    "rules": [
+      {
+        "id": "LED_CHAIN",
+        "net_regex": "^LED_CH([1-9]|1[01])$",
+        "source_pad_regex": "^D\\d+\\.2$",
+        "load_pad_regex": "^D\\d+\\.4$",
+        "max_vias_per_net": 0,
+        "permitted_layers": [
+          "F.Cu"
+        ]
+      }
+    ]
+  },
+  "routing": {
+    "min_segment_mm": 0.1,
+    "short_segment_justification": {
+      "allow_pad_or_via_entry": true
+    },
+    "hygiene": {
+      "forbid_duplicate_geometry": true,
+      "forbid_net_crossings": true,
+      "forbid_dangling": true
+    },
+    "provenance": "generated/routing.json"
+  },
+  "via_mask": {
+    "pad_contact": {
+      "populated_pad_attributes": [
+        "SMD"
+      ],
+      "require_paste": true
+    },
+    "metric": "annulus_to_opening_mm",
+    "contact_semantics": "annulus_contacts counts zero-distance tangency as contact; annulus_strict_overlaps counts positive shared area only",
+    "mask_dam_rule": "contact"
+  }
+}

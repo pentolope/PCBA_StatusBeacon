@@ -1,0 +1,78 @@
+{
+  "documents": {
+    "k2_1187sq_hro": {
+      "applies_to": [
+        "K2-1187SQ-A4SW-06"
+      ],
+      "bytes": 679443,
+      "file": "datasheets/k2_1187sq_hro.pdf",
+      "retrieved": "2026-09-01",
+      "sha256": "a2ae14416616397e00185313b0e597a644385d3eb8a09170daea0f6b6ef51c10",
+      "url": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Korean-Hroparts-Elec-K2-1187SQ-A4SW-06_C92584.pdf"
+    },
+    "py32f003_puya": {
+      "applies_to": [
+        "PY32F003F18P6TU"
+      ],
+      "bytes": 2830704,
+      "document_id": "PY32F003 Datasheet Rev1.7",
+      "file": "datasheets/py32f003_puya.pdf",
+      "retrieved": "2026-09-01",
+      "sha256": "826d02a0318e50c404ebcfd9667dff25674075d8ef479de44b4874a2aaa3dace",
+      "url": "https://download.py32.org/Datasheet/en/PY32F003_Datasheet_Rev1.7.pdf"
+    },
+    "tpd1e10b06_ti": {
+      "applies_to": [
+        "TPD1E10B06DPYR"
+      ],
+      "bytes": 2371535,
+      "document_id": "SLLSEB1G",
+      "file": "datasheets/tpd1e10b06_ti.pdf",
+      "retrieved": "2026-09-01",
+      "sha256": "6ffe72cb5f5e607fcafd05eef9809632402241eb44cd859a3652f43a35323da9",
+      "url": "https://www.ti.com/lit/ds/symlink/tpd1e10b06.pdf"
+    },
+    "typec31m12_hro": {
+      "applies_to": [
+        "TYPE-C-31-M-12"
+      ],
+      "bytes": 118176,
+      "file": "datasheets/typec31m12_hro.pdf",
+      "retrieved": "2026-09-01",
+      "sha256": "6ae33d50ac47820114661138dc4e4659f40fdc5d4f485b46685dfec338da1a9e",
+      "url": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2205251630_Korean-Hroparts-Elec-TYPE-C-31-M-12_C165948.pdf"
+    },
+    "typec31m12_lcsc_landpattern": {
+      "applies_to": [
+        "TYPE-C-31-M-12"
+      ],
+      "bytes": 36784,
+      "document_id": "LCSC C165948 footprint, docType 4",
+      "file": "datasheets/typec31m12_lcsc_landpattern.json",
+      "retrieved": "2026-09-01",
+      "sha256": "0ff53ebe88b18c225cc3be3295eddb66dd03a3ef6b25203df2475fc7fdc90860",
+      "url": "https://easyeda.com/api/products/C165948/svgs"
+    },
+    "ws2812b_luxalight": {
+      "applies_to": [
+        "WS2812B-B/T"
+      ],
+      "bytes": 495343,
+      "file": "datasheets/ws2812b_luxalight.pdf",
+      "retrieved": "2026-09-01",
+      "sha256": "df3c808802447eb580a463396cf498c870cd896e876f538513ed25862930a7c7",
+      "url": "https://www.luxalight.eu/sites/default/files/downloads/2020-03/Datasheet_WS2812B.pdf"
+    },
+    "ws2812b_worldsemi": {
+      "applies_to": [
+        "WS2812B-B/T"
+      ],
+      "bytes": 355361,
+      "file": "datasheets/ws2812b_worldsemi.pdf",
+      "retrieved": "2026-09-01",
+      "sha256": "670517e400d01f76e91187e173c9bb105e5470741604f81243364c5f13d37448",
+      "url": "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
+    }
+  },
+  "schema_version": 1
+}
