@@ -1,71 +1,6 @@
 {
   "schema_version": 2,
   "parts": {
-    "WS2812B-B/T": {
-      "ground_pins": [
-        "3"
-      ],
-      "supply_pins": [
-        "1"
-      ],
-      "supply": {
-        "abs_max_v": {
-          "value": 5.3,
-          "document": "ws2812b_worldsemi",
-          "basis": "direct"
-        },
-        "abs_min_v": {
-          "value": 3.5,
-          "document": "ws2812b_worldsemi",
-          "basis": "direct"
-        },
-        "characterised_min_v": {
-          "value": 4.5,
-          "document": "ws2812b_worldsemi",
-          "basis": "direct"
-        },
-        "characterised_max_v": {
-          "value": 5.5,
-          "document": "ws2812b_worldsemi",
-          "basis": "direct"
-        }
-      },
-      "digital_inputs": {
-        "4": {
-          "vih_min": {
-            "factor_of_supply": 0.7,
-            "document": "ws2812b_worldsemi",
-            "basis": "direct"
-          },
-          "vil_max": {
-            "factor_of_supply": 0.3,
-            "document": "ws2812b_worldsemi",
-            "basis": "direct"
-          },
-          "input_current_max_a": 1e-06,
-          "input_capacitance_f": {
-            "value": 1.5e-11,
-            "document": "ws2812b_worldsemi",
-            "basis": "direct"
-          }
-        }
-      },
-      "digital_outputs": {
-        "2": {
-          "voh_min": {
-            "knowledge": "unknown"
-          },
-          "vol_max": {
-            "knowledge": "unknown"
-          }
-        }
-      },
-      "supply_current_max_a": {
-        "value": 0.06,
-        "basis": "assumed"
-      },
-      "current_scales_with_brightness_limit": true
-    },
     "PY32F003F18P6TU": {
       "ground_pins": [
         "7"
@@ -490,6 +425,118 @@
             ]
           }
         ]
+      }
+    },
+    "WS2812B-V5/W": {
+      "ground_pins": [
+        "3"
+      ],
+      "supply_pins": [
+        "1"
+      ],
+      "supply": {
+        "abs_max_v": {
+          "value": 5.3,
+          "document": "ws2812b_v5_worldsemi",
+          "basis": "direct"
+        },
+        "abs_min_v": {
+          "value": 3.7,
+          "document": "ws2812b_v5_worldsemi",
+          "basis": "direct"
+        },
+        "characterised_min_v": {
+          "knowledge": "unknown",
+          "document": "ws2812b_v5_worldsemi"
+        },
+        "characterised_max_v": {
+          "knowledge": "unknown",
+          "document": "ws2812b_v5_worldsemi"
+        }
+      },
+      "digital_inputs": {
+        "4": {
+          "vih_min": {
+            "factor_of_supply": 0.63,
+            "document": "ws2812b_v5_worldsemi",
+            "basis": "direct"
+          },
+          "vil_max": {
+            "value": 0.7,
+            "document": "ws2812b_v5_worldsemi",
+            "basis": "direct"
+          },
+          "input_current_max_a": 1e-06,
+          "input_capacitance_f": {
+            "value": 1.5e-11,
+            "document": "ws2812b_v5_worldsemi",
+            "basis": "direct"
+          }
+        }
+      },
+      "digital_outputs": {
+        "2": {
+          "voh_min": {
+            "knowledge": "unknown"
+          },
+          "vol_max": {
+            "knowledge": "unknown"
+          }
+        }
+      },
+      "supply_current_max_a": {
+        "value": 0.036,
+        "channels": 3,
+        "channel_current_a": 0.012,
+        "document": "ws2812b_v5_worldsemi",
+        "basis": "direct"
+      },
+      "current_scales_with_brightness_limit": true,
+      "quiescent_current_a": {
+        "value": 0.0006,
+        "document": "ws2812b_v5_worldsemi",
+        "basis": "direct"
+      },
+      "data_timing": {
+        "shortest_high_s": {
+          "value": 2.2e-07,
+          "document": "ws2812b_v5_worldsemi",
+          "basis": "direct"
+        },
+        "reset_low_s": {
+          "value": 0.00028,
+          "document": "ws2812b_v5_worldsemi",
+          "basis": "direct"
+        }
+      }
+    },
+    "1N5819WS": {
+      "forward_voltage_max_v": {
+        "value": 0.6,
+        "at_current_a": 1.0,
+        "document": "1n5819ws_hottech",
+        "basis": "direct"
+      },
+      "forward_voltage_min_v": {
+        "knowledge": "unknown",
+        "document": "1n5819ws_hottech"
+      },
+      "average_forward_current_max_a": {
+        "value": 1.0,
+        "document": "1n5819ws_hottech",
+        "basis": "direct"
+      },
+      "reverse_voltage_max_v": {
+        "value": 40.0,
+        "document": "1n5819ws_hottech",
+        "basis": "direct"
+      },
+      "supply_pins": [],
+      "ground_pins": [],
+      "supply_current_max_a": {
+        "value": 0.0,
+        "document": "1n5819ws_hottech",
+        "basis": "direct"
       }
     }
   },

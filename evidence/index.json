@@ -1,5 +1,15 @@
 {
   "documents": {
+    "1n5819ws_hottech": {
+      "applies_to": [
+        "1N5819WS"
+      ],
+      "bytes": 1157833,
+      "file": "datasheets/1n5819ws_hottech.pdf",
+      "retrieved": "2026-09-02",
+      "sha256": "609a5bc2fcd5bbb36f47f802b11102f1e140eae519c74b067cb615b4d52d0a4f",
+      "url": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Guangdong-Hottech-1N5819WS_C191023.pdf"
+    },
     "k2_1187sq_hro": {
       "applies_to": [
         "K2-1187SQ-A4SW-06"
@@ -53,25 +63,15 @@
       "sha256": "0ff53ebe88b18c225cc3be3295eddb66dd03a3ef6b25203df2475fc7fdc90860",
       "url": "https://easyeda.com/api/products/C165948/svgs"
     },
-    "ws2812b_luxalight": {
+    "ws2812b_v5_worldsemi": {
       "applies_to": [
-        "WS2812B-B/T"
+        "WS2812B-V5/W"
       ],
-      "bytes": 495343,
-      "file": "datasheets/ws2812b_luxalight.pdf",
-      "retrieved": "2026-09-01",
-      "sha256": "df3c808802447eb580a463396cf498c870cd896e876f538513ed25862930a7c7",
-      "url": "https://www.luxalight.eu/sites/default/files/downloads/2020-03/Datasheet_WS2812B.pdf"
-    },
-    "ws2812b_worldsemi": {
-      "applies_to": [
-        "WS2812B-B/T"
-      ],
-      "bytes": 355361,
-      "file": "datasheets/ws2812b_worldsemi.pdf",
-      "retrieved": "2026-09-01",
-      "sha256": "670517e400d01f76e91187e173c9bb105e5470741604f81243364c5f13d37448",
-      "url": "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
+      "bytes": 726778,
+      "file": "datasheets/ws2812b_v5_worldsemi.pdf",
+      "retrieved": "2026-09-02",
+      "sha256": "652e7bc44abd2d4ba24991a403f48bbc64593ea3af7fc92e153b215c50a511af",
+      "url": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Worldsemi-WS2812B-V5-W_C2874885.pdf"
     }
   },
   "schema_version": 1

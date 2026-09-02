@@ -17,12 +17,32 @@ EXTRACTED_MODEL_ALIAS = "led_data_copper"
 
 SUPPLY_PATH_BUDGET_OHM = 0.1
 MCU_INPUT_CAPACITANCE_F = 5e-12
-WS2812B_SHORTEST_HIGH_S = 400e-9
+
+
+def shortest_high_s(parameters):
+    return led(parameters)["data_timing"]["shortest_high_s"]["value"]
+
+
+def _spec(parameters, reference):
+    """The frozen parameters of whatever part the netlist selects.
+
+    Keyed through the netlist rather than by a literal MPN, so replacing
+    a part is one edit in one place and cannot leave a stale key here.
+    """
+    return parameters["parts"][netlist.PARTS[reference]["mpn"]]
+
+
+def led(parameters):
+    return _spec(parameters, "D1")
+
+
+def mcu(parameters):
+    return _spec(parameters, "U1")
 
 
 def led_input_capacitance_f(parameters):
-    return (parameters["parts"]["WS2812B-B/T"]["digital_inputs"]["4"]
-            ["input_capacitance_f"]["value"])
+    return led(parameters)["digital_inputs"]["4"]["input_capacitance_f"][
+        "value"]
 
 
 def _parameters():
@@ -78,10 +98,23 @@ def _measurement(name, kind, node, op, value):
 
 
 def rail_droop_scenario(parameters):
-    led = parameters["parts"]["WS2812B-B/T"]
-    source_v = parameters["usb"]["vsafe5v_min_v"]
-    step_a = (netlist.LED_COUNT * led["supply_current_max_a"]["value"]
+    spec = led(parameters)
+    # The rail is fed through the series Schottky, whose forward voltage the
+    # datasheet states only as a MAXIMUM. Driving the scenario at the source
+    # minimum less that maximum makes every rail voltage it reports a LOWER
+    # BOUND on the real one, which is exactly the direction a ">=" assertion
+    # needs. Nothing here can bound the rail from above: no diode datasheet
+    # guarantees a minimum drop.
+    source_v = (parameters["usb"]["vsafe5v_min_v"]
+                - netlist.SERIES_DIODE_VF_MAX_V)
+    step_a = (netlist.LED_COUNT * spec["supply_current_max_a"]["value"]
               * netlist.FIRMWARE_GLOBAL_BRIGHTNESS_LIMIT)
+    bound = {"kind": "lower_bound",
+             "basis": {"kind": "assumed",
+                       "detail": "the source is held at its minimum and the "
+                                 "series diode at its maximum forward "
+                                 "voltage, so the rail can only be higher "
+                                 "than this in service"}}
     return {
         "name": "rail_droop_on_led_turn_on",
         "elements": [
@@ -101,14 +134,17 @@ def rail_droop_scenario(parameters):
         ],
         "analyses": [{"kind": "tran", "step_s": 1e-7, "stop_s": 1.1e-3}],
         "measurements": [
-            _measurement("rail_excursion_min", "tran_min_voltage", "rail",
-                         ">=", led["supply"]["characterised_min_v"]["value"]),
-            _measurement("rail_excursion_max", "tran_max_voltage", "rail",
-                         "<=", led["supply"]["abs_max_v"]["value"]),
+            dict(_measurement("rail_excursion_min", "tran_min_voltage",
+                              "rail", ">=",
+                              spec["supply"]["abs_min_v"]["value"]),
+                 knowledge=bound),
+            {"name": "rail_excursion_max", "kind": "tran_max_voltage",
+             "node": "rail", "knowledge": bound},
         ],
         "assumptions": _ideal({
-            "SRC": "the USB-C source as an ideal voltage source held at "
-                   "vSafe5V minimum, with no output impedance of its own",
+            "SRC": "the USB-C source at vSafe5V minimum, less the series "
+                   "Schottky's maximum forward voltage, as an ideal source "
+                   "with no output impedance of its own",
             "RPATH": "the series resistance of the cable, the receptacle "
                      "contacts and the board copper between the receptacle "
                      "and the LED ring, as a design budget",
@@ -125,9 +161,9 @@ def rail_droop_scenario(parameters):
 
 
 def button_release_scenario(parameters):
-    mcu = parameters["parts"]["PY32F003F18P6TU"]
+    spec = mcu(parameters)
     rail_v = netlist.RAILS["+5V"]["max_v"]
-    vih = mcu["digital_inputs"]["19"]["vih_min"]["factor_of_supply"] * rail_v
+    vih = spec["digital_inputs"]["19"]["vih_min"]["factor_of_supply"] * rail_v
     return {
         "name": "button_release_detection",
         "elements": [
@@ -151,7 +187,7 @@ def button_release_scenario(parameters):
             _measurement("mcu_input_at_deadline", "tran_final_voltage", "mcu",
                          ">=", vih),
             _measurement("mcu_input_peak", "tran_max_voltage", "mcu",
-                         "<=", mcu["supply"]["characterised_max_v"]["value"]),
+                         "<=", spec["supply"]["characterised_max_v"]["value"]),
         ],
         "assumptions": _ideal({
             "RAIL": "the switch contact held closed long enough for the "
@@ -183,12 +219,12 @@ def led_data_edge_scenario(parameters, model_identity=None):
     "never exceeds the absolute maximum" and cannot settle "reaches the
     input threshold", so each form asserts only what its evidence carries.
     """
-    mcu = parameters["parts"]["PY32F003F18P6TU"]
-    led = parameters["parts"]["WS2812B-B/T"]
+    driver = mcu(parameters)
+    receiver = led(parameters)
     rail_v = netlist.RAILS["+5V"]["max_v"]
-    voh = rail_v + mcu["digital_outputs"]["20"]["voh_min"][
+    voh = rail_v + driver["digital_outputs"]["20"]["voh_min"][
         "offset_from_supply"]
-    vih = led["digital_inputs"]["4"]["vih_min"]["factor_of_supply"] * rail_v
+    vih = receiver["digital_inputs"]["4"]["vih_min"]["factor_of_supply"] * rail_v
     extracted = model_identity is not None
     driver_node = "rin" if not extracted else "drv"
     elements = [
@@ -196,8 +232,8 @@ def led_data_edge_scenario(parameters, model_identity=None):
          "nodes": [driver_node, "0"],
          "pulse": {"v1": 0.0, "v2": voh, "delay_s": 0.0,
                    "rise_s": 1e-9, "fall_s": 1e-9,
-                   "width_s": WS2812B_SHORTEST_HIGH_S,
-                   "period_s": 2 * WS2812B_SHORTEST_HIGH_S}},
+                   "width_s": shortest_high_s(parameters),
+                   "period_s": 2 * shortest_high_s(parameters)}},
     ]
     if extracted:
         elements.append({"kind": "model_instance", "name": "COPPER",
@@ -221,7 +257,7 @@ def led_data_edge_scenario(parameters, model_identity=None):
                  else "led_data_edge_over_ideal_interconnect"),
         "elements": elements,
         "analyses": [{"kind": "tran", "step_s": 1e-10,
-                      "stop_s": WS2812B_SHORTEST_HIGH_S}],
+                      "stop_s": shortest_high_s(parameters)}],
         "assumptions": _ideal(ideal),
     }
     if not extracted:
@@ -229,7 +265,7 @@ def led_data_edge_scenario(parameters, model_identity=None):
             _measurement("din_at_shortest_high_end", "tran_final_voltage",
                          "din", ">=", vih),
             _measurement("din_peak", "tran_max_voltage", "din", "<=",
-                         led["supply"]["abs_max_v"]["value"]),
+                         receiver["supply"]["abs_max_v"]["value"]),
         ]
         return scenario
     bound = {
@@ -244,7 +280,7 @@ def led_data_edge_scenario(parameters, model_identity=None):
         },
     }
     peak = _measurement("din_peak", "tran_max_voltage", "din", "<=",
-                        led["supply"]["abs_max_v"]["value"])
+                        receiver["supply"]["abs_max_v"]["value"])
     peak["knowledge"] = bound
     settled = {"name": "din_at_shortest_high_end",
                "kind": "tran_final_voltage", "node": "din",

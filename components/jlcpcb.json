@@ -118,45 +118,6 @@
       ],
       "stock": 314848
     },
-    "C17477": {
-      "library_type": "base",
-      "manufacturer": "UNI-ROYAL(Uniroyal Elec)",
-      "mpn": "0805W8F0000T5E",
-      "package": "0805",
-      "price_breaks": [
-        {
-          "max_qty": 999,
-          "min_qty": 1,
-          "unit_usd": 0.0044
-        },
-        {
-          "max_qty": 4999,
-          "min_qty": 1000,
-          "unit_usd": 0.0035
-        },
-        {
-          "max_qty": 9999,
-          "min_qty": 5000,
-          "unit_usd": 0.003
-        },
-        {
-          "max_qty": 49999,
-          "min_qty": 10000,
-          "unit_usd": 0.0027
-        },
-        {
-          "max_qty": 99999,
-          "min_qty": 50000,
-          "unit_usd": 0.0026
-        },
-        {
-          "max_qty": null,
-          "min_qty": 100000,
-          "unit_usd": 0.0025
-        }
-      ],
-      "stock": 8781505
-    },
     "C1779": {
       "library_type": "base",
       "manufacturer": "Samsung Electro-Mechanics",
@@ -195,6 +156,45 @@
         }
       ],
       "stock": 3228004
+    },
+    "C191023": {
+      "library_type": "base",
+      "manufacturer": "Guangdong Hottech",
+      "mpn": "1N5819WS",
+      "package": "SOD-323",
+      "price_breaks": [
+        {
+          "max_qty": 499,
+          "min_qty": 1,
+          "unit_usd": 0.0137
+        },
+        {
+          "max_qty": 2999,
+          "min_qty": 500,
+          "unit_usd": 0.0116
+        },
+        {
+          "max_qty": 5999,
+          "min_qty": 3000,
+          "unit_usd": 0.011
+        },
+        {
+          "max_qty": 23999,
+          "min_qty": 6000,
+          "unit_usd": 0.0103
+        },
+        {
+          "max_qty": 50999,
+          "min_qty": 24000,
+          "unit_usd": 0.01
+        },
+        {
+          "max_qty": null,
+          "min_qty": 51000,
+          "unit_usd": 0.0098
+        }
+      ],
+      "stock": 6205386
     },
     "C25105": {
       "library_type": "base",
@@ -313,44 +313,44 @@
       ],
       "stock": 8366660
     },
-    "C2761795": {
-      "library_type": "expand",
+    "C2874885": {
+      "library_type": "extended",
       "manufacturer": "Worldsemi",
-      "mpn": "WS2812B-B/T",
+      "mpn": "WS2812B-V5/W",
       "package": "SMD5050-4P",
       "price_breaks": [
         {
           "max_qty": 49,
           "min_qty": 1,
-          "unit_usd": 0.1066
+          "unit_usd": 0.1095
         },
         {
           "max_qty": 149,
           "min_qty": 50,
-          "unit_usd": 0.0864
+          "unit_usd": 0.0893
         },
         {
           "max_qty": 999,
           "min_qty": 150,
-          "unit_usd": 0.076
+          "unit_usd": 0.0789
         },
         {
           "max_qty": 1999,
           "min_qty": 1000,
-          "unit_usd": 0.0661
+          "unit_usd": 0.0617
         },
         {
           "max_qty": 4999,
           "min_qty": 2000,
-          "unit_usd": 0.063
+          "unit_usd": 0.0588
         },
         {
           "max_qty": null,
           "min_qty": 5000,
-          "unit_usd": 0.061
+          "unit_usd": 0.0567
         }
       ],
-      "stock": 179074
+      "stock": 247321
     },
     "C48260": {
       "library_type": "expand",
@@ -470,7 +470,7 @@
       "stock": 29330
     }
   },
-  "retrieved": "2026-09-01",
+  "retrieved": "2026-09-02",
   "schema_version": 1,
   "source": "jlcpcb.com parts library"
 }

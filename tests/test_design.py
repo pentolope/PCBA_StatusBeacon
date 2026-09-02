@@ -14,8 +14,7 @@ if REPO_ROOT not in sys.path:
 from design import (build, cost, evidence, ksym, libraries,  # noqa: E402
                     netlist, physical, rules, sexpr, simulation)
 
-KNOWN_OPEN_FAILURES = {("usb_source_range_coverage",
-                        "vbus_declared_vs_vsafe5v")}
+KNOWN_OPEN_FAILURES = set()
 
 SCHEMATIC_ONLY_PREFIXES = ("#FLG",)
 
@@ -150,10 +149,31 @@ class ElectricalRules(unittest.TestCase):
         for key in KNOWN_OPEN_FAILURES:
             self.assertEqual(self.by_key[key]["verdict"]["result"], "FAIL")
 
-    def test_unknown_results_carry_no_number(self):
+    def test_unknown_knowledge_carries_no_number(self):
+        """A claim that knows nothing states nothing."""
         for item in self.results:
-            if item["verdict"]["result"] == "UNKNOWN":
-                self.assertEqual(item["claim"]["quantity"], {})
+            if item["claim"]["knowledge"] == "unknown":
+                self.assertEqual(item["claim"]["quantity"], {},
+                                 item["identity"])
+
+    def test_a_bounded_claim_may_be_undecided_yet_still_carry_a_number(self):
+        """An UNDECIDED verdict is not the same as an UNKNOWN claim.
+
+        A bound that falls the wrong side of its requirement measures
+        something real and still cannot settle the question: the margin is
+        at least this, which neither proves the requirement met nor proves
+        it broken. Collapsing the two would either hide the number or
+        report a failure the evidence does not support.
+        """
+        undecided = [item for item in self.results
+                     if item["verdict"]["result"] == "UNKNOWN"
+                     and item["claim"]["knowledge"] != "unknown"]
+        for item in undecided:
+            self.assertIn(item["claim"]["knowledge"],
+                          ("lower_bound", "upper_bound", "approximate"),
+                          item["identity"])
+            self.assertIn("value", item["claim"]["quantity"],
+                          item["identity"])
 
     def test_mcu_drives_the_led_chain(self):
         item = self.by_key[("logic_high_margin", "U1.20->D1.4")]
@@ -467,11 +487,11 @@ class SimulationInputs(unittest.TestCase):
         self.assertTrue(wanted <= seen, sorted(wanted - seen))
 
     def test_thresholds_come_from_the_frozen_datasheets(self):
-        led = self.parameters["parts"]["WS2812B-B/T"]
-        mcu = self.parameters["parts"]["PY32F003F18P6TU"]
+        led = simulation.led(self.parameters)
+        mcu = simulation.mcu(self.parameters)
         rail = netlist.RAILS["+5V"]["max_v"]
         allowed = {
-            led["supply"]["characterised_min_v"]["value"],
+            led["supply"]["abs_min_v"]["value"],
             led["supply"]["abs_max_v"]["value"],
             mcu["supply"]["characterised_max_v"]["value"],
             led["digital_inputs"]["4"]["vih_min"]["factor_of_supply"] * rail,

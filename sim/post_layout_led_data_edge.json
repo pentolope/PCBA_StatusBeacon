@@ -3,7 +3,7 @@
     {
       "kind": "tran",
       "step_s": 1e-10,
-      "stop_s": 4e-07
+      "stop_s": 2.2e-07
     }
   ],
   "assumptions": {
@@ -31,11 +31,11 @@
       "pulse": {
         "delay_s": 0.0,
         "fall_s": 1e-09,
-        "period_s": 8e-07,
+        "period_s": 4.4e-07,
         "rise_s": 1e-09,
         "v1": 0.0,
-        "v2": 4.85,
-        "width_s": 4e-07
+        "v2": 5.1,
+        "width_s": 2.2e-07
       }
     },
     {

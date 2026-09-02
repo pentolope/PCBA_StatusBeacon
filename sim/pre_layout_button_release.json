@@ -42,7 +42,7 @@
         "period_s": 0.006,
         "rise_s": 1e-09,
         "v1": 0.0,
-        "v2": 5.25,
+        "v2": 5.5,
         "width_s": 0.003
       }
     },
@@ -87,7 +87,7 @@
     {
       "assertion": {
         "op": ">=",
-        "value": 3.675
+        "value": 3.8499999999999996
       },
       "kind": "tran_final_voltage",
       "name": "mcu_input_at_deadline",

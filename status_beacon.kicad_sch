@@ -1455,6 +1455,206 @@
 			(embedded_fonts no)
 		)
 		(symbol
+			"Device:D_Schottky"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property
+				"Reference"
+				"D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property
+				"Value"
+				"D_Schottky"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property
+				"Footprint"
+				""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property
+				"Datasheet"
+				""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property
+				"Description"
+				"Schottky diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property
+				"ki_keywords"
+				"diode Schottky"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property
+				"ki_fp_filters"
+				"TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol
+				"D_Schottky_0_1"
+				(polyline
+					(pts
+						(xy -1.905 0.635)
+						(xy -1.905 1.27)
+						(xy -1.27 1.27)
+						(xy -1.27 -1.27)
+						(xy -0.635 -1.27)
+						(xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27)
+						(xy 1.27 -1.27)
+						(xy -1.27 0)
+						(xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0)
+						(xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol
+				"D_Schottky_1_1"
+				(pin
+					passive
+					line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name
+						"K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number
+						"1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin
+					passive
+					line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name
+						"A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number
+						"2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol
 			"Device:R"
 			(pin_numbers
 				(hide yes)
@@ -4275,7 +4475,7 @@
 		)
 		(property
 			"Value"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 482.6 81.28 0)
 			(effects
 				(font
@@ -4307,7 +4507,7 @@
 		)
 		(property
 			"MPN"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 482.6 101.6 0)
 			(hide yes)
 			(effects
@@ -4329,7 +4529,7 @@
 		)
 		(property
 			"LCSC"
-			"C2761795"
+			"C2874885"
 			(at 482.6 101.6 0)
 			(hide yes)
 			(effects
@@ -4370,7 +4570,7 @@
 		)
 		(property
 			"Value"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 546.1 81.28 0)
 			(effects
 				(font
@@ -4402,7 +4602,7 @@
 		)
 		(property
 			"MPN"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 546.1 101.6 0)
 			(hide yes)
 			(effects
@@ -4424,7 +4624,7 @@
 		)
 		(property
 			"LCSC"
-			"C2761795"
+			"C2874885"
 			(at 546.1 101.6 0)
 			(hide yes)
 			(effects
@@ -4465,7 +4665,7 @@
 		)
 		(property
 			"Value"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 609.6 81.28 0)
 			(effects
 				(font
@@ -4497,7 +4697,7 @@
 		)
 		(property
 			"MPN"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 609.6 101.6 0)
 			(hide yes)
 			(effects
@@ -4519,7 +4719,7 @@
 		)
 		(property
 			"LCSC"
-			"C2761795"
+			"C2874885"
 			(at 609.6 101.6 0)
 			(hide yes)
 			(effects
@@ -4560,7 +4760,7 @@
 		)
 		(property
 			"Value"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 673.1 81.28 0)
 			(effects
 				(font
@@ -4592,7 +4792,7 @@
 		)
 		(property
 			"MPN"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 673.1 101.6 0)
 			(hide yes)
 			(effects
@@ -4614,7 +4814,7 @@
 		)
 		(property
 			"LCSC"
-			"C2761795"
+			"C2874885"
 			(at 673.1 101.6 0)
 			(hide yes)
 			(effects
@@ -4655,7 +4855,7 @@
 		)
 		(property
 			"Value"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 736.6 81.28 0)
 			(effects
 				(font
@@ -4687,7 +4887,7 @@
 		)
 		(property
 			"MPN"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 736.6 101.6 0)
 			(hide yes)
 			(effects
@@ -4709,7 +4909,7 @@
 		)
 		(property
 			"LCSC"
-			"C2761795"
+			"C2874885"
 			(at 736.6 101.6 0)
 			(hide yes)
 			(effects
@@ -4750,7 +4950,7 @@
 		)
 		(property
 			"Value"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 38.1 144.78 0)
 			(effects
 				(font
@@ -4782,7 +4982,7 @@
 		)
 		(property
 			"MPN"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 38.1 165.1 0)
 			(hide yes)
 			(effects
@@ -4804,7 +5004,7 @@
 		)
 		(property
 			"LCSC"
-			"C2761795"
+			"C2874885"
 			(at 38.1 165.1 0)
 			(hide yes)
 			(effects
@@ -4845,7 +5045,7 @@
 		)
 		(property
 			"Value"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 101.6 144.78 0)
 			(effects
 				(font
@@ -4877,7 +5077,7 @@
 		)
 		(property
 			"MPN"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 101.6 165.1 0)
 			(hide yes)
 			(effects
@@ -4899,7 +5099,7 @@
 		)
 		(property
 			"LCSC"
-			"C2761795"
+			"C2874885"
 			(at 101.6 165.1 0)
 			(hide yes)
 			(effects
@@ -4940,7 +5140,7 @@
 		)
 		(property
 			"Value"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 165.1 144.78 0)
 			(effects
 				(font
@@ -4972,7 +5172,7 @@
 		)
 		(property
 			"MPN"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 165.1 165.1 0)
 			(hide yes)
 			(effects
@@ -4994,7 +5194,7 @@
 		)
 		(property
 			"LCSC"
-			"C2761795"
+			"C2874885"
 			(at 165.1 165.1 0)
 			(hide yes)
 			(effects
@@ -5035,7 +5235,7 @@
 		)
 		(property
 			"Value"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 228.6 144.78 0)
 			(effects
 				(font
@@ -5067,7 +5267,7 @@
 		)
 		(property
 			"MPN"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 228.6 165.1 0)
 			(hide yes)
 			(effects
@@ -5089,7 +5289,7 @@
 		)
 		(property
 			"LCSC"
-			"C2761795"
+			"C2874885"
 			(at 228.6 165.1 0)
 			(hide yes)
 			(effects
@@ -5130,7 +5330,7 @@
 		)
 		(property
 			"Value"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 292.1 144.78 0)
 			(effects
 				(font
@@ -5162,7 +5362,7 @@
 		)
 		(property
 			"MPN"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 292.1 165.1 0)
 			(hide yes)
 			(effects
@@ -5184,7 +5384,7 @@
 		)
 		(property
 			"LCSC"
-			"C2761795"
+			"C2874885"
 			(at 292.1 165.1 0)
 			(hide yes)
 			(effects
@@ -5225,7 +5425,7 @@
 		)
 		(property
 			"Value"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 355.6 144.78 0)
 			(effects
 				(font
@@ -5257,7 +5457,7 @@
 		)
 		(property
 			"MPN"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 355.6 165.1 0)
 			(hide yes)
 			(effects
@@ -5279,7 +5479,7 @@
 		)
 		(property
 			"LCSC"
-			"C2761795"
+			"C2874885"
 			(at 355.6 165.1 0)
 			(hide yes)
 			(effects
@@ -5320,7 +5520,7 @@
 		)
 		(property
 			"Value"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 419.1 144.78 0)
 			(effects
 				(font
@@ -5352,7 +5552,7 @@
 		)
 		(property
 			"MPN"
-			"WS2812B-B/T"
+			"WS2812B-V5/W"
 			(at 419.1 165.1 0)
 			(hide yes)
 			(effects
@@ -5374,7 +5574,7 @@
 		)
 		(property
 			"LCSC"
-			"C2761795"
+			"C2874885"
 			(at 419.1 165.1 0)
 			(hide yes)
 			(effects
@@ -5775,17 +5975,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:USB_C_Receptacle_USB2.0_16P")
+		(lib_id "Device:D_Schottky")
 		(at 736.6 165.1 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f87778b1-fa1f-5246-a084-8dd2c8a3612e")
+		(uuid "01db12e4-f3a5-5df4-8051-e578cbb074cc")
 		(property
 			"Reference"
-			"J1"
+			"D17"
 			(at 736.6 142.24 0)
 			(effects
 				(font
@@ -5795,7 +5995,7 @@
 		)
 		(property
 			"Value"
-			"USB_C_16P"
+			"1N5819WS"
 			(at 736.6 144.78 0)
 			(effects
 				(font
@@ -5805,7 +6005,7 @@
 		)
 		(property
 			"Footprint"
-			"StatusBeacon:USB_C_Receptacle_HRO_TYPE-C-31-M-12_LCSC"
+			"Diode_SMD:D_SOD-323"
 			(at 736.6 165.1 0)
 			(hide yes)
 			(effects
@@ -5827,7 +6027,7 @@
 		)
 		(property
 			"MPN"
-			"TYPE-C-31-M-12"
+			"1N5819WS"
 			(at 736.6 165.1 0)
 			(hide yes)
 			(effects
@@ -5838,7 +6038,7 @@
 		)
 		(property
 			"Manufacturer"
-			"Korean Hroparts Elec"
+			"Guangdong Hottech"
 			(at 736.6 165.1 0)
 			(hide yes)
 			(effects
@@ -5849,8 +6049,103 @@
 		)
 		(property
 			"LCSC"
-			"C165948"
+			"C191023"
 			(at 736.6 165.1 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project
+				"status_beacon"
+				(path
+					"/78997b39-3487-5b1b-b23d-003606e75a2f"
+					(reference "D17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:USB_C_Receptacle_USB2.0_16P")
+		(at 38.1 228.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f87778b1-fa1f-5246-a084-8dd2c8a3612e")
+		(property
+			"Reference"
+			"J1"
+			(at 38.1 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"Value"
+			"USB_C_16P"
+			(at 38.1 208.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"Footprint"
+			"StatusBeacon:USB_C_Receptacle_HRO_TYPE-C-31-M-12_LCSC"
+			(at 38.1 228.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"Datasheet"
+			""
+			(at 38.1 228.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"MPN"
+			"TYPE-C-31-M-12"
+			(at 38.1 228.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"Manufacturer"
+			"Korean Hroparts Elec"
+			(at 38.1 228.6 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"LCSC"
+			"C165948"
+			(at 38.1 228.6 0)
 			(hide yes)
 			(effects
 				(font
@@ -5871,7 +6166,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_02x03_Odd_Even")
-		(at 38.1 228.6 0)
+		(at 101.6 228.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -5881,7 +6176,7 @@
 		(property
 			"Reference"
 			"J2"
-			(at 38.1 205.74 0)
+			(at 101.6 205.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5891,7 +6186,7 @@
 		(property
 			"Value"
 			"SWD_TC2030"
-			(at 38.1 208.28 0)
+			(at 101.6 208.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5901,7 +6196,7 @@
 		(property
 			"Footprint"
 			"Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical"
-			(at 38.1 228.6 0)
+			(at 101.6 228.6 0)
 			(hide yes)
 			(effects
 				(font
@@ -5912,7 +6207,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 38.1 228.6 0)
+			(at 101.6 228.6 0)
 			(hide yes)
 			(effects
 				(font
@@ -5933,7 +6228,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 101.6 228.6 0)
+		(at 165.1 228.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5943,79 +6238,6 @@
 		(property
 			"Reference"
 			"R1"
-			(at 101.6 205.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property
-			"Value"
-			"5.1k"
-			(at 101.6 208.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property
-			"Footprint"
-			"Resistor_SMD:R_0402_1005Metric"
-			(at 101.6 228.6 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property
-			"Datasheet"
-			""
-			(at 101.6 228.6 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property
-			"LCSC"
-			"C25905"
-			(at 101.6 228.6 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project
-				"status_beacon"
-				(path
-					"/78997b39-3487-5b1b-b23d-003606e75a2f"
-					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 165.1 228.6 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "9863a44c-45df-5a73-8ebe-f596fa09079d")
-		(property
-			"Reference"
-			"R2"
 			(at 165.1 205.74 0)
 			(effects
 				(font
@@ -6071,7 +6293,7 @@
 				"status_beacon"
 				(path
 					"/78997b39-3487-5b1b-b23d-003606e75a2f"
-					(reference "R2")
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -6085,10 +6307,10 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b916a296-1aa8-50eb-8e25-f34ae025f8a8")
+		(uuid "9863a44c-45df-5a73-8ebe-f596fa09079d")
 		(property
 			"Reference"
-			"R3"
+			"R2"
 			(at 228.6 205.74 0)
 			(effects
 				(font
@@ -6098,7 +6320,7 @@
 		)
 		(property
 			"Value"
-			"0R"
+			"5.1k"
 			(at 228.6 208.28 0)
 			(effects
 				(font
@@ -6108,7 +6330,7 @@
 		)
 		(property
 			"Footprint"
-			"Resistor_SMD:R_0805_2012Metric"
+			"Resistor_SMD:R_0402_1005Metric"
 			(at 228.6 228.6 0)
 			(hide yes)
 			(effects
@@ -6130,7 +6352,7 @@
 		)
 		(property
 			"LCSC"
-			"C17477"
+			"C25905"
 			(at 228.6 228.6 0)
 			(hide yes)
 			(effects
@@ -6144,7 +6366,7 @@
 				"status_beacon"
 				(path
 					"/78997b39-3487-5b1b-b23d-003606e75a2f"
-					(reference "R3")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -8706,9 +8928,33 @@
 		(uuid "996c53e0-d212-54c0-862e-366568f7e15f")
 	)
 	(global_label
+		"+5V"
+		(shape bidirectional)
+		(at 732.79 165.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2a9602fd-8469-5833-868a-be1c5f1ddf74")
+	)
+	(global_label
+		"VBUS"
+		(shape bidirectional)
+		(at 740.41 165.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "71275723-26f6-54db-b686-e205c1465734")
+	)
+	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 736.6 187.96 0)
+		(at 38.1 251.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8720,7 +8966,7 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 736.6 187.96 0)
+		(at 38.1 251.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8732,7 +8978,7 @@
 	(global_label
 		"VBUS"
 		(shape bidirectional)
-		(at 751.84 149.86 0)
+		(at 53.34 213.36 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8744,7 +8990,7 @@
 	(global_label
 		"CC1"
 		(shape bidirectional)
-		(at 751.84 154.94 0)
+		(at 53.34 218.44 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8754,21 +9000,21 @@
 		(uuid "eae62a7f-f20e-5715-a033-866449953f05")
 	)
 	(no_connect
-		(at 751.84 167.64)
+		(at 53.34 231.14)
 		(uuid "9fbef624-30d7-5b68-89c3-3b59116454b1")
 	)
 	(no_connect
-		(at 751.84 162.56)
+		(at 53.34 226.06)
 		(uuid "4699a012-c9f5-5c95-9d73-e99ae33f8621")
 	)
 	(no_connect
-		(at 751.84 177.8)
+		(at 53.34 241.3)
 		(uuid "89ceab0f-577f-507e-8784-02157f699e4a")
 	)
 	(global_label
 		"VBUS"
 		(shape bidirectional)
-		(at 751.84 149.86 0)
+		(at 53.34 213.36 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8780,7 +9026,7 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 736.6 187.96 0)
+		(at 38.1 251.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8792,7 +9038,7 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 736.6 187.96 0)
+		(at 38.1 251.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8804,7 +9050,7 @@
 	(global_label
 		"VBUS"
 		(shape bidirectional)
-		(at 751.84 149.86 0)
+		(at 53.34 213.36 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8816,7 +9062,7 @@
 	(global_label
 		"CC2"
 		(shape bidirectional)
-		(at 751.84 157.48 0)
+		(at 53.34 220.98 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8826,21 +9072,21 @@
 		(uuid "a58c72f1-8ed8-54a8-bc66-31f93ba4ea51")
 	)
 	(no_connect
-		(at 751.84 170.18)
+		(at 53.34 233.68)
 		(uuid "ec1c7c02-8e35-5e2c-baf8-af13f2c846f2")
 	)
 	(no_connect
-		(at 751.84 165.1)
+		(at 53.34 228.6)
 		(uuid "3049bc80-8e62-566e-b289-881c06bc42f4")
 	)
 	(no_connect
-		(at 751.84 180.34)
+		(at 53.34 243.84)
 		(uuid "9982cdb3-8e46-5e76-9b41-0526044d632b")
 	)
 	(global_label
 		"VBUS"
 		(shape bidirectional)
-		(at 751.84 149.86 0)
+		(at 53.34 213.36 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8852,7 +9098,7 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 728.98 187.96 0)
+		(at 30.48 251.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8864,7 +9110,7 @@
 	(global_label
 		"+5V"
 		(shape bidirectional)
-		(at 33.02 226.06 0)
+		(at 96.52 226.06 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8876,7 +9122,7 @@
 	(global_label
 		"SWDIO"
 		(shape bidirectional)
-		(at 45.72 226.06 0)
+		(at 109.22 226.06 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8888,7 +9134,7 @@
 	(global_label
 		"NRST"
 		(shape bidirectional)
-		(at 33.02 228.6 0)
+		(at 96.52 228.6 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8900,7 +9146,7 @@
 	(global_label
 		"SWCLK"
 		(shape bidirectional)
-		(at 45.72 228.6 0)
+		(at 109.22 228.6 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8912,7 +9158,7 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 33.02 231.14 0)
+		(at 96.52 231.14 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8922,13 +9168,13 @@
 		(uuid "ec3e9d13-f79a-5a47-b02d-1f6a9f5278a8")
 	)
 	(no_connect
-		(at 45.72 231.14)
+		(at 109.22 231.14)
 		(uuid "cef395ef-808b-5db6-93d8-aabc88d3307e")
 	)
 	(global_label
 		"CC1"
 		(shape bidirectional)
-		(at 101.6 224.79 0)
+		(at 165.1 224.79 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8940,7 +9186,7 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 101.6 232.41 0)
+		(at 165.1 232.41 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8952,7 +9198,7 @@
 	(global_label
 		"CC2"
 		(shape bidirectional)
-		(at 165.1 224.79 0)
+		(at 228.6 224.79 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8964,30 +9210,6 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 165.1 232.41 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "840feec4-ecbf-52e3-9d55-1556302928d5")
-	)
-	(global_label
-		"VBUS"
-		(shape bidirectional)
-		(at 228.6 224.79 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ad850e21-66c9-59a4-a5f8-35fdbab05bd2")
-	)
-	(global_label
-		"+5V"
-		(shape bidirectional)
 		(at 228.6 232.41 0)
 		(effects
 			(font
@@ -8995,7 +9217,7 @@
 			)
 			(justify left)
 		)
-		(uuid "e7885e28-e17e-5964-a9d0-a3238fa679dd")
+		(uuid "840feec4-ecbf-52e3-9d55-1556302928d5")
 	)
 	(global_label
 		"LED_DATA"

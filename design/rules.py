@@ -566,10 +566,12 @@ def evaluate_probe_access(parameters):
     required = set(PROBE_REQUIRED_NETS)
     required |= {name for name in netlist.NETS if name.startswith("LED_CH")}
     violations = sorted(required - test_point_nets)
+    # Exactly one two-terminal part must bridge the input rail to the board
+    # rail, whatever kind it is: bring-up needs one identifiable element to
+    # lift or measure across, and more than one would mean a parallel supply
+    # path that no single measurement characterises.
     links = []
     for reference in netlist.PARTS:
-        if not reference.startswith("R"):
-            continue
         nets = {pin_map.get(reference + ".1"), pin_map.get(reference + ".2")}
         if nets == {"VBUS", "+5V"}:
             links.append(reference)

@@ -1,9 +1,9 @@
 {
-  "accepted_attempt": 1,
-  "adopted_sha256": "880fd457fe514b5c2ec0404ff13fac4d6773a48691260483b596446f32451803",
+  "accepted_attempt": 2,
+  "adopted_sha256": "fccc88ba56d527682f0a417a3e3083bdb60ff2ab0888a647e73c9a06c9aa4932",
   "attempts": [
     {
-      "accepted": true,
+      "accepted": false,
       "attempt": 1,
       "context": {
         "ordering": "mps",
@@ -13,7 +13,56 @@
           "finalize_excluded_nets": [
             "GND"
           ],
-          "main_loop_time_s": 0.38,
+          "main_loop_time_s": 0.52,
+          "min_clearance_used": 0.15,
+          "multipoint_deficit": 0,
+          "open_single": [],
+          "pad_pairs_open": {
+            "count": 0,
+            "nets": []
+          },
+          "routed": 7,
+          "scope": "merged",
+          "terminal_restores_broken": [],
+          "vias": 11
+        }
+      },
+      "source_sha256": "01fd87034d23645eaf2a2727c8550689e13ff93a9f33c114bf0b21df27735fde",
+      "stages": [
+        {
+          "produced_by": "router",
+          "sha256": "cfae1b302db4a08b0d471e028222514cc002fe24123322dca721955f5ee078f5",
+          "stage": "routed"
+        },
+        {
+          "effects": {
+            "dangling_tracks_removed": 0,
+            "endpoints_snapped": 3,
+            "zones_refilled": 2
+          },
+          "parameters": {
+            "snap_tolerance_mm": 0.25,
+            "touch_tolerance_mm": 0.01
+          },
+          "produced_by": "transform",
+          "sha256": "16a95ee9877a32ac701954f9f39e7c19da8da883382788bd3aa2d0d19d188ec9",
+          "stage": "tidied",
+          "transform": "snap track endpoints onto same-net via centres; prune dangling track ends, keeping any removal only while connectivity is unchanged; refill the zones so the pour is knocked out around the copper the router added"
+        }
+      ]
+    },
+    {
+      "accepted": true,
+      "attempt": 2,
+      "context": {
+        "ordering": "inside_out",
+        "router_summary": {
+          "failed": 0,
+          "failed_single": [],
+          "finalize_excluded_nets": [
+            "GND"
+          ],
+          "main_loop_time_s": 0.19,
           "min_clearance_used": 0.15,
           "multipoint_deficit": 0,
           "open_single": [],
@@ -27,17 +76,17 @@
           "vias": 10
         }
       },
-      "source_sha256": "84e031b704c75a062b5612866b53c3ef5dfa210142dc53a2dafc5d0c5f8b818a",
+      "source_sha256": "01fd87034d23645eaf2a2727c8550689e13ff93a9f33c114bf0b21df27735fde",
       "stages": [
         {
           "produced_by": "router",
-          "sha256": "bd52f162b05df488900ff2bb4134b2c61214aab2201fe1442fc9ceda8321ac36",
+          "sha256": "4c7e2d36f8064510bcd25bedf4d0a7dd3b28d5ed6c808876e530510377ce7855",
           "stage": "routed"
         },
         {
           "effects": {
             "dangling_tracks_removed": 1,
-            "endpoints_snapped": 4,
+            "endpoints_snapped": 7,
             "zones_refilled": 2
           },
           "parameters": {
@@ -45,7 +94,7 @@
             "touch_tolerance_mm": 0.01
           },
           "produced_by": "transform",
-          "sha256": "880fd457fe514b5c2ec0404ff13fac4d6773a48691260483b596446f32451803",
+          "sha256": "fccc88ba56d527682f0a417a3e3083bdb60ff2ab0888a647e73c9a06c9aa4932",
           "stage": "tidied",
           "transform": "snap track endpoints onto same-net via centres; prune dangling track ends, keeping any removal only while connectivity is unchanged; refill the zones so the pour is knocked out around the copper the router added"
         }
@@ -109,5 +158,5 @@
     }
   },
   "kind": "routing-run",
-  "source_sha256": "84e031b704c75a062b5612866b53c3ef5dfa210142dc53a2dafc5d0c5f8b818a"
+  "source_sha256": "01fd87034d23645eaf2a2727c8550689e13ff93a9f33c114bf0b21df27735fde"
 }

@@ -10,18 +10,19 @@ INDEX_PATH = os.path.join(REPO_ROOT, "evidence", "index.json")
 DATASHEET_DIR = os.path.join(REPO_ROOT, "evidence", "datasheets")
 
 SOURCES = {
-    "ws2812b_worldsemi": {
-        "file": "datasheets/ws2812b_worldsemi.pdf",
-        "url": "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf",
-        "retrieved": "2026-09-01",
-        "applies_to": ["WS2812B-B/T"],
+    "ws2812b_v5_worldsemi": {
+        "file": "datasheets/ws2812b_v5_worldsemi.pdf",
+        "url": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/"
+               "2304140030_Worldsemi-WS2812B-V5-W_C2874885.pdf",
+        "retrieved": "2026-09-02",
+        "applies_to": ["WS2812B-V5/W"],
     },
-    "ws2812b_luxalight": {
-        "file": "datasheets/ws2812b_luxalight.pdf",
-        "url": "https://www.luxalight.eu/sites/default/files/downloads/"
-               "2020-03/Datasheet_WS2812B.pdf",
-        "retrieved": "2026-09-01",
-        "applies_to": ["WS2812B-B/T"],
+    "1n5819ws_hottech": {
+        "file": "datasheets/1n5819ws_hottech.pdf",
+        "url": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/"
+               "2304140030_Guangdong-Hottech-1N5819WS_C191023.pdf",
+        "retrieved": "2026-09-02",
+        "applies_to": ["1N5819WS"],
     },
     "py32f003_puya": {
         "file": "datasheets/py32f003_puya.pdf",

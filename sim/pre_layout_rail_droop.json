@@ -21,7 +21,7 @@
     },
     "SRC": {
       "accepted_for_design_decision": true,
-      "stands_in_for": "the USB-C source as an ideal voltage source held at vSafe5V minimum, with no output impedance of its own"
+      "stands_in_for": "the USB-C source at vSafe5V minimum, less the series Schottky's maximum forward voltage, as an ideal source with no output impedance of its own"
     },
     "SWITCH": {
       "accepted_for_design_decision": true,
@@ -36,7 +36,7 @@
         "src",
         "0"
       ],
-      "value": 4.75
+      "value": 4.15
     },
     {
       "kind": "resistor",
@@ -63,7 +63,7 @@
         "rail",
         "sink"
       ],
-      "value": 10.14957264957265
+      "value": 14.77920227920228
     },
     {
       "kind": "vsource_pulse",
@@ -77,7 +77,7 @@
         "fall_s": 1e-09,
         "period_s": 0.002,
         "rise_s": 1e-09,
-        "v1": 4.75,
+        "v1": 4.15,
         "v2": 0.0,
         "width_s": 0.001
       }
@@ -87,18 +87,28 @@
     {
       "assertion": {
         "op": ">=",
-        "value": 4.5
+        "value": 3.7
       },
       "kind": "tran_min_voltage",
+      "knowledge": {
+        "basis": {
+          "detail": "the source is held at its minimum and the series diode at its maximum forward voltage, so the rail can only be higher than this in service",
+          "kind": "assumed"
+        },
+        "kind": "lower_bound"
+      },
       "name": "rail_excursion_min",
       "node": "rail"
     },
     {
-      "assertion": {
-        "op": "<=",
-        "value": 5.3
-      },
       "kind": "tran_max_voltage",
+      "knowledge": {
+        "basis": {
+          "detail": "the source is held at its minimum and the series diode at its maximum forward voltage, so the rail can only be higher than this in service",
+          "kind": "assumed"
+        },
+        "kind": "lower_bound"
+      },
       "name": "rail_excursion_max",
       "node": "rail"
     }

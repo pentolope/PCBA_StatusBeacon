@@ -72,7 +72,7 @@ CENTRE_PLACEMENT = {
 
 SERVICE_PLACEMENT = {
     "TP3": (230.0, 0.0),
-    "R3": (219.0, 0.0),
+    "D17": (219.0, 0.0),
     "C1": (208.0, 0.0),
     "TP2": (197.0, 0.0),
     "D13": (310.0, 0.0),
@@ -613,9 +613,9 @@ def _route_connector(board, footprints, nets):
            [pad_xy(footprints["D13"], "2"),
             pad_xy(footprints["TP1"], "1")], POWER_TRACK_WIDTH_MM)
     _route(board, nets["VBUS"],
-           [right, pad_xy(footprints["R3"], "1")], POWER_TRACK_WIDTH_MM)
+           [right, pad_xy(footprints["D17"], "2")], POWER_TRACK_WIDTH_MM)
     _route(board, nets["+5V"],
-           [pad_xy(footprints["R3"], "2"),
+           [pad_xy(footprints["D17"], "1"),
             pad_xy(footprints["C1"], "1")], POWER_TRACK_WIDTH_MM)
     _route(board, nets["+5V"],
            [pad_xy(footprints["C1"], "1"),

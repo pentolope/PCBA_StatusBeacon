@@ -53,8 +53,6 @@ def _parts():
                     lcsc="C25905"),
         "R2": _part("Device:R", "Resistor_SMD:R_0402_1005Metric", "5.1k",
                     lcsc="C25905"),
-        "R3": _part("Device:R", "Resistor_SMD:R_0805_2012Metric", "0R",
-                    lcsc="C17477"),
         "R4": _part("Device:R", "Resistor_SMD:R_0402_1005Metric", "33R",
                     lcsc="C25105"),
         "R5": _part("Device:R", "Resistor_SMD:R_0402_1005Metric", "1k",
@@ -72,10 +70,13 @@ def _parts():
         parts["D%d" % (index + 1)] = _part(
             "LED:WS2812B",
             "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm",
-            "WS2812B-B/T", "WS2812B-B/T", "Worldsemi", "C2761795")
+            "WS2812B-V5/W", "WS2812B-V5/W", "Worldsemi", "C2874885")
         parts["C%d" % (index + 5)] = _part(
             "Device:C", "Capacitor_SMD:C_0402_1005Metric", "100nF",
             lcsc="C1525")
+    parts["D17"] = _part(
+        "Device:D_Schottky", "Diode_SMD:D_SOD-323",
+        "1N5819WS", "1N5819WS", "Guangdong Hottech", "C191023")
     for ref in ("D13", "D14", "D15", "D16"):
         parts[ref] = _part(
             "StatusBeacon:TPD1E10B06", "StatusBeacon:TI_X1SON-2_1.0x0.6mm_P0.65mm",
@@ -101,7 +102,7 @@ def _nets():
         "D13.1", "D14.1", "D15.1", "D16.1", "TP3.1", "#FLG3.1",
     ]
     five_volt = [
-        "R3.2", "C1.1", "C2.1", "U1.9", "J2.1", "R6.1",
+        "D17.1", "C1.1", "C2.1", "U1.9", "J2.1", "R6.1",
         "TP2.1", "#FLG2.1",
     ]
     for index in range(LED_COUNT):
@@ -112,7 +113,7 @@ def _nets():
 
     nets = {
         "GND": ground,
-        "VBUS": ["J1.A4", "J1.A9", "J1.B4", "J1.B9", "D13.2", "R3.1",
+        "VBUS": ["J1.A4", "J1.A9", "J1.B4", "J1.B9", "D13.2", "D17.2",
                  "TP1.1", "#FLG1.1"],
         "+5V": five_volt,
         "CC1": ["J1.A5", "R1.1", "D14.2"],
@@ -141,9 +142,11 @@ NO_CONNECT = tuple(
     + ["J1.A6", "J1.A7", "J1.A8", "J1.B6", "J1.B7", "J1.B8", "J2.6"])
 
 
+SERIES_DIODE_VF_MAX_V = 0.60
+
 RAILS = {
-    "VBUS": {"min_v": 4.75, "max_v": 5.25},
-    "+5V": {"min_v": 4.75, "max_v": 5.25},
+    "VBUS": {"min_v": 4.75, "max_v": 5.5},
+    "+5V": {"min_v": 4.75 - SERIES_DIODE_VF_MAX_V, "max_v": 5.5},
     "GND": {"min_v": 0.0, "max_v": 0.0},
 }
 
