@@ -857,7 +857,7 @@ def evaluate_reference_gap_limit(parameters):
     with open(manifest_path, encoding="utf-8") as handle:
         interfaces = json.load(handle)["timing"]["interfaces"]
     rise_s = (2.2 * simulation._resistor_ohms("R4")
-              * simulation.LED_INPUT_CAPACITANCE_F)
+              * simulation.led_input_capacitance_f(parameters))
     allowed_mm = (ELECTRICALLY_SHORT_FRACTION * rise_s
                   * MICROSTRIP_VELOCITY_MM_PER_S)
     violations = []

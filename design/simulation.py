@@ -16,9 +16,13 @@ PARAMETERS_PATH = os.path.join(REPO_ROOT, "components", "parameters.json")
 EXTRACTED_MODEL_ALIAS = "led_data_copper"
 
 SUPPLY_PATH_BUDGET_OHM = 0.1
-LED_INPUT_CAPACITANCE_F = 10e-12
 MCU_INPUT_CAPACITANCE_F = 5e-12
 WS2812B_SHORTEST_HIGH_S = 400e-9
+
+
+def led_input_capacitance_f(parameters):
+    return (parameters["parts"]["WS2812B-B/T"]["digital_inputs"]["4"]
+            ["input_capacitance_f"]["value"])
 
 
 def _parameters():
@@ -202,7 +206,7 @@ def led_data_edge_scenario(parameters, model_identity=None):
         {"kind": "resistor", "name": "RSERIES", "nodes": ["rin", "din"],
          "value": _resistor_ohms("R4")},
         {"kind": "capacitor", "name": "CDIN", "nodes": ["din", "0"],
-         "value": LED_INPUT_CAPACITANCE_F},
+         "value": led_input_capacitance_f(parameters)},
     ])
     ideal = {
         "DRIVER": "the MCU output as an ideal source stepping to its "

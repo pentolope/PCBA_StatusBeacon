@@ -42,7 +42,12 @@
             "document": "ws2812b_worldsemi",
             "basis": "direct"
           },
-          "input_current_max_a": 1e-06
+          "input_current_max_a": 1e-06,
+          "input_capacitance_f": {
+            "value": 1.5e-11,
+            "document": "ws2812b_worldsemi",
+            "basis": "direct"
+          }
         }
       },
       "digital_outputs": {
