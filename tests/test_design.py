@@ -12,7 +12,7 @@ if REPO_ROOT not in sys.path:
     sys.path.insert(0, REPO_ROOT)
 
 from design import (build, cost, evidence, ksym, libraries,  # noqa: E402
-                    netlist, rules, sexpr, simulation)
+                    netlist, physical, rules, sexpr, simulation)
 
 KNOWN_OPEN_FAILURES = {("usb_source_range_coverage",
                         "vbus_declared_vs_vsafe5v")}
@@ -533,6 +533,23 @@ class FabricationRequirements(unittest.TestCase):
             selection = json.load(handle)
         self.assertTrue(selection["feasible"])
         self.assertEqual(selection["rejections"], [])
+
+    def test_the_frozen_physical_inputs_still_agree_with_the_catalog(self):
+        self.assertEqual(physical.verify(), [])
+
+    def test_the_frozen_physical_inputs_are_regenerable(self):
+        with open(physical.PHYSICAL_PATH, encoding="utf-8") as handle:
+            committed = json.load(handle)
+        self.assertEqual(committed, physical.resolve())
+
+    def test_every_physical_input_is_approved_evidence(self):
+        with open(physical.PHYSICAL_PATH, encoding="utf-8") as handle:
+            document = json.load(handle)
+        records = list(document["copper_thickness_mm"].values())
+        records.append(document["board_thickness_mm"])
+        for record in records:
+            self.assertIn(record["source_type"],
+                          ("approved-evidence", "derived"))
 
     def test_the_layer_count_matches_the_declared_stackup(self):
         expected = self.manifest["stackup"]["expected"]

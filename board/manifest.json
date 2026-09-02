@@ -437,7 +437,7 @@
       "*.kicad_pcb",
       "*.kicad_pro",
       "sim/*.json",
-      "fab/requirements.json",
+      "fab/*.json",
       "components/*.json",
       "evidence/index.json"
     ],
@@ -495,14 +495,14 @@
       "post_layout"
     ],
     "extracted_models": {
-      "physical_from_requirements": "fab/requirements.json",
       "paths": {
         "led_data_copper": {
           "net": "LED_DATA",
           "from_pad": "U1.20",
           "to_pad": "R4.1"
         }
-      }
+      },
+      "physical_inputs": "fab/physical_inputs.json"
     }
   },
   "timing": {
