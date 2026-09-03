@@ -605,11 +605,16 @@ class DeclaredContracts(unittest.TestCase):
                              reference)
 
     def test_the_routing_acceptance_set_excludes_release_artifact_gates(self):
-        accepted = set(self.manifest["routing"]["acceptance_gates"])
+        from design import route
+        from pcbqa import core, gates
+        gates.load()
+        ids, unknown = core.select_gates([route.ACCEPTANCE_SELECTION])
+        self.assertEqual(unknown, [])
+        self.assertTrue(ids)
         for gate in ("ARCH.CONTENTS", "ARCH.PROVENANCE", "BOM.NATIVE_PARITY",
                      "CPL.NATIVE_PARITY", "STACK.GERBER_PARITY",
                      "PROV.REPORT_FRESHNESS"):
-            self.assertNotIn(gate, accepted)
+            self.assertNotIn(gate, ids)
 
     def test_every_mandatory_gate_is_one_the_last_validation_passed(self):
         with open(os.path.join(REPO_ROOT, "generated", "release",
