@@ -608,9 +608,15 @@ class DeclaredContracts(unittest.TestCase):
         from design import route
         from pcbqa import core, gates
         gates.load()
-        ids, unknown = core.select_gates([route.ACCEPTANCE_SELECTION])
+        ids, unknown = core.select_gates(
+            route.ACCEPTANCE_SELECTION.split(","))
         self.assertEqual(unknown, [])
-        self.assertTrue(ids)
+        floor = {"ERC.AUTHORITATIVE", "DRC.AUTHORITATIVE",
+                 "ROUTE.GEOMETRY_HYGIENE", "ROUTE.TINY_SEGMENTS",
+                 "ROUTE.PROVENANCE"}
+        self.assertEqual(floor - set(ids), set(),
+                         "the acceptance selection lost a gate the routing "
+                         "loop depends on")
         for gate in ("ARCH.CONTENTS", "ARCH.PROVENANCE", "BOM.NATIVE_PARITY",
                      "CPL.NATIVE_PARITY", "STACK.GERBER_PARITY",
                      "PROV.REPORT_FRESHNESS"):
