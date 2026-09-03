@@ -1,7 +1,7 @@
 {
   "$schema": "https://schemas.kicad.org/erc.v1.json",
   "coordinate_units": "mm",
-  "date": "2026-09-03T10:26:57",
+  "date": "2026-09-03T15:06:16",
   "ignored_checks": [],
   "included_severities": [
     "error",
@@ -18,22 +18,28 @@
   ],
   "source": "status_beacon.kicad_sch",
   "source_sha256": "8b49a41176642a0d166848f29c57efdb2b76f80da45d3edb8b71594a43ebdc71",
-  "source_closure_sha256": "9732f5f96474c3418482eeb8e44c7b4bae4c0cbaf40cc19dcee622f255afe045",
+  "source_closure_sha256": "9927083a56d9e11718a6a38e4d82373c141a99404c4826cb5ab4eb30f49eb762",
   "source_closure": {
     "<configuration>": "0baa6791c270b8d9df0b6de1da78a8e856817a93e9cbc7db1b1d2f39b84273a8",
-    "<toolkit>": "0c051f23f5cb7c08360e7db4ab231ec321a4459c+clean",
+    "<toolkit>": "7f51066b4095042726be2be3824c3b9ff2f5158a+clean",
     "components/jlcpcb.json": "8048d36133b03ed2275e6b47446e4b93b7f493b5e4c221310cc4f1dd94a5e98c",
     "components/parameters.json": "54deccee4e33dee73ee36a8c307e6eb6eca355e5205154935f213a497b57db15",
     "evidence/index.json": "3565f98e06ddfdbf193c5482d84d015dd7d64a17e7d3c8efc1626bdc5a57d457",
     "fab/physical_inputs.json": "f84bb310ac42ec8daddf51865da86b05d79ae44bda1e4a49615dc20bdba21ee8",
     "fab/requirements.json": "7ab5540addf347bbc27fd3d8b7097bec169dc1e53619c67169de5072efe96ec9",
     "fab/selection.json": "a99d1115875c2038dfba11cab302043231a0470a2d834d5b59e8e79e45a3128b",
+    "fp-lib-table": "3ff17061746b99f674857d4dc16b3262f32a2625c423b8daeb0852c532732e60",
+    "library/StatusBeacon.kicad_sym": "830fb9ffe821600ce2c9dbdcc77f4037019aa978aea85f1b02d39ecce6a9fa7e",
+    "library/StatusBeacon.pretty/TI_X1SON-2_1.0x0.6mm_P0.65mm.kicad_mod": "8e69664c1230a2558ff8ca9937584e16102eede94d4a95b44316ff3e662f29c0",
+    "library/StatusBeacon.pretty/USB_C_Receptacle_HRO_TYPE-C-31-M-12_LCSC.kicad_mod": "4b208b97d86a33a95d3c054695f96872ce0eac0783969b79b83c58850db96a11",
     "sim/post_layout_led_data_edge.json": "5fe9b77aa4977492150d6a25fc565e74959fddf4758a3d01304fb5634d86d9e7",
     "sim/pre_layout_button_release.json": "f811ab1c46cdb649f2479b4e54c2a5304aaf2a48d70daee219239c3933700493",
     "sim/pre_layout_led_data_edge.json": "737cb96297f41977106a4747fdfd00c4e20b25fe6d1716bd307ee6bfca7737a9",
     "sim/pre_layout_rail_droop.json": "124a11bc1e222fbdb3d1fdc46486d1e4e74c6bb49744eaba78d161ce0da64900",
     "status_beacon.kicad_pcb": "d2b2fb1fea76bdf557194ebe119272c63e11b4987a36d7d6cfebffc4d298d412",
+    "status_beacon.kicad_prl": "e09e2ed8948084c025fde348f620c4cf3fccf294dce9b84d5bb765ef7e393eb6",
     "status_beacon.kicad_pro": "86dbe5cee6469f5c2a5fcaefb0964cb190d4f714345a825139e472f4f3f805a9",
-    "status_beacon.kicad_sch": "8b49a41176642a0d166848f29c57efdb2b76f80da45d3edb8b71594a43ebdc71"
+    "status_beacon.kicad_sch": "8b49a41176642a0d166848f29c57efdb2b76f80da45d3edb8b71594a43ebdc71",
+    "sym-lib-table": "0ad0b4752e47c7897d40f0617a04987b6d27b05c3ecfa31d21c5900a30c38f0b"
   }
 }

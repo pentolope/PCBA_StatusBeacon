@@ -22,4 +22,4 @@ openems/
 *.vtr
 *.vtu
 *.log
-*.kicad_prl
+.pcbqa-hold-*
