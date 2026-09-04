@@ -3,12 +3,12 @@
   "board_id": "status_beacon",
   "constraint_version": "schematic-stage-2026-09-01",
   "release_profile": "jlcpcb-2layer-assembled",
-  "generated_utc": "2026-09-03T21:06:40.234508+00:00",
-  "source_closure_sha256": "9927083a56d9e11718a6a38e4d82373c141a99404c4826cb5ab4eb30f49eb762",
+  "generated_utc": "2026-09-04T11:09:13.506411+00:00",
+  "source_closure_sha256": "d0e27e601f8e5b181b57acb49c111ae9f5f3cf2f21771768500ae46f2e3b23ef",
   "source_closure_files": 21,
   "source_closure": {
-    "<configuration>": "0baa6791c270b8d9df0b6de1da78a8e856817a93e9cbc7db1b1d2f39b84273a8",
-    "<toolkit>": "7f51066b4095042726be2be3824c3b9ff2f5158a+clean",
+    "<configuration>": "ec9cb924093aa28ef9298f02c7849dac3a5f37eecf6fca8e8fe862d19d43394a",
+    "<toolkit>": "bd0ad78d84983c4907944f30d31c1bc53897e4b5+clean",
     "components/jlcpcb.json": "8048d36133b03ed2275e6b47446e4b93b7f493b5e4c221310cc4f1dd94a5e98c",
     "components/parameters.json": "54deccee4e33dee73ee36a8c307e6eb6eca355e5205154935f213a497b57db15",
     "evidence/index.json": "3565f98e06ddfdbf193c5482d84d015dd7d64a17e7d3c8efc1626bdc5a57d457",
@@ -34,7 +34,7 @@
     "kicad_cli": "kicad-cli"
   },
   "toolkit": {
-    "commit": "7f51066b4095042726be2be3824c3b9ff2f5158a",
+    "commit": "bd0ad78d84983c4907944f30d31c1bc53897e4b5",
     "working_tree_dirty": false,
     "detail": "git HEAD of the toolkit checkout that executed this validation"
   },
@@ -45,25 +45,26 @@
     "kicad-cli pcb export drill --output export --format excellon --excellon-separate-th --drill-origin plot status_beacon.kicad_pcb",
     "kicad-cli pcb export pos --output cpl.csv --format csv --units mm --side both --exclude-dnp status_beacon.kicad_pcb",
     "kicad-cli sch export bom --output bom.csv --fields ${QUANTITY},Reference,Value,Footprint,LCSC --labels Quantity,Designator,Comment,Footprint,LCSC Part # --group-by Value,Footprint,LCSC --exclude-dnp --ref-range-delimiter  status_beacon.kicad_sch",
+    "strip-volatile export",
     "zip status_beacon-fabrication.zip"
   ],
   "artifacts": {
     "bom.csv": "5061db0e5008364b1f7345a28c514938782279f708ca5e78e4dac07a4f41cffd",
     "cpl.csv": "8621b1fe5a451d530727a298cdadb2193a3a52f203f1ce4ee392c6ab643830f5",
-    "gerbers/status_beacon-B_Cu.gbr": "930e8a9956012e68ba6e73b342e2f5b18609bc2cd06fcf27c5e3d7062aff305e",
-    "gerbers/status_beacon-B_Mask.gbr": "3afa5836d49c5dc565d9de69da9f6ee25e38f6d3ecddde08dc63bc4b9fa46bfb",
-    "gerbers/status_beacon-B_Silkscreen.gbr": "bb3e152a0035606a0f97a8631b4d7757c0beee9a1406565e2ba52a5d182ce3d9",
-    "gerbers/status_beacon-Edge_Cuts.gbr": "5468335be04bcea6064624e2b538aa497025575ab008425e3540d1972334cbd9",
-    "gerbers/status_beacon-F_Cu.gbr": "73c443b6e58880f82d7cbf6a606b6f23219b707297a6ba264c9ed4a3376ed43c",
-    "gerbers/status_beacon-F_Mask.gbr": "84224fdaf6a4edf5988470e153484ec0e29aa45f81b431c635687fdefd09e3ea",
-    "gerbers/status_beacon-F_Paste.gbr": "8b500553260c3e85cb44fbd62893cb45976af4285d6a897fda167e849942a2e1",
-    "gerbers/status_beacon-F_Silkscreen.gbr": "1f19cc629a1ec7dacaa1e6b2823cc9eb15a61a13a0fae8cd01cc28f398983ae4",
-    "gerbers/status_beacon-NPTH.drl": "8e4556d6b64fc99f17a916ead220bd7400f5a9be6f167d20bddacb61952f725e",
-    "gerbers/status_beacon-PTH.drl": "660472986b47d863e30f40a61fbe44cb422c264d7d71b4472f4c449d91d4674f",
-    "gerbers/status_beacon-job.gbrjob": "a12ebedeb4a0617e592c7c92f0a0fa1c29c538fef94d0ee3a8d5a9f348488e01",
-    "reports/drc.json": "191dda8f1e31a72eecf15ca3193e8d30b72f403942e8b46feb237b73aa50fcbe",
-    "reports/erc.json": "445e1b4e5e8bbf21bcb4a913e8505878a6a9b16051a5f9af9ef2ddf7e362ffe2",
-    "status_beacon-fabrication.zip": "e3ae67a9e4c57e1b3f8bea46f3294f3207e94ed22f0ffde5c28a6bb06ec4a4e6"
+    "gerbers/status_beacon-B_Cu.gbr": "1262b27b7d622ac667f130fdb590d83459ac9f7d7de2b3fda287a24ac7f2b86b",
+    "gerbers/status_beacon-B_Mask.gbr": "8be3235373090afa970641e90d37c1e648f0d043d70b3171dcf009a661474933",
+    "gerbers/status_beacon-B_Silkscreen.gbr": "73c9acf2cecd0d566f0c1030c243c1b920f5390f0d5170e835c70822ccaabc94",
+    "gerbers/status_beacon-Edge_Cuts.gbr": "ccea543679bdbade82035cc11df63c97bd7673a0da07f50a9025990f906e5825",
+    "gerbers/status_beacon-F_Cu.gbr": "7b9d56f3306a83220b1c593d269901c2bab5c44b11385dc4256d12c87451c50e",
+    "gerbers/status_beacon-F_Mask.gbr": "098f452f53e108613a3ba06c6bee3c3e5d5f783bd3e5eb564b3ade1fccafdb48",
+    "gerbers/status_beacon-F_Paste.gbr": "e91c99d3380e99669716801e100c7ab18a1ff7e78177be275d5a948de44dc2d4",
+    "gerbers/status_beacon-F_Silkscreen.gbr": "61ce53ce8bfa8e644d98cd095a7dd10d7a783e18eee4b70c39a3cfb3da02ac22",
+    "gerbers/status_beacon-NPTH.drl": "225c3ceffcd82447197fd9343ca16e9e1eb2903ba226565e2f9d2db9640a2658",
+    "gerbers/status_beacon-PTH.drl": "780f4723a0a5d19144afe53163cc482d8673d5b2ec064fb0955e0cd56ca7814d",
+    "gerbers/status_beacon-job.gbrjob": "31e31e427f1b5e31f14140dd456d0275579cfa3666c553972cbbf05121f7ff90",
+    "reports/drc.json": "5bbca47ec06ea43454618a0f459be510587afac423958258227887e0f0ac305c",
+    "reports/erc.json": "b690c38891bec58afac1e93a5f48b8d1d4f7e3f1ac7e4d78f42c0bf61c9c7d20",
+    "status_beacon-fabrication.zip": "61eae43046e3c697ae8ee3e089a2cd1b3ea71c9ddbad89da80c0aee50a4e8f4d"
   },
   "excluded_layers": []
 }

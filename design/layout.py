@@ -12,6 +12,7 @@ _TOOLKIT = os.path.join(
 if _TOOLKIT not in sys.path:
     sys.path.insert(0, _TOOLKIT)
 
+from pcbqa import board as pcbqa_board  # noqa: E402
 from pcbqa import headless  # noqa: E402
 
 headless.suppress_blocking_ui()
@@ -659,7 +660,7 @@ def fill_zones(board):
 def write():
     board, _ = build()
     fill_zones(board)
-    pcbnew.SaveBoard(BOARD_PATH, board)
+    pcbqa_board.save(board, BOARD_PATH)
     return BOARD_PATH
 
 
