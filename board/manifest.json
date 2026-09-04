@@ -201,6 +201,18 @@
       ]
     }
   },
+  "placement": {
+    "courtyard": {
+      "sides": [
+        "front",
+        "back"
+      ]
+    },
+    "edge_clearance": {
+      "min_mm": 0.1,
+      "basis": "courtyard"
+    }
+  },
   "via_mask": {
     "pad_contact": {
       "populated_pad_attributes": [

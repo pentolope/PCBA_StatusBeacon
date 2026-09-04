@@ -3,12 +3,12 @@
   "board_id": "status_beacon",
   "constraint_version": "schematic-stage-2026-09-01",
   "release_profile": "jlcpcb-2layer-assembled",
-  "generated_utc": "2026-09-04T16:30:06.596348+00:00",
-  "source_closure_sha256": "a90f1b188731b49cf8696abfa7e25d570684199a113677d5451ea2fb3891fb1f",
+  "generated_utc": "2026-09-04T21:22:50.377372+00:00",
+  "source_closure_sha256": "65d2de9a461e359c13abb573a856599fe9890a1c163ee784b901d80eeda1cec4",
   "source_closure_files": 21,
   "source_closure": {
-    "<configuration>": "ec9cb924093aa28ef9298f02c7849dac3a5f37eecf6fca8e8fe862d19d43394a",
-    "<toolkit>": "7fa035ead507892a9f3ad1b451d36fd4fef28537+clean",
+    "<configuration>": "7eba2f1c5f2f3ae18433e279fdbe5250cd1a7afada6caeb7aad346900f807c2e",
+    "<toolkit>": "b929c435bdf933f9eee20d7587e1b3bf1238e27b+clean",
     "components/jlcpcb.json": "8048d36133b03ed2275e6b47446e4b93b7f493b5e4c221310cc4f1dd94a5e98c",
     "components/parameters.json": "54deccee4e33dee73ee36a8c307e6eb6eca355e5205154935f213a497b57db15",
     "evidence/index.json": "3565f98e06ddfdbf193c5482d84d015dd7d64a17e7d3c8efc1626bdc5a57d457",
@@ -34,7 +34,7 @@
     "kicad_cli": "kicad-cli"
   },
   "toolkit": {
-    "commit": "7fa035ead507892a9f3ad1b451d36fd4fef28537",
+    "commit": "b929c435bdf933f9eee20d7587e1b3bf1238e27b",
     "working_tree_dirty": false,
     "detail": "git HEAD of the toolkit checkout that executed this validation"
   },
@@ -62,8 +62,8 @@
     "gerbers/status_beacon-NPTH.drl": "225c3ceffcd82447197fd9343ca16e9e1eb2903ba226565e2f9d2db9640a2658",
     "gerbers/status_beacon-PTH.drl": "780f4723a0a5d19144afe53163cc482d8673d5b2ec064fb0955e0cd56ca7814d",
     "gerbers/status_beacon-job.gbrjob": "31e31e427f1b5e31f14140dd456d0275579cfa3666c553972cbbf05121f7ff90",
-    "reports/drc.json": "b2ea9d4d0a25076d1e2dedeaaa7f88192e954097d21b251c4223c1b7bb6eb2b6",
-    "reports/erc.json": "2f435676534b7c8a0100afe3fa201ee66d63b10a938d9b403dd200a59d66b432",
+    "reports/drc.json": "c41e22281c5b5ca017d512a7e8dd7b993fbe5fe36dbdd1225f80dff0892fb69b",
+    "reports/erc.json": "cd105d7846bd1e9a2144e83759104d14020127c95c9ca4d51815dc1bff1251b6",
     "status_beacon-fabrication.zip": "61eae43046e3c697ae8ee3e089a2cd1b3ea71c9ddbad89da80c0aee50a4e8f4d"
   },
   "excluded_layers": []
