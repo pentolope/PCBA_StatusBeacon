@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_utc": "2026-09-05T07:30:10.552991+00:00",
-  "source_closure_sha256": "a9346996730963b628dd672256b3c3f1d6619ff25045beedc8c9d8917913f9de",
+  "generated_utc": "2026-09-05T08:43:12.975901+00:00",
+  "source_closure_sha256": "ce7c50ed6c3e29e906badeecdb966bf6776bba68088a813e0469891b3c6a3eb8",
   "manifest": {
     "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/board/manifest.json",
     "sha256": "468f125f765ea501e984c3a301a18ea8055eac8ad16c94e84a9dfa87d498cf2b",
@@ -13,7 +13,7 @@
     "kicad_cli": "/usr/bin/kicad-cli",
     "validation_implementation": {
       "toolkit_root": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/tooling/PCBA_AutoDesignAndTest",
-      "commit": "5918e5d0225533a2069502017f70b39f6fed6b2e",
+      "commit": "0c7274190de891f20cd9a73b6cc9548f3fdb7642",
       "working_tree_dirty": false,
       "detail": "git HEAD of the toolkit checkout that executed this validation"
     },
@@ -173,8 +173,8 @@
         "fabrication_manifest": "fabrication.json",
         "artifacts_recorded": 16,
         "artifacts_present": 16,
-        "source_closure_sha256": "a9346996730963b628dd672256b3c3f1d6619ff25045beedc8c9d8917913f9de",
-        "recorded_source_closure_sha256": "a9346996730963b628dd672256b3c3f1d6619ff25045beedc8c9d8917913f9de"
+        "source_closure_sha256": "ce7c50ed6c3e29e906badeecdb966bf6776bba68088a813e0469891b3c6a3eb8",
+        "recorded_source_closure_sha256": "ce7c50ed6c3e29e906badeecdb966bf6776bba68088a813e0469891b3c6a3eb8"
       },
       "limits": {},
       "finding_count": 0,
@@ -183,7 +183,7 @@
         {
           "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/generated/release/fabrication.json",
           "name": "fabrication.json",
-          "sha256": "7b2dcf1d5cc60bbeda81326199cb6c3a406e120e7f22507d4ad2ad039de18fca"
+          "sha256": "b3839e9647c74d13d92e002e27d3ffd3effdcb392289e3ec621a07dc4204f817"
         }
       ]
     },
@@ -299,7 +299,7 @@
         "expired_permissions": 0
       },
       "limits": {},
-      "finding_count": 11,
+      "finding_count": 16,
       "findings": [
         {
           "classification": "permitted_unknown",
@@ -309,6 +309,8 @@
           "knowledge": "unknown",
           "permitted_by": {
             "id": "drive_meets_receiver_threshold",
+            "scope": "D*",
+            "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
             "accepted_by": "pentolope",
             "review_by": "2027-09-01"
           }
@@ -321,6 +323,8 @@
           "knowledge": "unknown",
           "permitted_by": {
             "id": "drive_meets_receiver_threshold",
+            "scope": "D*",
+            "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
             "accepted_by": "pentolope",
             "review_by": "2027-09-01"
           }
@@ -333,6 +337,8 @@
           "knowledge": "unknown",
           "permitted_by": {
             "id": "drive_meets_receiver_threshold",
+            "scope": "D*",
+            "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
             "accepted_by": "pentolope",
             "review_by": "2027-09-01"
           }
@@ -345,6 +351,8 @@
           "knowledge": "unknown",
           "permitted_by": {
             "id": "drive_meets_receiver_threshold",
+            "scope": "D*",
+            "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
             "accepted_by": "pentolope",
             "review_by": "2027-09-01"
           }
@@ -357,6 +365,8 @@
           "knowledge": "unknown",
           "permitted_by": {
             "id": "drive_meets_receiver_threshold",
+            "scope": "D*",
+            "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
             "accepted_by": "pentolope",
             "review_by": "2027-09-01"
           }
@@ -369,6 +379,8 @@
           "knowledge": "unknown",
           "permitted_by": {
             "id": "drive_meets_receiver_threshold",
+            "scope": "D*",
+            "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
             "accepted_by": "pentolope",
             "review_by": "2027-09-01"
           }
@@ -381,6 +393,8 @@
           "knowledge": "unknown",
           "permitted_by": {
             "id": "drive_meets_receiver_threshold",
+            "scope": "D*",
+            "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
             "accepted_by": "pentolope",
             "review_by": "2027-09-01"
           }
@@ -393,6 +407,8 @@
           "knowledge": "unknown",
           "permitted_by": {
             "id": "drive_meets_receiver_threshold",
+            "scope": "D*",
+            "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
             "accepted_by": "pentolope",
             "review_by": "2027-09-01"
           }
@@ -405,6 +421,8 @@
           "knowledge": "unknown",
           "permitted_by": {
             "id": "drive_meets_receiver_threshold",
+            "scope": "D*",
+            "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
             "accepted_by": "pentolope",
             "review_by": "2027-09-01"
           }
@@ -417,6 +435,8 @@
           "knowledge": "unknown",
           "permitted_by": {
             "id": "drive_meets_receiver_threshold",
+            "scope": "D*",
+            "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
             "accepted_by": "pentolope",
             "review_by": "2027-09-01"
           }
@@ -429,9 +449,46 @@
           "knowledge": "unknown",
           "permitted_by": {
             "id": "drive_meets_receiver_threshold",
+            "scope": "D*",
+            "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
             "accepted_by": "pentolope",
             "review_by": "2027-09-01"
           }
+        },
+        {
+          "classification": "approximate_labelled",
+          "id": "low_rail_dropout_extrapolation",
+          "identity": "+5V",
+          "requirement": "declared_dropout_bound_covers_the_typical_figure",
+          "knowledge": "approximate"
+        },
+        {
+          "classification": "approximate_labelled",
+          "id": "thermal_board_temperature",
+          "identity": "board@40C_ambient",
+          "requirement": "board_within_component_operating_range",
+          "knowledge": "approximate"
+        },
+        {
+          "classification": "approximate_labelled",
+          "id": "thermal_brightness_limit",
+          "identity": "firmware_limit_0.65",
+          "requirement": "firmware_limit_within_thermal_budget",
+          "knowledge": "approximate"
+        },
+        {
+          "classification": "approximate_labelled",
+          "id": "thermal_declared_ambient",
+          "identity": "ambient_40C",
+          "requirement": "estimate_supports_declared_ambient",
+          "knowledge": "approximate"
+        },
+        {
+          "classification": "approximate_labelled",
+          "id": "thermal_regulator_derated",
+          "identity": "U2@57C",
+          "requirement": "within_derated_dissipation",
+          "knowledge": "approximate"
         }
       ],
       "evidence": []
@@ -598,10 +655,10 @@
         "rules_sha256": "86dbe5cee6469f5c2a5fcaefb0964cb190d4f714345a825139e472f4f3f805a9",
         "constraint_manifest_sha256": "468f125f765ea501e984c3a301a18ea8055eac8ad16c94e84a9dfa87d498cf2b",
         "kicad_version": "10.0.5",
-        "generated_utc": "2026-09-05T07:30:04.186433+00:00",
+        "generated_utc": "2026-09-05T08:43:06.895154+00:00",
         "report_meta": {
           "schema": "https://schemas.kicad.org/drc.v1.json",
-          "date": "2026-09-05T01:30:04",
+          "date": "2026-09-05T02:43:06",
           "kicad_version": "10.0.5",
           "source": "status_beacon.kicad_pcb",
           "ignored_checks": [],
@@ -635,9 +692,9 @@
       "findings": [],
       "evidence": [
         {
-          "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260905T073000Z-56a8287d/work/drc_authoritative.json",
+          "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260905T084303Z-fefa8350/work/drc_authoritative.json",
           "name": "drc_authoritative.json",
-          "sha256": "451c62cfba2694e8ba9c95d6feb38a86e9614c958a238bba2b1a4aa988651b16"
+          "sha256": "35ca3b2f9e7955cdb69557c6625e1ab82cb516ce929b88575ca4809f2ee815fa"
         }
       ]
     },
@@ -806,10 +863,10 @@
         "rules_sha256": "86dbe5cee6469f5c2a5fcaefb0964cb190d4f714345a825139e472f4f3f805a9",
         "constraint_manifest_sha256": "468f125f765ea501e984c3a301a18ea8055eac8ad16c94e84a9dfa87d498cf2b",
         "kicad_version": "10.0.5",
-        "generated_utc": "2026-09-05T07:30:06.046198+00:00",
+        "generated_utc": "2026-09-05T08:43:08.714188+00:00",
         "report_meta": {
           "schema": "https://schemas.kicad.org/erc.v1.json",
-          "date": "2026-09-05T01:30:05",
+          "date": "2026-09-05T02:43:08",
           "kicad_version": "10.0.5",
           "source": "status_beacon.kicad_sch",
           "ignored_checks": [],
@@ -843,9 +900,9 @@
       "findings": [],
       "evidence": [
         {
-          "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260905T073000Z-56a8287d/work/erc_authoritative.json",
+          "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260905T084303Z-fefa8350/work/erc_authoritative.json",
           "name": "erc_authoritative.json",
-          "sha256": "fbb44d85d95dbee2f85d1aa013546a33bfd30ad093bf4c6fa04e985cfa057a76"
+          "sha256": "7636d0c7ebde050cd79940d49a6ae86c53096d89b6b1789281690ae17250a73b"
         }
       ]
     },
@@ -1109,7 +1166,7 @@
       "gate": "PROV.DERIVED_DOCUMENTS",
       "title": "Derived documents regenerate byte-identical from their generators",
       "status": "PASS",
-      "reason": "1 derived document(s) regenerate byte-identical from their declared generators",
+      "reason": "1 derived document(s) regenerate byte-identical from their declared generators, each run against a staged tree with its own target hidden",
       "measurements": {
         "documents": 1
       },
@@ -1210,7 +1267,7 @@
       "reason": "all 2 committed report(s) bind the canonical digest of all 29 source inputs, and every one still matches",
       "measurements": {
         "source_closure_files": 29,
-        "source_closure_sha256": "a9346996730963b628dd672256b3c3f1d6619ff25045beedc8c9d8917913f9de",
+        "source_closure_sha256": "ce7c50ed6c3e29e906badeecdb966bf6776bba68088a813e0469891b3c6a3eb8",
         "source_sha256": {
           "pcb": "d2b2fb1fea76bdf5",
           "schematic": "8b49a41176642a0d"
@@ -1411,7 +1468,7 @@
       "status": "PASS",
       "reason": "2 shipped copper layers match a fresh export by geometric symmetric difference (limit 0.05 mm2)",
       "measurements": {
-        "fresh_export_command": "pcb export gerbers --output /home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260905T073000Z-56a8287d/work/fresh_gerbers --layers F.Cu,B.Cu,F.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts --no-protel-ext --use-drill-file-origin --subtract-soldermask /home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260905T073000Z-56a8287d/work/design/status_beacon.kicad_pcb",
+        "fresh_export_command": "pcb export gerbers --output /home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260905T084303Z-fefa8350/work/fresh_gerbers --layers F.Cu,B.Cu,F.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts --no-protel-ext --use-drill-file-origin --subtract-soldermask /home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260905T084303Z-fefa8350/work/design/status_beacon.kicad_pcb",
         "fresh_export_exit": 0,
         "shipped_copper_layers": [
           "copper,l1,top",
@@ -2068,6 +2125,7 @@
         "blocking": false
       }
     ],
+    "advisory_demotions": [],
     "meaning": "what this verdict authorizes; see pcbqa/policy.py for the derivation"
   }
 }
