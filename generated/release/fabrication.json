@@ -3,12 +3,12 @@
   "board_id": "status_beacon",
   "constraint_version": "schematic-stage-2026-09-01",
   "release_profile": "jlcpcb-2layer-assembled",
-  "generated_utc": "2026-09-05T07:06:46.213124+00:00",
-  "source_closure_sha256": "c311e8d2b47366d937d73db4f18bf2bcb417b8c710baa53c75d34400399b6970",
+  "generated_utc": "2026-09-05T07:30:00.315627+00:00",
+  "source_closure_sha256": "a9346996730963b628dd672256b3c3f1d6619ff25045beedc8c9d8917913f9de",
   "source_closure_files": 29,
   "source_closure": {
     "<configuration>": "bed6f0fde5a9250a4a67e5deba90ccb2afd958bf8456c39253498ad1cc117722",
-    "<toolkit>": "ce99472a7b68454b810f8130441590af2a3bc801+dirty",
+    "<toolkit>": "5918e5d0225533a2069502017f70b39f6fed6b2e+clean",
     "components/device_parameters.json": "586246968cfaa8eb871b40f424a287aa9a802bbad346ce1804cd2326494d7e5b",
     "components/jlcpcb.json": "8048d36133b03ed2275e6b47446e4b93b7f493b5e4c221310cc4f1dd94a5e98c",
     "components/parameters.json": "54deccee4e33dee73ee36a8c307e6eb6eca355e5205154935f213a497b57db15",
@@ -42,8 +42,8 @@
     "kicad_cli": "kicad-cli"
   },
   "toolkit": {
-    "commit": "ce99472a7b68454b810f8130441590af2a3bc801",
-    "working_tree_dirty": true,
+    "commit": "5918e5d0225533a2069502017f70b39f6fed6b2e",
+    "working_tree_dirty": false,
     "detail": "git HEAD of the toolkit checkout that executed this validation"
   },
   "commands": [
@@ -70,8 +70,8 @@
     "gerbers/status_beacon-NPTH.drl": "225c3ceffcd82447197fd9343ca16e9e1eb2903ba226565e2f9d2db9640a2658",
     "gerbers/status_beacon-PTH.drl": "780f4723a0a5d19144afe53163cc482d8673d5b2ec064fb0955e0cd56ca7814d",
     "gerbers/status_beacon-job.gbrjob": "31e31e427f1b5e31f14140dd456d0275579cfa3666c553972cbbf05121f7ff90",
-    "reports/drc.json": "d212969a191cb3207b4e67a8840d962675daeaa8e8c27abbbbcfd7c7d9e0dbb0",
-    "reports/erc.json": "8d41e796e8c4eeb893175aaaabbc7416542d34910bf4c27978668e8bd1356abf",
+    "reports/drc.json": "ad6ef0d47dad3e7827de18f293709553e6cf938d04f873aca69117122bcce93b",
+    "reports/erc.json": "cce811910a92063b8dd6d5591e484e17f784590eb2cc0f19792fe2eda2b85395",
     "status_beacon-fabrication.zip": "61eae43046e3c697ae8ee3e089a2cd1b3ea71c9ddbad89da80c0aee50a4e8f4d"
   },
   "excluded_layers": []
