@@ -3,12 +3,12 @@
   "board_id": "status_beacon",
   "constraint_version": "schematic-stage-2026-09-01",
   "release_profile": "jlcpcb-2layer-assembled",
-  "generated_utc": "2026-09-05T09:36:58.007056+00:00",
-  "source_closure_sha256": "78c421fdaed927d67a0c58504935a170d8ae6123e2b0dd52a5b7746d79c6a5e8",
-  "source_closure_files": 29,
+  "generated_utc": "2026-09-05T10:43:30.986136+00:00",
+  "source_closure_sha256": "4c76f5083279965481ac5f8baf06592e5f3448d90ccf53fb699d842cc4cca415",
+  "source_closure_files": 30,
   "source_closure": {
-    "<configuration>": "6cef3a874a45836ede2e6af86814b8285e14c501d69f459ad88b8d4765d18875",
-    "<toolkit>": "49c830212ae5bb44e7f161de7ba78103841de55c+clean",
+    "<configuration>": "1f5e14d925ffce251b548965a5ead7b12302a1675f624136fb8ce7796aab000f",
+    "<toolkit>": "049c12af9efb8dbb7e8e42d650fc87c1ce448329+clean",
     "components/device_parameters.json": "586246968cfaa8eb871b40f424a287aa9a802bbad346ce1804cd2326494d7e5b",
     "components/jlcpcb.json": "8048d36133b03ed2275e6b47446e4b93b7f493b5e4c221310cc4f1dd94a5e98c",
     "components/parameters.json": "54deccee4e33dee73ee36a8c307e6eb6eca355e5205154935f213a497b57db15",
@@ -24,6 +24,7 @@
     "fab/requirements.json": "7ab5540addf347bbc27fd3d8b7097bec169dc1e53619c67169de5072efe96ec9",
     "fab/selection.json": "a99d1115875c2038dfba11cab302043231a0470a2d834d5b59e8e79e45a3128b",
     "fp-lib-table": "3ff17061746b99f674857d4dc16b3262f32a2625c423b8daeb0852c532732e60",
+    "generated/requirements.json": "e733e73c118bfd2b42e0c0f8b8b88a676313f40761e07c76430684eb2c8479f6",
     "library/StatusBeacon.kicad_sym": "830fb9ffe821600ce2c9dbdcc77f4037019aa978aea85f1b02d39ecce6a9fa7e",
     "library/StatusBeacon.pretty/TI_X1SON-2_1.0x0.6mm_P0.65mm.kicad_mod": "8e69664c1230a2558ff8ca9937584e16102eede94d4a95b44316ff3e662f29c0",
     "library/StatusBeacon.pretty/USB_C_Receptacle_HRO_TYPE-C-31-M-12_LCSC.kicad_mod": "4b208b97d86a33a95d3c054695f96872ce0eac0783969b79b83c58850db96a11",
@@ -42,7 +43,7 @@
     "kicad_cli": "kicad-cli"
   },
   "toolkit": {
-    "commit": "49c830212ae5bb44e7f161de7ba78103841de55c",
+    "commit": "049c12af9efb8dbb7e8e42d650fc87c1ce448329",
     "working_tree_dirty": false,
     "detail": "git HEAD of the toolkit checkout that executed this validation"
   },
@@ -70,8 +71,8 @@
     "gerbers/status_beacon-NPTH.drl": "225c3ceffcd82447197fd9343ca16e9e1eb2903ba226565e2f9d2db9640a2658",
     "gerbers/status_beacon-PTH.drl": "780f4723a0a5d19144afe53163cc482d8673d5b2ec064fb0955e0cd56ca7814d",
     "gerbers/status_beacon-job.gbrjob": "31e31e427f1b5e31f14140dd456d0275579cfa3666c553972cbbf05121f7ff90",
-    "reports/drc.json": "79d770662813ec41ef7a942b9ed06fbdc682f0de02bdaa7a77ba1744751f8913",
-    "reports/erc.json": "33cc0e8e9ea9132300d4403deada1dcee3052c39243e393ceb338153e2b86132",
+    "reports/drc.json": "e00070a94c9aa0a1729777a7f2581dfcf4a0846d8e791d5fad9e2a0b64ec18b4",
+    "reports/erc.json": "76a7cace4afd145d78be2ac708735f0d9bfa6a5cce297df03ce58fb995832bf8",
     "status_beacon-fabrication.zip": "61eae43046e3c697ae8ee3e089a2cd1b3ea71c9ddbad89da80c0aee50a4e8f4d"
   },
   "excluded_layers": []

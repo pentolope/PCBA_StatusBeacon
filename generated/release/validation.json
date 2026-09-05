@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generated_utc": "2026-09-05T09:37:07.882061+00:00",
-  "source_closure_sha256": "78c421fdaed927d67a0c58504935a170d8ae6123e2b0dd52a5b7746d79c6a5e8",
+  "generated_utc": "2026-09-05T10:43:40.985933+00:00",
+  "source_closure_sha256": "4c76f5083279965481ac5f8baf06592e5f3448d90ccf53fb699d842cc4cca415",
   "manifest": {
     "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/board/manifest.json",
-    "sha256": "b82db5ec1819f993fceb914380638b0c707f4469aa03905b2f8c341eb4d16983",
+    "sha256": "16960e6c032953c7e66468abfc9e385ced443383ed53e7da73e98bd056e61c8d",
     "board_id": "status_beacon",
     "constraint_version": "schematic-stage-2026-09-01"
   },
@@ -13,7 +13,7 @@
     "kicad_cli": "/usr/bin/kicad-cli",
     "validation_implementation": {
       "toolkit_root": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/tooling/PCBA_AutoDesignAndTest",
-      "commit": "49c830212ae5bb44e7f161de7ba78103841de55c",
+      "commit": "049c12af9efb8dbb7e8e42d650fc87c1ce448329",
       "working_tree_dirty": false,
       "detail": "git HEAD of the toolkit checkout that executed this validation"
     },
@@ -151,7 +151,7 @@
           "units": "file function",
           "kind": "policy",
           "manifest_key": "archive.allow",
-          "provenance": "manifest.json#archive.allow@b82db5ec1819"
+          "provenance": "manifest.json#archive.allow@16960e6c0329"
         }
       },
       "finding_count": 0,
@@ -173,8 +173,8 @@
         "fabrication_manifest": "fabrication.json",
         "artifacts_recorded": 16,
         "artifacts_present": 16,
-        "source_closure_sha256": "78c421fdaed927d67a0c58504935a170d8ae6123e2b0dd52a5b7746d79c6a5e8",
-        "recorded_source_closure_sha256": "78c421fdaed927d67a0c58504935a170d8ae6123e2b0dd52a5b7746d79c6a5e8"
+        "source_closure_sha256": "4c76f5083279965481ac5f8baf06592e5f3448d90ccf53fb699d842cc4cca415",
+        "recorded_source_closure_sha256": "4c76f5083279965481ac5f8baf06592e5f3448d90ccf53fb699d842cc4cca415"
       },
       "limits": {},
       "finding_count": 0,
@@ -183,7 +183,7 @@
         {
           "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/generated/release/fabrication.json",
           "name": "fabrication.json",
-          "sha256": "b474f9c691aa82ab04c4b840e27ee52eb8aa119cead07f107ff8228fc4fd8bb2"
+          "sha256": "c0834f0bd7a6ad410be85efedd92e2206f20f6ad1813c0bb5fae590e80770678"
         }
       ]
     },
@@ -231,7 +231,7 @@
           "units": "field name",
           "kind": "policy",
           "manifest_key": "assembly.required_part_fields",
-          "provenance": "manifest.json#assembly.required_part_fields@b82db5ec1819"
+          "provenance": "manifest.json#assembly.required_part_fields@16960e6c0329"
         },
         "assembly.compared_part_fields": {
           "id": "assembly.compared_part_fields",
@@ -243,7 +243,7 @@
           "units": "field name",
           "kind": "policy",
           "manifest_key": "assembly.compared_part_fields",
-          "provenance": "manifest.json#assembly.compared_part_fields@b82db5ec1819"
+          "provenance": "manifest.json#assembly.compared_part_fields@16960e6c0329"
         }
       },
       "finding_count": 0,
@@ -323,6 +323,152 @@
             "knowledge": "approximate"
           }
         ],
+        "permitted_unknown_items": [
+          {
+            "id": "logic_high_margin",
+            "identity": "D1.2->D2.4",
+            "requirement": "drive_meets_receiver_threshold",
+            "knowledge": "unknown",
+            "permitted_by": {
+              "id": "drive_meets_receiver_threshold",
+              "scope": "D*",
+              "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+              "accepted_by": "pentolope",
+              "review_by": "2027-09-01"
+            }
+          },
+          {
+            "id": "logic_high_margin",
+            "identity": "D10.2->D11.4",
+            "requirement": "drive_meets_receiver_threshold",
+            "knowledge": "unknown",
+            "permitted_by": {
+              "id": "drive_meets_receiver_threshold",
+              "scope": "D*",
+              "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+              "accepted_by": "pentolope",
+              "review_by": "2027-09-01"
+            }
+          },
+          {
+            "id": "logic_high_margin",
+            "identity": "D11.2->D12.4",
+            "requirement": "drive_meets_receiver_threshold",
+            "knowledge": "unknown",
+            "permitted_by": {
+              "id": "drive_meets_receiver_threshold",
+              "scope": "D*",
+              "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+              "accepted_by": "pentolope",
+              "review_by": "2027-09-01"
+            }
+          },
+          {
+            "id": "logic_high_margin",
+            "identity": "D2.2->D3.4",
+            "requirement": "drive_meets_receiver_threshold",
+            "knowledge": "unknown",
+            "permitted_by": {
+              "id": "drive_meets_receiver_threshold",
+              "scope": "D*",
+              "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+              "accepted_by": "pentolope",
+              "review_by": "2027-09-01"
+            }
+          },
+          {
+            "id": "logic_high_margin",
+            "identity": "D3.2->D4.4",
+            "requirement": "drive_meets_receiver_threshold",
+            "knowledge": "unknown",
+            "permitted_by": {
+              "id": "drive_meets_receiver_threshold",
+              "scope": "D*",
+              "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+              "accepted_by": "pentolope",
+              "review_by": "2027-09-01"
+            }
+          },
+          {
+            "id": "logic_high_margin",
+            "identity": "D4.2->D5.4",
+            "requirement": "drive_meets_receiver_threshold",
+            "knowledge": "unknown",
+            "permitted_by": {
+              "id": "drive_meets_receiver_threshold",
+              "scope": "D*",
+              "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+              "accepted_by": "pentolope",
+              "review_by": "2027-09-01"
+            }
+          },
+          {
+            "id": "logic_high_margin",
+            "identity": "D5.2->D6.4",
+            "requirement": "drive_meets_receiver_threshold",
+            "knowledge": "unknown",
+            "permitted_by": {
+              "id": "drive_meets_receiver_threshold",
+              "scope": "D*",
+              "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+              "accepted_by": "pentolope",
+              "review_by": "2027-09-01"
+            }
+          },
+          {
+            "id": "logic_high_margin",
+            "identity": "D6.2->D7.4",
+            "requirement": "drive_meets_receiver_threshold",
+            "knowledge": "unknown",
+            "permitted_by": {
+              "id": "drive_meets_receiver_threshold",
+              "scope": "D*",
+              "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+              "accepted_by": "pentolope",
+              "review_by": "2027-09-01"
+            }
+          },
+          {
+            "id": "logic_high_margin",
+            "identity": "D7.2->D8.4",
+            "requirement": "drive_meets_receiver_threshold",
+            "knowledge": "unknown",
+            "permitted_by": {
+              "id": "drive_meets_receiver_threshold",
+              "scope": "D*",
+              "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+              "accepted_by": "pentolope",
+              "review_by": "2027-09-01"
+            }
+          },
+          {
+            "id": "logic_high_margin",
+            "identity": "D8.2->D9.4",
+            "requirement": "drive_meets_receiver_threshold",
+            "knowledge": "unknown",
+            "permitted_by": {
+              "id": "drive_meets_receiver_threshold",
+              "scope": "D*",
+              "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+              "accepted_by": "pentolope",
+              "review_by": "2027-09-01"
+            }
+          },
+          {
+            "id": "logic_high_margin",
+            "identity": "D9.2->D10.4",
+            "requirement": "drive_meets_receiver_threshold",
+            "knowledge": "unknown",
+            "permitted_by": {
+              "id": "drive_meets_receiver_threshold",
+              "scope": "D*",
+              "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+              "accepted_by": "pentolope",
+              "review_by": "2027-09-01"
+            }
+          }
+        ],
+        "permitted_approximate_items": [],
         "permitted_unknown": 11,
         "permitted_approximate": 0,
         "approximate_labelled": 5,
@@ -616,7 +762,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "artifacts.position_tolerance_mm",
-          "provenance": "manifest.json#artifacts.position_tolerance_mm@b82db5ec1819"
+          "provenance": "manifest.json#artifacts.position_tolerance_mm@16960e6c0329"
         },
         "geometry.rotation_match_deg": {
           "id": "geometry.rotation_match_deg",
@@ -624,7 +770,7 @@
           "units": "deg",
           "kind": "tolerance",
           "manifest_key": "geometry_profile.tolerances.rotation_match_deg.value",
-          "provenance": "manifest.json#geometry_profile.tolerances.rotation_match_deg.value@b82db5ec1819"
+          "provenance": "manifest.json#geometry_profile.tolerances.rotation_match_deg.value@16960e6c0329"
         },
         "artifacts.cpl_origin": {
           "id": "artifacts.cpl_origin",
@@ -638,7 +784,7 @@
           "units": "frame",
           "kind": "policy",
           "manifest_key": "artifacts.cpl_origin",
-          "provenance": "manifest.json#artifacts.cpl_origin@b82db5ec1819"
+          "provenance": "manifest.json#artifacts.cpl_origin@16960e6c0329"
         }
       },
       "finding_count": 0,
@@ -685,12 +831,12 @@
         "source_sha256": "d2b2fb1fea76bdf557194ebe119272c63e11b4987a36d7d6cfebffc4d298d412",
         "checked_copy_sha256": "7c7eeb3487d425c0ffa915da13589fde48791b0defba4e19ceace5581b5882ac",
         "rules_sha256": "86dbe5cee6469f5c2a5fcaefb0964cb190d4f714345a825139e472f4f3f805a9",
-        "constraint_manifest_sha256": "b82db5ec1819f993fceb914380638b0c707f4469aa03905b2f8c341eb4d16983",
+        "constraint_manifest_sha256": "16960e6c032953c7e66468abfc9e385ced443383ed53e7da73e98bd056e61c8d",
         "kicad_version": "10.0.5",
-        "generated_utc": "2026-09-05T09:37:01.822596+00:00",
+        "generated_utc": "2026-09-05T10:43:34.825311+00:00",
         "report_meta": {
           "schema": "https://schemas.kicad.org/drc.v1.json",
-          "date": "2026-09-05T03:37:01",
+          "date": "2026-09-05T04:43:34",
           "kicad_version": "10.0.5",
           "source": "status_beacon.kicad_pcb",
           "ignored_checks": [],
@@ -717,16 +863,16 @@
           "units": "mm",
           "kind": "tolerance",
           "manifest_key": "geometry_profile.tolerances.waiver_location_mm.value",
-          "provenance": "manifest.json#geometry_profile.tolerances.waiver_location_mm.value@b82db5ec1819"
+          "provenance": "manifest.json#geometry_profile.tolerances.waiver_location_mm.value@16960e6c0329"
         }
       },
       "finding_count": 0,
       "findings": [],
       "evidence": [
         {
-          "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260905T093658Z-f34fcaf5/work/drc_authoritative.json",
+          "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260905T104331Z-e8631c43/work/drc_authoritative.json",
           "name": "drc_authoritative.json",
-          "sha256": "07cf62617ca546fb6f69a36c45728564763465c3c33e656d9e6697fdd5b60ad4"
+          "sha256": "bd657fa323c2f226d455364b4f163c6880fde602a2c3a77f4a19dddf2825537e"
         }
       ]
     },
@@ -746,7 +892,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.rules.min_clearance",
-          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_clearance@b82db5ec1819"
+          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_clearance@16960e6c0329"
         },
         "drc.floor.min_copper_edge_clearance": {
           "id": "drc.floor.min_copper_edge_clearance",
@@ -754,7 +900,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.rules.min_copper_edge_clearance",
-          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_copper_edge_clearance@b82db5ec1819"
+          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_copper_edge_clearance@16960e6c0329"
         },
         "drc.floor.min_hole_clearance": {
           "id": "drc.floor.min_hole_clearance",
@@ -762,7 +908,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.rules.min_hole_clearance",
-          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_hole_clearance@b82db5ec1819"
+          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_hole_clearance@16960e6c0329"
         },
         "drc.floor.min_hole_to_hole": {
           "id": "drc.floor.min_hole_to_hole",
@@ -770,7 +916,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.rules.min_hole_to_hole",
-          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_hole_to_hole@b82db5ec1819"
+          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_hole_to_hole@16960e6c0329"
         },
         "drc.floor.min_through_hole_diameter": {
           "id": "drc.floor.min_through_hole_diameter",
@@ -778,7 +924,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.rules.min_through_hole_diameter",
-          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_through_hole_diameter@b82db5ec1819"
+          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_through_hole_diameter@16960e6c0329"
         },
         "drc.floor.min_track_width": {
           "id": "drc.floor.min_track_width",
@@ -786,7 +932,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.rules.min_track_width",
-          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_track_width@b82db5ec1819"
+          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_track_width@16960e6c0329"
         },
         "drc.floor.min_via_annular_width": {
           "id": "drc.floor.min_via_annular_width",
@@ -794,7 +940,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.rules.min_via_annular_width",
-          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_via_annular_width@b82db5ec1819"
+          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_via_annular_width@16960e6c0329"
         },
         "drc.floor.min_via_diameter": {
           "id": "drc.floor.min_via_diameter",
@@ -802,7 +948,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.rules.min_via_diameter",
-          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_via_diameter@b82db5ec1819"
+          "provenance": "manifest.json#checks.drc.constraint_floor.rules.min_via_diameter@16960e6c0329"
         },
         "drc.floor.Default.clearance": {
           "id": "drc.floor.Default.clearance",
@@ -810,7 +956,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.net_classes.Default.clearance",
-          "provenance": "manifest.json#checks.drc.constraint_floor.net_classes.Default.clearance@b82db5ec1819"
+          "provenance": "manifest.json#checks.drc.constraint_floor.net_classes.Default.clearance@16960e6c0329"
         },
         "drc.floor.Default.track_width": {
           "id": "drc.floor.Default.track_width",
@@ -818,7 +964,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.net_classes.Default.track_width",
-          "provenance": "manifest.json#checks.drc.constraint_floor.net_classes.Default.track_width@b82db5ec1819"
+          "provenance": "manifest.json#checks.drc.constraint_floor.net_classes.Default.track_width@16960e6c0329"
         },
         "drc.floor.Default.via_diameter": {
           "id": "drc.floor.Default.via_diameter",
@@ -826,7 +972,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.net_classes.Default.via_diameter",
-          "provenance": "manifest.json#checks.drc.constraint_floor.net_classes.Default.via_diameter@b82db5ec1819"
+          "provenance": "manifest.json#checks.drc.constraint_floor.net_classes.Default.via_diameter@16960e6c0329"
         },
         "drc.floor.Default.via_drill": {
           "id": "drc.floor.Default.via_drill",
@@ -834,7 +980,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "checks.drc.constraint_floor.net_classes.Default.via_drill",
-          "provenance": "manifest.json#checks.drc.constraint_floor.net_classes.Default.via_drill@b82db5ec1819"
+          "provenance": "manifest.json#checks.drc.constraint_floor.net_classes.Default.via_drill@16960e6c0329"
         }
       },
       "finding_count": 0,
@@ -861,7 +1007,7 @@
           "units": "severity",
           "kind": "policy",
           "manifest_key": "checks.drc.forbidden_severities",
-          "provenance": "manifest.json#checks.drc.forbidden_severities@b82db5ec1819"
+          "provenance": "manifest.json#checks.drc.forbidden_severities@16960e6c0329"
         }
       },
       "finding_count": 0,
@@ -893,12 +1039,12 @@
         "source_sha256": "8b49a41176642a0d166848f29c57efdb2b76f80da45d3edb8b71594a43ebdc71",
         "checked_copy_sha256": "8b49a41176642a0d166848f29c57efdb2b76f80da45d3edb8b71594a43ebdc71",
         "rules_sha256": "86dbe5cee6469f5c2a5fcaefb0964cb190d4f714345a825139e472f4f3f805a9",
-        "constraint_manifest_sha256": "b82db5ec1819f993fceb914380638b0c707f4469aa03905b2f8c341eb4d16983",
+        "constraint_manifest_sha256": "16960e6c032953c7e66468abfc9e385ced443383ed53e7da73e98bd056e61c8d",
         "kicad_version": "10.0.5",
-        "generated_utc": "2026-09-05T09:37:03.649819+00:00",
+        "generated_utc": "2026-09-05T10:43:36.641635+00:00",
         "report_meta": {
           "schema": "https://schemas.kicad.org/erc.v1.json",
-          "date": "2026-09-05T03:37:03",
+          "date": "2026-09-05T04:43:36",
           "kicad_version": "10.0.5",
           "source": "status_beacon.kicad_sch",
           "ignored_checks": [],
@@ -925,16 +1071,16 @@
           "units": "mm",
           "kind": "tolerance",
           "manifest_key": "geometry_profile.tolerances.waiver_location_mm.value",
-          "provenance": "manifest.json#geometry_profile.tolerances.waiver_location_mm.value@b82db5ec1819"
+          "provenance": "manifest.json#geometry_profile.tolerances.waiver_location_mm.value@16960e6c0329"
         }
       },
       "finding_count": 0,
       "findings": [],
       "evidence": [
         {
-          "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260905T093658Z-f34fcaf5/work/erc_authoritative.json",
+          "path": "/home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260905T104331Z-e8631c43/work/erc_authoritative.json",
           "name": "erc_authoritative.json",
-          "sha256": "152f5d4d928e9e25921f252f643ffbf2c61d1ebe15519a7c9267c53ee839bdbc"
+          "sha256": "70943ef89b4d76bac9bb5b21bc64e73c934d01dc50f4f647b36249dc428dbc4e"
         }
       ]
     },
@@ -1135,7 +1281,7 @@
           "units": "mm",
           "kind": "tolerance",
           "manifest_key": "geometry_profile.tolerances.polygon_chord_error_mm.value",
-          "provenance": "manifest.json#geometry_profile.tolerances.polygon_chord_error_mm.value@b82db5ec1819"
+          "provenance": "manifest.json#geometry_profile.tolerances.polygon_chord_error_mm.value@16960e6c0329"
         },
         "net_topology.LED_CHAIN.max_vias_per_net": {
           "id": "net_topology.LED_CHAIN.max_vias_per_net",
@@ -1143,7 +1289,7 @@
           "units": "vias",
           "kind": "policy",
           "manifest_key": "net_topology.rules.0.max_vias_per_net",
-          "provenance": "manifest.json#net_topology.rules.0.max_vias_per_net@b82db5ec1819"
+          "provenance": "manifest.json#net_topology.rules.0.max_vias_per_net@16960e6c0329"
         }
       },
       "finding_count": 0,
@@ -1187,7 +1333,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "placement.edge_clearance.min_mm",
-          "provenance": "manifest.json#placement.edge_clearance.min_mm@b82db5ec1819"
+          "provenance": "manifest.json#placement.edge_clearance.min_mm@16960e6c0329"
         }
       },
       "finding_count": 0,
@@ -1296,10 +1442,10 @@
       "gate": "PROV.REPORT_FRESHNESS",
       "title": "Committed reports match the current sources",
       "status": "PASS",
-      "reason": "all 2 committed report(s) bind the canonical digest of all 29 source inputs, and every one still matches",
+      "reason": "all 2 committed report(s) bind the canonical digest of all 30 source inputs, and every one still matches",
       "measurements": {
-        "source_closure_files": 29,
-        "source_closure_sha256": "78c421fdaed927d67a0c58504935a170d8ae6123e2b0dd52a5b7746d79c6a5e8",
+        "source_closure_files": 30,
+        "source_closure_sha256": "4c76f5083279965481ac5f8baf06592e5f3448d90ccf53fb699d842cc4cca415",
         "source_sha256": {
           "pcb": "d2b2fb1fea76bdf5",
           "schematic": "8b49a41176642a0d"
@@ -1322,12 +1468,13 @@
             "fab/*.json",
             "components/*.json",
             "evidence/index.json",
-            "evidence/datasheets/*"
+            "evidence/datasheets/*",
+            "generated/requirements.json"
           ],
           "units": "path glob",
           "kind": "policy",
           "manifest_key": "reports.source_closure",
-          "provenance": "manifest.json#reports.source_closure@b82db5ec1819"
+          "provenance": "manifest.json#reports.source_closure@16960e6c0329"
         }
       },
       "finding_count": 0,
@@ -1428,7 +1575,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "routing.min_segment_mm",
-          "provenance": "manifest.json#routing.min_segment_mm@b82db5ec1819"
+          "provenance": "manifest.json#routing.min_segment_mm@16960e6c0329"
         }
       },
       "finding_count": 0,
@@ -1487,7 +1634,7 @@
           "units": "stage name",
           "kind": "policy",
           "manifest_key": "simulation.required_stages",
-          "provenance": "manifest.json#simulation.required_stages@b82db5ec1819"
+          "provenance": "manifest.json#simulation.required_stages@16960e6c0329"
         }
       },
       "finding_count": 0,
@@ -1500,7 +1647,7 @@
       "status": "PASS",
       "reason": "2 shipped copper layers match a fresh export by geometric symmetric difference (limit 0.05 mm2)",
       "measurements": {
-        "fresh_export_command": "pcb export gerbers --output /home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260905T093658Z-f34fcaf5/work/fresh_gerbers --layers F.Cu,B.Cu,F.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts --no-protel-ext --use-drill-file-origin --subtract-soldermask /home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260905T093658Z-f34fcaf5/work/design/status_beacon.kicad_pcb",
+        "fresh_export_command": "pcb export gerbers --output /home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260905T104331Z-e8631c43/work/fresh_gerbers --layers F.Cu,B.Cu,F.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts --no-protel-ext --use-drill-file-origin --subtract-soldermask /home/pentolope/github/PCBA_AutoDesignAndTest_Bench/boards/01_PCBA_StatusBeacon/out/status_beacon/20260905T104331Z-e8631c43/work/design/status_beacon.kicad_pcb",
         "fresh_export_exit": 0,
         "shipped_copper_layers": [
           "copper,l1,top",
@@ -1538,7 +1685,7 @@
           "units": "cli option",
           "kind": "policy",
           "manifest_key": "artifacts.gerber_export_flags",
-          "provenance": "manifest.json#artifacts.gerber_export_flags@b82db5ec1819"
+          "provenance": "manifest.json#artifacts.gerber_export_flags@16960e6c0329"
         },
         "geometry.layer_symmetric_difference_mm2": {
           "id": "geometry.layer_symmetric_difference_mm2",
@@ -1546,7 +1693,7 @@
           "units": "mm2",
           "kind": "tolerance",
           "manifest_key": "geometry_profile.tolerances.layer_symmetric_difference_mm2.value",
-          "provenance": "manifest.json#geometry_profile.tolerances.layer_symmetric_difference_mm2.value@b82db5ec1819"
+          "provenance": "manifest.json#geometry_profile.tolerances.layer_symmetric_difference_mm2.value@16960e6c0329"
         }
       },
       "finding_count": 0,
@@ -1595,7 +1742,7 @@
           "units": "layer roles",
           "kind": "policy",
           "manifest_key": "stackup.expected",
-          "provenance": "manifest.json#stackup.expected@b82db5ec1819"
+          "provenance": "manifest.json#stackup.expected@16960e6c0329"
         }
       },
       "finding_count": 0,
@@ -1620,7 +1767,7 @@
           "units": "mm",
           "kind": "tolerance",
           "manifest_key": "geometry_profile.tolerances.contact_mm.value",
-          "provenance": "manifest.json#geometry_profile.tolerances.contact_mm.value@b82db5ec1819"
+          "provenance": "manifest.json#geometry_profile.tolerances.contact_mm.value@16960e6c0329"
         },
         "geometry.polygon_chord_error_mm": {
           "id": "geometry.polygon_chord_error_mm",
@@ -1628,7 +1775,7 @@
           "units": "mm",
           "kind": "tolerance",
           "manifest_key": "geometry_profile.tolerances.polygon_chord_error_mm.value",
-          "provenance": "manifest.json#geometry_profile.tolerances.polygon_chord_error_mm.value@b82db5ec1819"
+          "provenance": "manifest.json#geometry_profile.tolerances.polygon_chord_error_mm.value@16960e6c0329"
         }
       },
       "finding_count": 0,
@@ -1658,7 +1805,7 @@
           "units": "pad attribute",
           "kind": "policy",
           "manifest_key": "via_mask.pad_contact.populated_pad_attributes",
-          "provenance": "manifest.json#via_mask.pad_contact.populated_pad_attributes@b82db5ec1819"
+          "provenance": "manifest.json#via_mask.pad_contact.populated_pad_attributes@16960e6c0329"
         },
         "via_mask.mask_dam_rule": {
           "id": "via_mask.mask_dam_rule",
@@ -1666,7 +1813,7 @@
           "units": "policy",
           "kind": "policy",
           "manifest_key": "via_mask.mask_dam_rule",
-          "provenance": "manifest.json#via_mask.mask_dam_rule@b82db5ec1819"
+          "provenance": "manifest.json#via_mask.mask_dam_rule@16960e6c0329"
         }
       },
       "finding_count": 0,
@@ -1700,7 +1847,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "via_mask.design_target_mm",
-          "provenance": "manifest.json#via_mask.design_target_mm@b82db5ec1819"
+          "provenance": "manifest.json#via_mask.design_target_mm@16960e6c0329"
         },
         "geometry.polygon_chord_error_mm": {
           "id": "geometry.polygon_chord_error_mm",
@@ -1708,7 +1855,7 @@
           "units": "mm",
           "kind": "tolerance",
           "manifest_key": "geometry_profile.tolerances.polygon_chord_error_mm.value",
-          "provenance": "manifest.json#geometry_profile.tolerances.polygon_chord_error_mm.value@b82db5ec1819"
+          "provenance": "manifest.json#geometry_profile.tolerances.polygon_chord_error_mm.value@16960e6c0329"
         },
         "via_mask.metric": {
           "id": "via_mask.metric",
@@ -1716,7 +1863,7 @@
           "units": "field name",
           "kind": "policy",
           "manifest_key": "via_mask.metric",
-          "provenance": "manifest.json#via_mask.metric@b82db5ec1819"
+          "provenance": "manifest.json#via_mask.metric@16960e6c0329"
         }
       },
       "finding_count": 0,
@@ -1794,7 +1941,7 @@
           "units": "policy",
           "kind": "policy",
           "manifest_key": "timing.physical_stackup.require_complete",
-          "provenance": "manifest.json#timing.physical_stackup.require_complete@b82db5ec1819"
+          "provenance": "manifest.json#timing.physical_stackup.require_complete@16960e6c0329"
         }
       },
       "finding_count": 1,
@@ -1882,7 +2029,7 @@
           "units": "paths",
           "kind": "policy",
           "manifest_key": "timing.interfaces.led_data.expected_path_count",
-          "provenance": "manifest.json#timing.interfaces.led_data.expected_path_count@b82db5ec1819"
+          "provenance": "manifest.json#timing.interfaces.led_data.expected_path_count@16960e6c0329"
         },
         "timing.led_data.required_component_crossings": {
           "id": "timing.led_data.required_component_crossings",
@@ -1890,7 +2037,7 @@
           "units": "component crossings per path",
           "kind": "policy",
           "manifest_key": "timing.interfaces.led_data.required_component_crossings",
-          "provenance": "manifest.json#timing.interfaces.led_data.required_component_crossings@b82db5ec1819"
+          "provenance": "manifest.json#timing.interfaces.led_data.required_component_crossings@16960e6c0329"
         },
         "timing.led_data.max_unreferenced_mm": {
           "id": "timing.led_data.max_unreferenced_mm",
@@ -1898,7 +2045,7 @@
           "units": "mm",
           "kind": "policy",
           "manifest_key": "timing.interfaces.led_data.max_unreferenced_mm",
-          "provenance": "manifest.json#timing.interfaces.led_data.max_unreferenced_mm@b82db5ec1819"
+          "provenance": "manifest.json#timing.interfaces.led_data.max_unreferenced_mm@16960e6c0329"
         }
       },
       "finding_count": 0,
@@ -2097,7 +2244,7 @@
   "policy": {
     "state": "fabrication-ready",
     "reasons": [
-      "every declared check ran clean; the release still names 8 open item(s) to close outside this toolkit"
+      "every declared check ran clean; the release still names 19 open item(s) to close outside this toolkit"
     ],
     "domains": {
       "claims": {
@@ -2196,6 +2343,160 @@
         "requirement": "within_derated_dissipation",
         "knowledge": "approximate",
         "kind": "claim_labelled_estimate"
+      },
+      {
+        "id": "logic_high_margin",
+        "identity": "D1.2->D2.4",
+        "requirement": "drive_meets_receiver_threshold",
+        "knowledge": "unknown",
+        "permitted_by": {
+          "id": "drive_meets_receiver_threshold",
+          "scope": "D*",
+          "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+          "accepted_by": "pentolope",
+          "review_by": "2027-09-01"
+        },
+        "kind": "claim_permitted_unknown"
+      },
+      {
+        "id": "logic_high_margin",
+        "identity": "D10.2->D11.4",
+        "requirement": "drive_meets_receiver_threshold",
+        "knowledge": "unknown",
+        "permitted_by": {
+          "id": "drive_meets_receiver_threshold",
+          "scope": "D*",
+          "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+          "accepted_by": "pentolope",
+          "review_by": "2027-09-01"
+        },
+        "kind": "claim_permitted_unknown"
+      },
+      {
+        "id": "logic_high_margin",
+        "identity": "D11.2->D12.4",
+        "requirement": "drive_meets_receiver_threshold",
+        "knowledge": "unknown",
+        "permitted_by": {
+          "id": "drive_meets_receiver_threshold",
+          "scope": "D*",
+          "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+          "accepted_by": "pentolope",
+          "review_by": "2027-09-01"
+        },
+        "kind": "claim_permitted_unknown"
+      },
+      {
+        "id": "logic_high_margin",
+        "identity": "D2.2->D3.4",
+        "requirement": "drive_meets_receiver_threshold",
+        "knowledge": "unknown",
+        "permitted_by": {
+          "id": "drive_meets_receiver_threshold",
+          "scope": "D*",
+          "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+          "accepted_by": "pentolope",
+          "review_by": "2027-09-01"
+        },
+        "kind": "claim_permitted_unknown"
+      },
+      {
+        "id": "logic_high_margin",
+        "identity": "D3.2->D4.4",
+        "requirement": "drive_meets_receiver_threshold",
+        "knowledge": "unknown",
+        "permitted_by": {
+          "id": "drive_meets_receiver_threshold",
+          "scope": "D*",
+          "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+          "accepted_by": "pentolope",
+          "review_by": "2027-09-01"
+        },
+        "kind": "claim_permitted_unknown"
+      },
+      {
+        "id": "logic_high_margin",
+        "identity": "D4.2->D5.4",
+        "requirement": "drive_meets_receiver_threshold",
+        "knowledge": "unknown",
+        "permitted_by": {
+          "id": "drive_meets_receiver_threshold",
+          "scope": "D*",
+          "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+          "accepted_by": "pentolope",
+          "review_by": "2027-09-01"
+        },
+        "kind": "claim_permitted_unknown"
+      },
+      {
+        "id": "logic_high_margin",
+        "identity": "D5.2->D6.4",
+        "requirement": "drive_meets_receiver_threshold",
+        "knowledge": "unknown",
+        "permitted_by": {
+          "id": "drive_meets_receiver_threshold",
+          "scope": "D*",
+          "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+          "accepted_by": "pentolope",
+          "review_by": "2027-09-01"
+        },
+        "kind": "claim_permitted_unknown"
+      },
+      {
+        "id": "logic_high_margin",
+        "identity": "D6.2->D7.4",
+        "requirement": "drive_meets_receiver_threshold",
+        "knowledge": "unknown",
+        "permitted_by": {
+          "id": "drive_meets_receiver_threshold",
+          "scope": "D*",
+          "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+          "accepted_by": "pentolope",
+          "review_by": "2027-09-01"
+        },
+        "kind": "claim_permitted_unknown"
+      },
+      {
+        "id": "logic_high_margin",
+        "identity": "D7.2->D8.4",
+        "requirement": "drive_meets_receiver_threshold",
+        "knowledge": "unknown",
+        "permitted_by": {
+          "id": "drive_meets_receiver_threshold",
+          "scope": "D*",
+          "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+          "accepted_by": "pentolope",
+          "review_by": "2027-09-01"
+        },
+        "kind": "claim_permitted_unknown"
+      },
+      {
+        "id": "logic_high_margin",
+        "identity": "D8.2->D9.4",
+        "requirement": "drive_meets_receiver_threshold",
+        "knowledge": "unknown",
+        "permitted_by": {
+          "id": "drive_meets_receiver_threshold",
+          "scope": "D*",
+          "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+          "accepted_by": "pentolope",
+          "review_by": "2027-09-01"
+        },
+        "kind": "claim_permitted_unknown"
+      },
+      {
+        "id": "logic_high_margin",
+        "identity": "D9.2->D10.4",
+        "requirement": "drive_meets_receiver_threshold",
+        "knowledge": "unknown",
+        "permitted_by": {
+          "id": "drive_meets_receiver_threshold",
+          "scope": "D*",
+          "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+          "accepted_by": "pentolope",
+          "review_by": "2027-09-01"
+        },
+        "kind": "claim_permitted_unknown"
       }
     ],
     "advisory_demotions": [],
