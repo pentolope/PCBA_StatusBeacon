@@ -1220,6 +1220,9 @@
             ],
             "parameters": [
               {
+                "operating": {
+                  "load_current": 0.5
+                },
                 "parameter": "dropout_voltage",
                 "part": "ME6211C50M5G-N"
               }

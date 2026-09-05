@@ -1007,7 +1007,9 @@ def evaluate_low_rail_extrapolation(parameters):
         {"source": "components/device_parameters.json",
          "documents": list(record["documents"]),
          "parameters": [{"part": record["part"],
-                         "parameter": record["parameter"]}]},
+                         "parameter": record["parameter"],
+                         "operating": {"load_current":
+                                       netlist.PORT_BUDGET_A}}]},
         assumptions=tuple(statements) + (
             "the declared bound extrapolates the typical slope to the "
             "port budget and adds the pass device's rise with "
