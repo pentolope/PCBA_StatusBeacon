@@ -1,7 +1,7 @@
 {
   "$schema": "https://schemas.kicad.org/erc.v1.json",
   "coordinate_units": "mm",
-  "date": "2026-09-05T10:24:39",
+  "date": "2026-09-05T14:13:29",
   "ignored_checks": [],
   "included_severities": [
     "error",
@@ -18,10 +18,10 @@
   ],
   "source": "status_beacon.kicad_sch",
   "source_sha256": "8b49a41176642a0d166848f29c57efdb2b76f80da45d3edb8b71594a43ebdc71",
-  "source_closure_sha256": "1d62d40debfb707bd5be6552534407055ac7e5bf9a900a60d7fd837711e3d53a",
+  "source_closure_sha256": "1a4322dc9d787def3669705fc455857eb8634ab3a2306ed06ccc61a78afb382a",
   "source_closure": {
     "<configuration>": "1f5e14d925ffce251b548965a5ead7b12302a1675f624136fb8ce7796aab000f",
-    "<toolkit>": "be3c718edb053353445e3296f6f2482aa8b9949e+clean",
+    "<toolkit>": "cb03fa0fc091cbd8af36a42e6b288d32f61ceeb2+clean",
     "components/device_parameters.json": "586246968cfaa8eb871b40f424a287aa9a802bbad346ce1804cd2326494d7e5b",
     "components/jlcpcb.json": "8048d36133b03ed2275e6b47446e4b93b7f493b5e4c221310cc4f1dd94a5e98c",
     "components/parameters.json": "54deccee4e33dee73ee36a8c307e6eb6eca355e5205154935f213a497b57db15",
@@ -33,9 +33,9 @@
     "evidence/datasheets/typec31m12_lcsc_landpattern.json": "0ff53ebe88b18c225cc3be3295eddb66dd03a3ef6b25203df2475fc7fdc90860",
     "evidence/datasheets/ws2812b_v5_worldsemi.pdf": "652e7bc44abd2d4ba24991a403f48bbc64593ea3af7fc92e153b215c50a511af",
     "evidence/index.json": "3565f98e06ddfdbf193c5482d84d015dd7d64a17e7d3c8efc1626bdc5a57d457",
-    "fab/physical_inputs.json": "f84bb310ac42ec8daddf51865da86b05d79ae44bda1e4a49615dc20bdba21ee8",
+    "fab/physical_inputs.json": "f3cb893844f14cf28dfc3ec2205c6298cedd4be61c3d6b1c9c6674949fc90f62",
     "fab/requirements.json": "7ab5540addf347bbc27fd3d8b7097bec169dc1e53619c67169de5072efe96ec9",
-    "fab/selection.json": "a99d1115875c2038dfba11cab302043231a0470a2d834d5b59e8e79e45a3128b",
+    "fab/selection.json": "34863a2f4dc99475c8db9eee3650764b3e4748d14e4c8d52a2ba435aa4be5ee0",
     "fp-lib-table": "3ff17061746b99f674857d4dc16b3262f32a2625c423b8daeb0852c532732e60",
     "generated/requirements.json": "daed0d41e6232651e2d541c92773c31bec4e50cd9a24cff93255f11a10c84994",
     "library/StatusBeacon.kicad_sym": "830fb9ffe821600ce2c9dbdcc77f4037019aa978aea85f1b02d39ecce6a9fa7e",
