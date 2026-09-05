@@ -1,0 +1,2650 @@
+{
+  "kind": "board-requirement-evidence",
+  "results": [
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "exact",
+        "knowledge_basis": null,
+        "quantity": {
+          "value": 0.0
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 0.0
+          },
+          "name": "bom_footprints_resolve",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "assembly_footprints",
+          "level": "board"
+        },
+        "significance": "every_bom_footprint_resolves",
+        "units": "count"
+      },
+      "id": "assembly_footprints_resolve",
+      "identity": "assembly_footprints",
+      "verdict": {
+        "basis": "exact",
+        "exact": true,
+        "knowledge_basis": null,
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "exact",
+        "knowledge_basis": null,
+        "quantity": {
+          "value": 0.0
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 0.0
+          },
+          "name": "contacts_carry_their_declared_function",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "J1_contacts",
+          "level": "board"
+        },
+        "significance": "connector_contacts_match_drawing",
+        "units": "count"
+      },
+      "id": "connector_contact_assignment",
+      "identity": "J1:TYPE-C-31-M-12",
+      "verdict": {
+        "basis": "exact",
+        "exact": true,
+        "knowledge_basis": null,
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "typec31m12_hro"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "lower_bound",
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "quantity": {
+          "value": 14.5
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "rating_at_or_above_rail_maximum",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "J1:TYPE-C-31-M-12",
+          "level": "measurement"
+        },
+        "significance": "connector_rating_covers_rail",
+        "units": "V"
+      },
+      "id": "contact_voltage_rating_margin",
+      "identity": "J1:TYPE-C-31-M-12",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "k2_1187sq_hro"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "lower_bound",
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "quantity": {
+          "value": 6.5
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "rating_at_or_above_rail_maximum",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "SW1:K2-1187SQ-A4SW-06",
+          "level": "measurement"
+        },
+        "significance": "connector_rating_covers_rail",
+        "units": "V"
+      },
+      "id": "contact_voltage_rating_margin",
+      "identity": "SW1:K2-1187SQ-A4SW-06",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "exact",
+        "knowledge_basis": null,
+        "quantity": {
+          "value": 0.0
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 0.0
+          },
+          "name": "debug_connector_carries_swd_contract",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "swd_connector",
+          "level": "board"
+        },
+        "significance": "in_circuit_program_and_halt",
+        "units": "count"
+      },
+      "id": "debug_connector_contract",
+      "identity": "swd_connector",
+      "verdict": {
+        "basis": "exact",
+        "exact": true,
+        "knowledge_basis": null,
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "exact",
+        "knowledge_basis": null,
+        "quantity": {
+          "value": 0.0
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 0.0
+          },
+          "name": "exposed_contacts_protected_to_ground",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "exposed_contacts",
+          "level": "board"
+        },
+        "significance": "esd_protection_present",
+        "units": "count"
+      },
+      "id": "esd_protection_coverage",
+      "identity": "exposed_contacts",
+      "verdict": {
+        "basis": "exact",
+        "exact": true,
+        "knowledge_basis": null,
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "exact",
+        "knowledge_basis": null,
+        "quantity": {
+          "value": 0.0
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 0.0
+          },
+          "name": "standoff_above_rail_maximum",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "esd_standoff",
+          "level": "board"
+        },
+        "significance": "esd_device_not_conducting_in_operation",
+        "units": "count"
+      },
+      "id": "esd_standoff_above_rail",
+      "identity": "esd_standoff",
+      "verdict": {
+        "basis": "exact",
+        "exact": true,
+        "knowledge_basis": null,
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "exact",
+        "knowledge_basis": null,
+        "quantity": {
+          "value": 0.0
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 0.0
+          },
+          "name": "footprint_land_pattern_matches_document",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D13:TPD1E10B06DPYR",
+          "level": "board"
+        },
+        "significance": "footprint_matches_package_drawing",
+        "units": "count"
+      },
+      "id": "footprint_land_pattern",
+      "identity": "D13:TPD1E10B06DPYR",
+      "verdict": {
+        "basis": "exact",
+        "exact": true,
+        "knowledge_basis": null,
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "exact",
+        "knowledge_basis": null,
+        "quantity": {
+          "value": 0.0
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 0.0
+          },
+          "name": "footprint_land_pattern_matches_document",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D14:TPD1E10B06DPYR",
+          "level": "board"
+        },
+        "significance": "footprint_matches_package_drawing",
+        "units": "count"
+      },
+      "id": "footprint_land_pattern",
+      "identity": "D14:TPD1E10B06DPYR",
+      "verdict": {
+        "basis": "exact",
+        "exact": true,
+        "knowledge_basis": null,
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "exact",
+        "knowledge_basis": null,
+        "quantity": {
+          "value": 0.0
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 0.0
+          },
+          "name": "footprint_land_pattern_matches_document",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D15:TPD1E10B06DPYR",
+          "level": "board"
+        },
+        "significance": "footprint_matches_package_drawing",
+        "units": "count"
+      },
+      "id": "footprint_land_pattern",
+      "identity": "D15:TPD1E10B06DPYR",
+      "verdict": {
+        "basis": "exact",
+        "exact": true,
+        "knowledge_basis": null,
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "exact",
+        "knowledge_basis": null,
+        "quantity": {
+          "value": 0.0
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 0.0
+          },
+          "name": "footprint_land_pattern_matches_document",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D16:TPD1E10B06DPYR",
+          "level": "board"
+        },
+        "significance": "footprint_matches_package_drawing",
+        "units": "count"
+      },
+      "id": "footprint_land_pattern",
+      "identity": "D16:TPD1E10B06DPYR",
+      "verdict": {
+        "basis": "exact",
+        "exact": true,
+        "knowledge_basis": null,
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "exact",
+        "knowledge_basis": null,
+        "quantity": {
+          "value": 0.0
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 0.0
+          },
+          "name": "footprint_land_pattern_matches_document",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "J1:TYPE-C-31-M-12",
+          "level": "board"
+        },
+        "significance": "footprint_matches_package_drawing",
+        "units": "count"
+      },
+      "id": "footprint_land_pattern",
+      "identity": "J1:TYPE-C-31-M-12",
+      "verdict": {
+        "basis": "exact",
+        "exact": true,
+        "knowledge_basis": null,
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "exact",
+        "knowledge_basis": null,
+        "quantity": {
+          "value": 0.0
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 0.0
+          },
+          "name": "footprint_land_pattern_matches_document",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "SW1:K2-1187SQ-A4SW-06",
+          "level": "board"
+        },
+        "significance": "footprint_matches_package_drawing",
+        "units": "count"
+      },
+      "id": "footprint_land_pattern",
+      "identity": "SW1:K2-1187SQ-A4SW-06",
+      "verdict": {
+        "basis": "exact",
+        "exact": true,
+        "knowledge_basis": null,
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "exact",
+        "knowledge_basis": null,
+        "quantity": {
+          "value": 0.0
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 0.0
+          },
+          "name": "footprint_land_pattern_matches_document",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "U1:PY32F003F18P6TU",
+          "level": "board"
+        },
+        "significance": "footprint_matches_package_drawing",
+        "units": "count"
+      },
+      "id": "footprint_land_pattern",
+      "identity": "U1:PY32F003F18P6TU",
+      "verdict": {
+        "basis": "exact",
+        "exact": true,
+        "knowledge_basis": null,
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "design-source",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "unknown",
+        "knowledge_basis": null,
+        "quantity": {},
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "drive_meets_receiver_threshold",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D1.2->D2.4",
+          "level": "net"
+        },
+        "significance": "logic_high_noise_margin",
+        "units": "V"
+      },
+      "id": "logic_high_margin",
+      "identity": "D1.2->D2.4",
+      "verdict": {
+        "basis": "unknown",
+        "exact": false,
+        "knowledge_basis": null,
+        "result": "UNKNOWN"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "design-source",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "unknown",
+        "knowledge_basis": null,
+        "quantity": {},
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "drive_meets_receiver_threshold",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D10.2->D11.4",
+          "level": "net"
+        },
+        "significance": "logic_high_noise_margin",
+        "units": "V"
+      },
+      "id": "logic_high_margin",
+      "identity": "D10.2->D11.4",
+      "verdict": {
+        "basis": "unknown",
+        "exact": false,
+        "knowledge_basis": null,
+        "result": "UNKNOWN"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "design-source",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "unknown",
+        "knowledge_basis": null,
+        "quantity": {},
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "drive_meets_receiver_threshold",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D11.2->D12.4",
+          "level": "net"
+        },
+        "significance": "logic_high_noise_margin",
+        "units": "V"
+      },
+      "id": "logic_high_margin",
+      "identity": "D11.2->D12.4",
+      "verdict": {
+        "basis": "unknown",
+        "exact": false,
+        "knowledge_basis": null,
+        "result": "UNKNOWN"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "design-source",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "unknown",
+        "knowledge_basis": null,
+        "quantity": {},
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "drive_meets_receiver_threshold",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D2.2->D3.4",
+          "level": "net"
+        },
+        "significance": "logic_high_noise_margin",
+        "units": "V"
+      },
+      "id": "logic_high_margin",
+      "identity": "D2.2->D3.4",
+      "verdict": {
+        "basis": "unknown",
+        "exact": false,
+        "knowledge_basis": null,
+        "result": "UNKNOWN"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "design-source",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "unknown",
+        "knowledge_basis": null,
+        "quantity": {},
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "drive_meets_receiver_threshold",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D3.2->D4.4",
+          "level": "net"
+        },
+        "significance": "logic_high_noise_margin",
+        "units": "V"
+      },
+      "id": "logic_high_margin",
+      "identity": "D3.2->D4.4",
+      "verdict": {
+        "basis": "unknown",
+        "exact": false,
+        "knowledge_basis": null,
+        "result": "UNKNOWN"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "design-source",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "unknown",
+        "knowledge_basis": null,
+        "quantity": {},
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "drive_meets_receiver_threshold",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D4.2->D5.4",
+          "level": "net"
+        },
+        "significance": "logic_high_noise_margin",
+        "units": "V"
+      },
+      "id": "logic_high_margin",
+      "identity": "D4.2->D5.4",
+      "verdict": {
+        "basis": "unknown",
+        "exact": false,
+        "knowledge_basis": null,
+        "result": "UNKNOWN"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "design-source",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "unknown",
+        "knowledge_basis": null,
+        "quantity": {},
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "drive_meets_receiver_threshold",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D5.2->D6.4",
+          "level": "net"
+        },
+        "significance": "logic_high_noise_margin",
+        "units": "V"
+      },
+      "id": "logic_high_margin",
+      "identity": "D5.2->D6.4",
+      "verdict": {
+        "basis": "unknown",
+        "exact": false,
+        "knowledge_basis": null,
+        "result": "UNKNOWN"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "design-source",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "unknown",
+        "knowledge_basis": null,
+        "quantity": {},
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "drive_meets_receiver_threshold",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D6.2->D7.4",
+          "level": "net"
+        },
+        "significance": "logic_high_noise_margin",
+        "units": "V"
+      },
+      "id": "logic_high_margin",
+      "identity": "D6.2->D7.4",
+      "verdict": {
+        "basis": "unknown",
+        "exact": false,
+        "knowledge_basis": null,
+        "result": "UNKNOWN"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "design-source",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "unknown",
+        "knowledge_basis": null,
+        "quantity": {},
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "drive_meets_receiver_threshold",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D7.2->D8.4",
+          "level": "net"
+        },
+        "significance": "logic_high_noise_margin",
+        "units": "V"
+      },
+      "id": "logic_high_margin",
+      "identity": "D7.2->D8.4",
+      "verdict": {
+        "basis": "unknown",
+        "exact": false,
+        "knowledge_basis": null,
+        "result": "UNKNOWN"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "design-source",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "unknown",
+        "knowledge_basis": null,
+        "quantity": {},
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "drive_meets_receiver_threshold",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D8.2->D9.4",
+          "level": "net"
+        },
+        "significance": "logic_high_noise_margin",
+        "units": "V"
+      },
+      "id": "logic_high_margin",
+      "identity": "D8.2->D9.4",
+      "verdict": {
+        "basis": "unknown",
+        "exact": false,
+        "knowledge_basis": null,
+        "result": "UNKNOWN"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "design-source",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "unknown",
+        "knowledge_basis": null,
+        "quantity": {},
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "drive_meets_receiver_threshold",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D9.2->D10.4",
+          "level": "net"
+        },
+        "significance": "logic_high_noise_margin",
+        "units": "V"
+      },
+      "id": "logic_high_margin",
+      "identity": "D9.2->D10.4",
+      "verdict": {
+        "basis": "unknown",
+        "exact": false,
+        "knowledge_basis": null,
+        "result": "UNKNOWN"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "py32f003_puya",
+              "ws2812b_v5_worldsemi"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "lower_bound",
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "quantity": {
+          "value": 0.46846699999999997
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "drive_meets_receiver_threshold",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "U1.20->D1.4",
+          "level": "net"
+        },
+        "significance": "logic_high_noise_margin",
+        "units": "V"
+      },
+      "id": "logic_high_margin",
+      "identity": "U1.20->D1.4",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [
+            "ME6211C50M5G-N:dropout_voltage is stated for load_current in [0.1, 0.2] and is used at 0.5; this is an extrapolation the vendor does not support",
+            "the declared bound extrapolates the typical slope to the port budget and adds the pass device's rise with temperature"
+          ],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "me6211_microne"
+            ],
+            "parameters": [
+              {
+                "parameter": "dropout_voltage",
+                "part": "ME6211C50M5G-N"
+              }
+            ],
+            "source": "components/device_parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "approximate",
+        "knowledge_basis": {
+          "detail": "typical-only figure (ME6211C50M5G-N: dropout_voltage), measured at load_current=0.2 A; the vendor guarantees no bound",
+          "kind": "direct"
+        },
+        "quantity": {
+          "value": 0.2
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 0.7
+          },
+          "name": "declared_dropout_bound_covers_the_typical_figure",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "+5V",
+          "level": "net"
+        },
+        "significance": "rail_margin",
+        "units": "V"
+      },
+      "id": "low_rail_dropout_extrapolation",
+      "identity": "+5V",
+      "verdict": {
+        "basis": "approximate",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "typical-only figure (ME6211C50M5G-N: dropout_voltage), measured at load_current=0.2 A; the vendor guarantees no bound",
+          "kind": "direct"
+        },
+        "result": "UNKNOWN"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "exact",
+        "knowledge_basis": null,
+        "quantity": {
+          "value": 0.0
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 0.0
+          },
+          "name": "required_nets_probeable",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "probe_points",
+          "level": "board"
+        },
+        "significance": "bring_up_probe_access",
+        "units": "count"
+      },
+      "id": "probe_access",
+      "identity": "probe_points",
+      "verdict": {
+        "basis": "exact",
+        "exact": true,
+        "knowledge_basis": null,
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "exact",
+        "knowledge_basis": null,
+        "quantity": {
+          "value": 0.0
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 0.0
+          },
+          "name": "declared_unreferenced_run_is_electrically_short",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "led_data",
+          "level": "board"
+        },
+        "significance": "return_path_discontinuity",
+        "units": "count"
+      },
+      "id": "reference_gap_limit_is_electrically_short",
+      "identity": "led_data",
+      "verdict": {
+        "basis": "exact",
+        "exact": true,
+        "knowledge_basis": null,
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "ws2812b_v5_worldsemi"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "lower_bound",
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "quantity": {
+          "value": 0.25
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "rail_within_absolute_maximum",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D1.1@+5V",
+          "level": "measurement"
+        },
+        "significance": "device_absolute_maximum_margin",
+        "units": "V"
+      },
+      "id": "supply_absolute_maximum_margin",
+      "identity": "D1.1@+5V",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "ws2812b_v5_worldsemi"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "lower_bound",
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "quantity": {
+          "value": 0.25
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "rail_within_absolute_maximum",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D10.1@+5V",
+          "level": "measurement"
+        },
+        "significance": "device_absolute_maximum_margin",
+        "units": "V"
+      },
+      "id": "supply_absolute_maximum_margin",
+      "identity": "D10.1@+5V",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "ws2812b_v5_worldsemi"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "lower_bound",
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "quantity": {
+          "value": 0.25
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "rail_within_absolute_maximum",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D11.1@+5V",
+          "level": "measurement"
+        },
+        "significance": "device_absolute_maximum_margin",
+        "units": "V"
+      },
+      "id": "supply_absolute_maximum_margin",
+      "identity": "D11.1@+5V",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "ws2812b_v5_worldsemi"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "lower_bound",
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "quantity": {
+          "value": 0.25
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "rail_within_absolute_maximum",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D12.1@+5V",
+          "level": "measurement"
+        },
+        "significance": "device_absolute_maximum_margin",
+        "units": "V"
+      },
+      "id": "supply_absolute_maximum_margin",
+      "identity": "D12.1@+5V",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "ws2812b_v5_worldsemi"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "lower_bound",
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "quantity": {
+          "value": 0.25
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "rail_within_absolute_maximum",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D2.1@+5V",
+          "level": "measurement"
+        },
+        "significance": "device_absolute_maximum_margin",
+        "units": "V"
+      },
+      "id": "supply_absolute_maximum_margin",
+      "identity": "D2.1@+5V",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "ws2812b_v5_worldsemi"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "lower_bound",
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "quantity": {
+          "value": 0.25
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "rail_within_absolute_maximum",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D3.1@+5V",
+          "level": "measurement"
+        },
+        "significance": "device_absolute_maximum_margin",
+        "units": "V"
+      },
+      "id": "supply_absolute_maximum_margin",
+      "identity": "D3.1@+5V",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "ws2812b_v5_worldsemi"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "lower_bound",
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "quantity": {
+          "value": 0.25
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "rail_within_absolute_maximum",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D4.1@+5V",
+          "level": "measurement"
+        },
+        "significance": "device_absolute_maximum_margin",
+        "units": "V"
+      },
+      "id": "supply_absolute_maximum_margin",
+      "identity": "D4.1@+5V",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "ws2812b_v5_worldsemi"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "lower_bound",
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "quantity": {
+          "value": 0.25
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "rail_within_absolute_maximum",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D5.1@+5V",
+          "level": "measurement"
+        },
+        "significance": "device_absolute_maximum_margin",
+        "units": "V"
+      },
+      "id": "supply_absolute_maximum_margin",
+      "identity": "D5.1@+5V",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "ws2812b_v5_worldsemi"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "lower_bound",
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "quantity": {
+          "value": 0.25
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "rail_within_absolute_maximum",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D6.1@+5V",
+          "level": "measurement"
+        },
+        "significance": "device_absolute_maximum_margin",
+        "units": "V"
+      },
+      "id": "supply_absolute_maximum_margin",
+      "identity": "D6.1@+5V",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "ws2812b_v5_worldsemi"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "lower_bound",
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "quantity": {
+          "value": 0.25
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "rail_within_absolute_maximum",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D7.1@+5V",
+          "level": "measurement"
+        },
+        "significance": "device_absolute_maximum_margin",
+        "units": "V"
+      },
+      "id": "supply_absolute_maximum_margin",
+      "identity": "D7.1@+5V",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "ws2812b_v5_worldsemi"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "lower_bound",
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "quantity": {
+          "value": 0.25
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "rail_within_absolute_maximum",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D8.1@+5V",
+          "level": "measurement"
+        },
+        "significance": "device_absolute_maximum_margin",
+        "units": "V"
+      },
+      "id": "supply_absolute_maximum_margin",
+      "identity": "D8.1@+5V",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "ws2812b_v5_worldsemi"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "lower_bound",
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "quantity": {
+          "value": 0.25
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "rail_within_absolute_maximum",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "D9.1@+5V",
+          "level": "measurement"
+        },
+        "significance": "device_absolute_maximum_margin",
+        "units": "V"
+      },
+      "id": "supply_absolute_maximum_margin",
+      "identity": "D9.1@+5V",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "py32f003_puya"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "lower_bound",
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "quantity": {
+          "value": 1.2000000000000002
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "rail_within_absolute_maximum",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "U1.9@+5V",
+          "level": "measurement"
+        },
+        "significance": "device_absolute_maximum_margin",
+        "units": "V"
+      },
+      "id": "supply_absolute_maximum_margin",
+      "identity": "U1.9@+5V",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "me6211_microne"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "lower_bound",
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "quantity": {
+          "value": 1.0
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "rail_within_absolute_maximum",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "U2.1@VBUS",
+          "level": "measurement"
+        },
+        "significance": "device_absolute_maximum_margin",
+        "units": "V"
+      },
+      "id": "supply_absolute_maximum_margin",
+      "identity": "U2.1@VBUS",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "datasheet_limit",
+          "kind": "direct"
+        },
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "assumed-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "me6211_microne",
+              "tpd1e10b06_ti",
+              "ws2812b_v5_worldsemi"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "upper_bound",
+        "knowledge_basis": {
+          "detail": "assumed",
+          "kind": "assumed"
+        },
+        "quantity": {
+          "value": 0.2908604
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 0.5
+          },
+          "name": "within_declared_port_budget",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "board_vbus_current",
+          "level": "board"
+        },
+        "significance": "port_current_budget",
+        "units": "A"
+      },
+      "id": "supply_current_budget",
+      "identity": "board_vbus_current",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "assumed",
+          "kind": "assumed"
+        },
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [
+            "bare board in still air, mounted horizontally, no enclosure and no forced convection",
+            "heat leaves only by natural convection and radiation from the two faces of the outline, with emissivity 0.90",
+            "the board is isothermal: no spreading gradient between the LED ring and the regulator is modelled",
+            "the regulator's thermal resistance is the one implied by its package dissipation rating and maximum junction temperature, for the smallest five-pin package its datasheet lists"
+          ],
+          "evidence_class": "design-source",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "ws2812b_v5_worldsemi"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "approximate",
+        "knowledge_basis": {
+          "detail": "derived",
+          "kind": "derived"
+        },
+        "quantity": {
+          "value": 8.130831331166085
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "board_within_component_operating_range",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "board_temperature_headroom",
+          "level": "board"
+        },
+        "significance": "board_thermal_rise",
+        "units": "K"
+      },
+      "id": "thermal_board_temperature",
+      "identity": "board@40C_ambient",
+      "verdict": {
+        "basis": "approximate",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "derived",
+          "kind": "derived"
+        },
+        "result": "UNKNOWN"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [
+            "bare board in still air, mounted horizontally, no enclosure and no forced convection",
+            "heat leaves only by natural convection and radiation from the two faces of the outline, with emissivity 0.90",
+            "the board is isothermal: no spreading gradient between the LED ring and the regulator is modelled",
+            "the regulator's thermal resistance is the one implied by its package dissipation rating and maximum junction temperature, for the smallest five-pin package its datasheet lists"
+          ],
+          "evidence_class": "design-source",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "ws2812b_v5_worldsemi"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "approximate",
+        "knowledge_basis": {
+          "detail": "derived",
+          "kind": "derived"
+        },
+        "quantity": {
+          "value": 0.23468754279408421
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "firmware_limit_within_thermal_budget",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "brightness_limit_headroom",
+          "level": "board"
+        },
+        "significance": "board_thermal_rise",
+        "units": "fraction"
+      },
+      "id": "thermal_brightness_limit",
+      "identity": "firmware_limit_0.65",
+      "verdict": {
+        "basis": "approximate",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "derived",
+          "kind": "derived"
+        },
+        "result": "UNKNOWN"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [
+            "bare board in still air, mounted horizontally, no enclosure and no forced convection",
+            "heat leaves only by natural convection and radiation from the two faces of the outline, with emissivity 0.90",
+            "the board is isothermal: no spreading gradient between the LED ring and the regulator is modelled",
+            "the regulator's thermal resistance is the one implied by its package dissipation rating and maximum junction temperature, for the smallest five-pin package its datasheet lists"
+          ],
+          "evidence_class": "design-source",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "ws2812b_v5_worldsemi"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "approximate",
+        "knowledge_basis": {
+          "detail": "derived",
+          "kind": "derived"
+        },
+        "quantity": {
+          "value": 8.683767782623612
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "estimate_supports_declared_ambient",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "declared_ambient_headroom",
+          "level": "board"
+        },
+        "significance": "board_thermal_rise",
+        "units": "K"
+      },
+      "id": "thermal_declared_ambient",
+      "identity": "ambient_40C",
+      "verdict": {
+        "basis": "approximate",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "derived",
+          "kind": "derived"
+        },
+        "result": "UNKNOWN"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [
+            "bare board in still air, mounted horizontally, no enclosure and no forced convection",
+            "heat leaves only by natural convection and radiation from the two faces of the outline, with emissivity 0.90",
+            "the board is isothermal: no spreading gradient between the LED ring and the regulator is modelled",
+            "the regulator's thermal resistance is the one implied by its package dissipation rating and maximum junction temperature, for the smallest five-pin package its datasheet lists"
+          ],
+          "evidence_class": "design-source",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "me6211_microne"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "approximate",
+        "knowledge_basis": {
+          "detail": "derived",
+          "kind": "derived"
+        },
+        "quantity": {
+          "value": 0.055401662662332124
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "within_derated_dissipation",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "regulator_derated_headroom",
+          "level": "measurement"
+        },
+        "significance": "device_power_dissipation",
+        "units": "W"
+      },
+      "id": "thermal_regulator_derated",
+      "identity": "U2@57C",
+      "verdict": {
+        "basis": "approximate",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "derived",
+          "kind": "derived"
+        },
+        "result": "UNKNOWN"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [
+              "me6211_microne"
+            ],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "exact",
+        "knowledge_basis": null,
+        "quantity": {
+          "value": 0.11913999999999994
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "within_package_power_rating",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "regulator_package_rating",
+          "level": "measurement"
+        },
+        "significance": "device_power_dissipation",
+        "units": "W"
+      },
+      "id": "thermal_regulator_package_rating",
+      "identity": "U2@25C",
+      "verdict": {
+        "basis": "exact",
+        "exact": true,
+        "knowledge_basis": null,
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "exact",
+        "knowledge_basis": null,
+        "quantity": {
+          "value": 1.0
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 1.0
+          },
+          "name": "within_declared_through_hole_allowance",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "assembly_process",
+          "level": "board"
+        },
+        "significance": "through_hole_soldering_steps",
+        "units": "count"
+      },
+      "id": "through_hole_soldered_parts",
+      "identity": "assembly_process",
+      "verdict": {
+        "basis": "exact",
+        "exact": true,
+        "knowledge_basis": null,
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "datasheet-behavioral",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "exact",
+        "knowledge_basis": null,
+        "quantity": {
+          "value": 0.0
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 0.0
+          },
+          "name": "cc_pins_present_sink_terminations",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "cc_terminations",
+          "level": "board"
+        },
+        "significance": "typec_sink_advertisement",
+        "units": "count"
+      },
+      "id": "typec_sink_cc_terminations",
+      "identity": "cc_terminations",
+      "verdict": {
+        "basis": "exact",
+        "exact": true,
+        "knowledge_basis": null,
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "design-source",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "exact",
+        "knowledge_basis": null,
+        "quantity": {
+          "value": 0.0
+        },
+        "requirement": {
+          "assertion": {
+            "op": ">=",
+            "value": 0.0
+          },
+          "name": "covers_usb_c_vsafe5v_maximum",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "vbus_declared_vs_vsafe5v",
+          "level": "board"
+        },
+        "significance": "declared_range_covers_source_range",
+        "units": "V"
+      },
+      "id": "usb_source_range_coverage",
+      "identity": "vbus_declared_vs_vsafe5v",
+      "verdict": {
+        "basis": "exact",
+        "exact": true,
+        "knowledge_basis": null,
+        "result": "PASS"
+      }
+    },
+    {
+      "claim": {
+        "evidence": {
+          "applicability": {
+            "detail": "model applies to this scope",
+            "status": "applicable"
+          },
+          "assumptions": [],
+          "evidence_class": "design-source",
+          "omitted_contributions": [],
+          "phenomenon": "device_electrical",
+          "provenance": {
+            "documents": [],
+            "source": "components/parameters.json"
+          }
+        },
+        "kind": "claim",
+        "knowledge": "upper_bound",
+        "knowledge_basis": {
+          "detail": "derived",
+          "kind": "derived"
+        },
+        "quantity": {
+          "value": 5.639999999999999e-06
+        },
+        "requirement": {
+          "assertion": {
+            "op": "<=",
+            "value": 1e-05
+          },
+          "name": "within_usb_bypass_capacitance_limit",
+          "source": "BRIEF.md"
+        },
+        "scope": {
+          "identity": "vbus_domain",
+          "level": "board"
+        },
+        "significance": "usb_inrush_capacitance",
+        "units": "F"
+      },
+      "id": "vbus_bypass_capacitance",
+      "identity": "vbus_domain",
+      "verdict": {
+        "basis": "bound",
+        "exact": false,
+        "knowledge_basis": {
+          "detail": "derived",
+          "kind": "derived"
+        },
+        "result": "PASS"
+      }
+    }
+  ],
+  "schema": 1,
+  "summary": {
+    "PASS": 37,
+    "UNKNOWN": 16
+  }
+}

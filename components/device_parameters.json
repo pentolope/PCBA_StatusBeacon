@@ -1,0 +1,32 @@
+{
+  "kind": "device-parameter-set",
+  "records": [
+    {
+      "conditions": {
+        "load_current": {
+          "units": "A",
+          "value": 0.2
+        }
+      },
+      "detail": "the datasheet states dropout as a typical only, at 100 mA (0.1 V) and 200 mA (0.2 V); no maximum is given at any current, and no figure at all at this board's declared port budget",
+      "documents": [
+        "me6211_microne"
+      ],
+      "kind": "device_parameter",
+      "knowledge": "typical",
+      "parameter": "dropout_voltage",
+      "part": "ME6211C50M5G-N",
+      "source": "components/device_parameters.json",
+      "units": "V",
+      "validity": {
+        "load_current": {
+          "max": 0.2,
+          "min": 0.1,
+          "units": "A"
+        }
+      },
+      "value": 0.2
+    }
+  ],
+  "schema": 1
+}

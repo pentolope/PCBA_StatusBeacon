@@ -978,10 +978,56 @@ def evaluate_thermal(parameters):
     return results
 
 
+def evaluate_low_rail_extrapolation(parameters):
+    """The figure the low rail rests on, stated as the extrapolation it is.
+
+    The regulator's datasheet gives dropout as a TYPICAL at 100 mA and
+    200 mA only - no maximum, and no figure at this board's declared port
+    budget. The declared bound extrapolates that slope beyond the stated
+    range and adds the pass device's rise with temperature; that used to
+    be visible only in a netlist comment. The figure is now a recorded
+    device-parameter with a knowledge level, and this claim carries the
+    extrapolation statements the toolkit derives from the record - a
+    typical-only figure can never come out EXACT, and
+    PROV.DEVICE_PARAMETERS refuses a claim that tries.
+    """
+    from pcbqa import device_parameters
+
+    with open(os.path.join(REPO_ROOT, "components",
+                           "device_parameters.json"),
+              encoding="utf-8") as handle:
+        _document, records = device_parameters.load_set(
+            handle.read(), "components/device_parameters.json")
+    record = records[("ME6211C50M5G-N", "dropout_voltage")]
+    knowledge, quantity, basis = device_parameters.claim_knowledge(record)
+    statements = device_parameters.extrapolation_assumptions(
+        record, {"load_current": netlist.PORT_BUDGET_A})
+    evidence_record = claim.evidence(
+        "device_electrical", "datasheet-behavioral",
+        {"source": "components/device_parameters.json",
+         "documents": list(record["documents"]),
+         "parameters": [{"part": record["part"],
+                         "parameter": record["parameter"]}]},
+        assumptions=tuple(statements) + (
+            "the declared bound extrapolates the typical slope to the "
+            "port budget and adds the pass device's rise with "
+            "temperature",))
+    return [{
+        "id": "low_rail_dropout_extrapolation",
+        "identity": "+5V",
+        "claim": claim.claim(
+            "net", "+5V", "V", knowledge, quantity, evidence_record,
+            "rail_margin", basis,
+            _requirement("declared_dropout_bound_covers_the_typical_figure",
+                         "<=", netlist.LDO_DROPOUT_AT_BUDGET_V)),
+    }]
+
+
 def evaluate_all():
     parameters = load_parameters()
     results = []
     results.extend(evaluate_logic_levels(parameters))
+    results.extend(evaluate_low_rail_extrapolation(parameters))
     results.append(evaluate_supply_current(parameters))
     results.append(evaluate_vbus_capacitance(parameters))
     results.extend(evaluate_absolute_maximum(parameters))
@@ -1001,6 +1047,30 @@ def evaluate_all():
     return results
 
 
+REPORT_PATH = os.path.join(REPO_ROOT, "generated", "requirements.json")
+
+
+def write_report(path=None):
+    """The whole claim set, as a committed artifact the gates judge.
+
+    Built through the toolkit's claim-document constructor, so every claim
+    is validated and every verdict re-derived at write time; CLAIM.MATRIX
+    accepts at release exactly what was written here, and
+    PROV.DERIVED_DOCUMENTS proves the committed copy fresh through this
+    same entry point.
+    """
+    from pcbqa import evidence as toolkit_evidence
+
+    evaluated = evaluate_all()
+    document = toolkit_evidence.claim_document(
+        [toolkit_evidence.claim_result(result["id"], result["identity"],
+                                       result["claim"])
+         for result in evaluated])
+    target = path or os.environ.get("PCBQA_OUT") or REPORT_PATH
+    os.makedirs(os.path.dirname(target) or ".", exist_ok=True)
+    return toolkit_evidence.write_document(target, document)
+
+
 def summarise(results):
     counts = {}
     for result in results:
@@ -1010,6 +1080,7 @@ def summarise(results):
 
 
 if __name__ == "__main__":
+    write_report()
     evaluated = evaluate_all()
     for result in sorted(evaluated, key=lambda item: (
             item["verdict"]["result"], item["id"], item["identity"])):

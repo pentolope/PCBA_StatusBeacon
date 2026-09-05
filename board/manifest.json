@@ -474,7 +474,8 @@
       "sim/*.json",
       "fab/*.json",
       "components/*.json",
-      "evidence/index.json"
+      "evidence/index.json",
+      "evidence/datasheets/*"
     ],
     "source_hash_field": "source_sha256",
     "closure_field": "source_closure_sha256"
@@ -488,6 +489,8 @@
       "ARCH.CONTENTS",
       "ARCH.PROVENANCE",
       "BOM.NATIVE_PARITY",
+      "CLAIM.MATRIX",
+      "CLAIM.POLICY",
       "CONTRACT.CONNECTOR",
       "CONTRACT.PLACEMENT",
       "CPL.NATIVE_PARITY",
@@ -495,7 +498,11 @@
       "DRC.CONSTRAINT_FLOOR",
       "DRC.NO_SUPPRESSED_RULES",
       "ERC.AUTHORITATIVE",
+      "EXT.DEPENDENCIES",
       "NET.TOPOLOGY",
+      "PROV.DERIVED_DOCUMENTS",
+      "PROV.DEVICE_PARAMETERS",
+      "PROV.EVIDENCE_INTEGRITY",
       "PROV.REPORT_FRESHNESS",
       "ROUTE.GEOMETRY_HYGIENE",
       "ROUTE.PROVENANCE",
@@ -512,6 +519,23 @@
     "required_evidence": [
       "generated/routing.json",
       "evidence/index.json"
+    ],
+    "required_domains": [
+      "claims",
+      "simulation",
+      "device_parameters",
+      "external_dependencies",
+      "timing"
+    ],
+    "declined_domains": [
+      {
+        "domain": "requirements",
+        "reason": "no requirement register is authored yet; every claim's requirement cites the brief or a frozen document directly, and the register lands with a later revision"
+      },
+      {
+        "domain": "orientation",
+        "reason": "no part on this board needs a rotation correction; the CPL ships library angles and the fabrication order review checks the preview"
+      }
     ]
   },
   "simulation": {
@@ -645,6 +669,64 @@
         "5": "GND",
         "6": null
       }
+    }
+  ],
+  "claims": {
+    "document": "generated/requirements.json",
+    "unsupported": {
+      "default": "blocking",
+      "permitted": [
+        {
+          "id": "drive_meets_receiver_threshold",
+          "scope": "D*",
+          "because": "the WS2812E datasheet states no DOUT drive levels at all, so the margin at each receiver's input has no vendor figure to be judged against; only a vendor specification or a bench characterisation of the chain closes it, and the chain demonstrably runs on the datasheet's own demo topology",
+          "accepted_by": "pentolope",
+          "review_by": "2027-09-01"
+        }
+      ]
+    },
+    "approximate": {
+      "default": "permitted-with-label"
+    }
+  },
+  "external_dependencies": [
+    {
+      "id": "led-chain-bench",
+      "statement": "the full LED chain passes data at the declared rate on the assembled board, which is what stands in for the drive levels the vendor never specified",
+      "method": "PHYSICAL_TEST",
+      "owner": "bench bring-up",
+      "status": "open",
+      "blocking": false
+    },
+    {
+      "id": "board-thermal-bench",
+      "statement": "board temperature at the firmware brightness limit and the declared ambient, confirming the spreadsheet-grade thermal estimates the four approximate claims label",
+      "method": "PHYSICAL_TEST",
+      "owner": "bench bring-up",
+      "status": "open",
+      "blocking": false
+    },
+    {
+      "id": "jlcpcb-assembly-preview",
+      "statement": "JLCPCB's own assembly preview shows every part at its intended position and rotation",
+      "method": "MANUFACTURING_CHECK",
+      "owner": "fabrication order review",
+      "status": "open",
+      "blocking": false
+    }
+  ],
+  "provenance": {
+    "evidence_index": "evidence/index.json"
+  },
+  "device_parameters": "components/device_parameters.json",
+  "derived_documents": [
+    {
+      "path": "generated/requirements.json",
+      "command": [
+        "python3",
+        "-m",
+        "design.rules"
+      ]
     }
   ]
 }
