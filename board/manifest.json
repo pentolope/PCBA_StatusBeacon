@@ -530,12 +530,32 @@
     ],
     "declined_domains": [
       {
-        "domain": "requirements",
-        "reason": "no requirement register is authored yet; every claim's requirement cites the brief or a frozen document directly, and the register lands with a later revision"
+        "domain": "current_capacity",
+        "reason": "the board draws its whole load through the USB port budget and no conductor on it carries more than that; a declared current-path set with its own capacity basis has not been authored, and stating one would mean choosing a curve this board has not sourced"
+      },
+      {
+        "domain": "differential_pairs",
+        "reason": "this board routes no differential pair; every net on it is single-ended and there is no pair impedance to hold"
       },
       {
         "domain": "orientation",
         "reason": "no part on this board needs a rotation correction; the CPL ships library angles and the fabrication order review checks the preview"
+      },
+      {
+        "domain": "power_integrity",
+        "reason": "the rails here are short and lightly loaded, and the dropout that matters is judged as a device parameter with its own extrapolation statement rather than as a plane solve; no poured rail on this board carries enough current for an IR-drop solve to decide anything"
+      },
+      {
+        "domain": "reference_continuity",
+        "reason": "the one interface whose return path matters is judged inside timing.interfaces, which measures the same unreferenced length; declaring it again under the neutral block would state the same requirement twice"
+      },
+      {
+        "domain": "requirements",
+        "reason": "no requirement register is authored yet; every claim's requirement cites the brief or a frozen document directly, and the register lands with a later revision"
+      },
+      {
+        "domain": "thermal",
+        "reason": "this board's thermal analysis is its own - the regulator's dissipation, the board rise and the maximum ambient are computed in design/thermal.py and published as claims that CLAIM.MATRIX re-derives - and it has not been migrated to the toolkit's THERMAL.* gates; that migration is deliberate future work, not an absence of thermal evidence"
       }
     ]
   },
