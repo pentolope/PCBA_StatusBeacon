@@ -223,7 +223,15 @@
     "metric": "annulus_to_opening_mm",
     "note": "annulus_contacts counts zero-distance tangency as contact; annulus_strict_overlaps counts positive shared area only",
     "mask_dam_rule": "contact",
-    "design_target_mm": 0.15
+    "design_target_mm": 0.15,
+    "process": {
+      "name": "JLCPCB PCB capabilities",
+      "rule": "soldermask opening to neighbouring copper",
+      "interpretation": "a via annulus is copper that is not the opening's own pad, so this published clearance is the process floor for the annulus_to_opening_mm metric this board already measures",
+      "limit_from_catalog": {
+        "from_catalog": "soldermask_opening_to_trace_mm"
+      }
+    }
   },
   "artifacts": {
     "gerber_dir": "generated/release/gerbers",
@@ -555,7 +563,7 @@
       },
       {
         "domain": "thermal",
-        "reason": "this board's thermal analysis is its own - the regulator's dissipation, the board rise and the maximum ambient are computed in design/thermal.py and published as claims that CLAIM.MATRIX re-derives - and it has not been migrated to the toolkit's THERMAL.* gates; that migration is deliberate future work, not an absence of thermal evidence"
+        "reason": "the toolkit's THERMAL.* gates judge junction paths, and 13 of this board's 14 dissipating parts publish no steady-state junction-to-ambient resistance at all - the LED and MCU vendors state none - so DERATING and JUNCTION refuse them rather than pass; only the regulator has a derivable path, and it clears its limit. What design/thermal.py computes, and CLAIM.MATRIX re-derives, is a board-average rise: a different quantity from a junction temperature, published as four labelled approximate claims. Migration waits on junction evidence the datasheets do not contain, not on effort"
       }
     ]
   },
@@ -752,5 +760,9 @@
         "design.rules"
       ]
     }
-  ]
+  ],
+  "catalog": {
+    "normalized_sha256": "e504b0de30d419179ecef39b27a688fa09b89a8e83cdfeec4d4eec95dbe73258",
+    "why": "the catalogue state fab/selection.json already resolved this board's fabrication against; citing a limit from any other state would judge the board against rules it was not selected under"
+  }
 }
