@@ -538,12 +538,20 @@
     ],
     "declined_domains": [
       {
+        "domain": "assembly_process",
+        "reason": "the process half is already decided and encoded: BRIEF.md permits no more than stencil print, single-side placement and one reflow pass, design/netlist.py holds that as ASSEMBLY_POLICY, and the through_hole_soldered_parts claim judges the part of it with a measurable consequence. ASM.PROCESS needs the other half - a record per fitted part number, where an empty record is the explicit statement 'we looked and it needs nothing'. Twelve part numbers are fitted; six carry a frozen datasheet, and the six passive ones - two Samsung MLCCs and four Uniroyal 0402 resistors - carry no committed document at all, so half the records could only be written by asserting a review that never happened. Freezing those six documents is what lifts this decline; the peak this board would then declare is already fixed at the WS2812B's 245 C, the lowest of the three peaks the frozen datasheets state - the USB-C receptacle's drawing gives 260 C held 10 s and TI's orderable table gives 260 C at MSL 1, while the K2 switch drawing, the PY32 datasheet and the ME6211 datasheet carry no soldering profile at all"
+      },
+      {
         "domain": "current_capacity",
         "reason": "the board draws its whole load through the USB port budget and no conductor on it carries more than that; a declared current-path set with its own capacity basis has not been authored, and stating one would mean choosing a curve this board has not sourced"
       },
       {
         "domain": "differential_pairs",
         "reason": "this board routes no differential pair; every net on it is single-ended and there is no pair impedance to hold"
+      },
+      {
+        "domain": "lifecycle",
+        "reason": "BOM.LIFECYCLE judges a frozen snapshot whose entries carry an established status, and unestablished blocks because unknown is not PASS anywhere here. The only acquisition the toolkit offers retrieves the LCSC per-part record, and that record - committed on this board as components/jlcpcb.json - carries library_type, manufacturer, mpn, package, price_breaks and stock, and no lifecycle field at all; reading 'in stock today' as 'active' is exactly the false confidence the snapshot exists to prevent. A freeze here would therefore write twelve unestablished candidates and no evidence to establish them from. Of the twelve part numbers fitted, one publishes its own status - TI prints Active/Production in the orderable table of the frozen TPD1E10B06 datasheet - so what lifts this decline is per-part documents stating lifecycle for the other eleven, not a re-run of the freeze"
       },
       {
         "domain": "orientation",
