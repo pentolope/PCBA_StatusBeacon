@@ -128,8 +128,14 @@ class FrozenEvidence(unittest.TestCase):
         self.assertEqual(sorted(selected - declared), [])
 
     def test_every_frozen_document_applies_to_a_selected_part(self):
-        selected = {part["mpn"] for part in netlist.PARTS.values()
-                    if part["mpn"]}
+        catalog = cost.load_catalog()["parts"]
+        selected = set()
+        for part in netlist.PARTS.values():
+            if part["mpn"]:
+                selected.add(part["mpn"])
+            entry = catalog.get(part.get("lcsc") or "")
+            if entry and entry.get("mpn"):
+                selected.add(entry["mpn"])
         for name, entry in evidence.load_index()["documents"].items():
             self.assertTrue(set(entry["applies_to"]) & selected, name)
 

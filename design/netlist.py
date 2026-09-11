@@ -169,8 +169,6 @@ NODE_VOLTAGE_RANGES = {
 }
 
 ASSEMBLY_POLICY = {
-    "reflow_passes": 1,
-    "placement_sides": 1,
     "max_through_hole_soldered_parts": 1,
 }
 

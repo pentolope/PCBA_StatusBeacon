@@ -378,7 +378,87 @@
       "LCSC",
       "MPN",
       "Manufacturer"
-    ]
+    ],
+    "part_number_field": "LCSC",
+    "process": {
+      "reflow_passes": 1,
+      "peak_temp_c": 245.0,
+      "sides": [
+        "top"
+      ],
+      "cleaning": "no_clean",
+      "note": "BRIEF.md permits stencil print, single-side placement and one reflow pass; the peak is set by the lowest part ceiling on the board, the WS2812B's 245 C"
+    },
+    "parts": {
+      "C11702": {
+        "note": "chip_resistor_uniroyal p6: reflow peak value temperature 245-250 C",
+        "peak_temp_max_c": 250.0
+      },
+      "C1525": {
+        "note": "mlcc_samsung 6-2-1: reflow soldering 260 +0/-5 C, 10 s max",
+        "peak_temp_max_c": 260.0
+      },
+      "C165948": {
+        "note": "typec31m12_hro note 6: IR reflow peak 260 C maintained 10 s",
+        "peak_temp_max_c": 260.0
+      },
+      "C1779": {
+        "note": "mlcc_samsung 6-2-1: reflow soldering 260 +0/-5 C, 10 s max",
+        "peak_temp_max_c": 260.0
+      },
+      "C236670": {
+        "note": "me6211_microne states no soldering profile"
+      },
+      "C25105": {
+        "note": "chip_resistor_uniroyal p6: reflow peak value temperature 245-250 C",
+        "peak_temp_max_c": 250.0
+      },
+      "C25744": {
+        "note": "chip_resistor_uniroyal p6: reflow peak value temperature 245-250 C",
+        "peak_temp_max_c": 250.0
+      },
+      "C25905": {
+        "note": "chip_resistor_uniroyal p6: reflow peak value temperature 245-250 C",
+        "peak_temp_max_c": 250.0
+      },
+      "C2874885": {
+        "cleaning": "recommended_against",
+        "note": "ws2812b_v5_worldsemi s3: peak temperature Tp 245 C; s2.1 advises against organic solvents and ultrasonic cleaning",
+        "peak_temp_max_c": 245.0
+      },
+      "C48260": {
+        "note": "tpd1e10b06_ti orderable table: Level-1-260C-UNLIM",
+        "peak_temp_max_c": 260.0
+      },
+      "C5379864": {
+        "note": "py32f003_puya states no soldering profile"
+      },
+      "C92584": {
+        "note": "k2_1187sq_hro states no soldering profile"
+      }
+    },
+    "furniture": {
+      "J2": {
+        "note": "debug footprint: bare 2x3 land array, no part is fitted"
+      },
+      "TP1": {},
+      "TP10": {},
+      "TP11": {},
+      "TP12": {},
+      "TP13": {},
+      "TP14": {},
+      "TP15": {},
+      "TP16": {},
+      "TP17": {},
+      "TP2": {},
+      "TP3": {},
+      "TP4": {},
+      "TP5": {},
+      "TP6": {},
+      "TP7": {},
+      "TP8": {},
+      "TP9": {}
+    }
   },
   "release_generation": {
     "lock_file_globs": [
@@ -538,10 +618,6 @@
     ],
     "declined_domains": [
       {
-        "domain": "assembly_process",
-        "reason": "the process half is already decided and encoded: BRIEF.md permits no more than stencil print, single-side placement and one reflow pass, design/netlist.py holds that as ASSEMBLY_POLICY, and the through_hole_soldered_parts claim judges the part of it with a measurable consequence. ASM.PROCESS needs the other half - a record per fitted part number, where an empty record is the explicit statement 'we looked and it needs nothing'. Twelve part numbers are fitted; six carry a frozen datasheet, and the six passive ones - two Samsung MLCCs and four Uniroyal 0402 resistors - carry no committed document at all, so half the records could only be written by asserting a review that never happened. Freezing those six documents is what lifts this decline; the peak this board would then declare is already fixed at the WS2812B's 245 C, the lowest of the three peaks the frozen datasheets state - the USB-C receptacle's drawing gives 260 C held 10 s and TI's orderable table gives 260 C at MSL 1, while the K2 switch drawing, the PY32 datasheet and the ME6211 datasheet carry no soldering profile at all"
-      },
-      {
         "domain": "current_capacity",
         "reason": "the board draws its whole load through the USB port budget and no conductor on it carries more than that; a declared current-path set with its own capacity basis has not been authored, and stating one would mean choosing a curve this board has not sourced"
       },
@@ -551,7 +627,7 @@
       },
       {
         "domain": "lifecycle",
-        "reason": "BOM.LIFECYCLE judges a frozen snapshot whose entries carry an established status, and unestablished blocks because unknown is not PASS anywhere here. The only acquisition the toolkit offers retrieves the LCSC per-part record, and that record - committed on this board as components/jlcpcb.json - carries library_type, manufacturer, mpn, package, price_breaks and stock, and no lifecycle field at all; reading 'in stock today' as 'active' is exactly the false confidence the snapshot exists to prevent. A freeze here would therefore write twelve unestablished candidates and no evidence to establish them from. Of the twelve part numbers fitted, one publishes its own status - TI prints Active/Production in the orderable table of the frozen TPD1E10B06 datasheet - so what lifts this decline is per-part documents stating lifecycle for the other eleven, not a re-run of the freeze"
+        "reason": "BOM.LIFECYCLE judges a frozen snapshot whose entries carry an established status, and unestablished blocks because unknown is not PASS anywhere here. The only acquisition the toolkit offers retrieves the LCSC per-part record, and that record - committed on this board as components/jlcpcb.json - carries library_type, manufacturer, mpn, package, price_breaks and stock, and no lifecycle field at all; reading 'in stock today' as 'active' is exactly the false confidence the snapshot exists to prevent. A freeze here would therefore write twelve unestablished candidates and no evidence to establish them from. All twelve part numbers now carry a frozen datasheet, and exactly one of those documents states a production status: TI prints Active/Production in the TPD1E10B06 orderable table. Samsung's MLCC catalogue and Uniroyal's resistor sheet state none, and the remaining vendors state none either. So what lifts this decline is a different class of document - a vendor product-status page - not a re-run of the freeze and not more datasheets"
       },
       {
         "domain": "orientation",

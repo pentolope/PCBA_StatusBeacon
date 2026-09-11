@@ -1,5 +1,19 @@
 {
   "documents": {
+    "chip_resistor_uniroyal": {
+      "applies_to": [
+        "0402WGF1001TCE",
+        "0402WGF1002TCE",
+        "0402WGF330JTCE",
+        "0402WGF5101TCE"
+      ],
+      "bytes": 467557,
+      "document_id": "Uniroyal Thick Film Chip Resistors Feb.12,2019 V.3",
+      "file": "datasheets/chip_resistor_uniroyal.pdf",
+      "retrieved": "2026-09-10",
+      "sha256": "11cd644d5d8a34a6d12775afb80bf58d8fc11f0c3b700dbd0f7a59942ceaa5ef",
+      "url": "https://datasheet.lcsc.com/datasheet/pdf/0a975aaa49b7c97f38a963127be4a823.pdf"
+    },
     "k2_1187sq_hro": {
       "applies_to": [
         "K2-1187SQ-A4SW-06"
@@ -19,6 +33,18 @@
       "retrieved": "2026-09-02",
       "sha256": "23084e9d0d0fd762c7419509ee656856be36f08ffc39f184e22a2acf7cfae5e6",
       "url": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_MICRONE-Nanjing-Micro-One-Elec-ME6211C50M5G-N_C236670.pdf"
+    },
+    "mlcc_samsung": {
+      "applies_to": [
+        "CL05B104KO5NNNC",
+        "CL21A475KAQNNNE"
+      ],
+      "bytes": 7856403,
+      "document_id": "Samsung Electro-Mechanics Multilayer Ceramic Capacitors, November 2015",
+      "file": "datasheets/mlcc_samsung.pdf",
+      "retrieved": "2026-09-10",
+      "sha256": "96baebe4bd0ce363e87be28b5b003f511f1502e084a6fc4f02333ded56c808f6",
+      "url": "https://datasheet.lcsc.com/datasheet/pdf/02336ea48ea44ca18c72517dd3cb7b47.pdf"
     },
     "py32f003_puya": {
       "applies_to": [

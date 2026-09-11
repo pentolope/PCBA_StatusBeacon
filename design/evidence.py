@@ -17,6 +17,15 @@ SOURCES = {
         "retrieved": "2026-09-02",
         "applies_to": ["WS2812B-V5/W"],
     },
+    "mlcc_samsung": {
+        "file": "datasheets/mlcc_samsung.pdf",
+        "url": "https://datasheet.lcsc.com/datasheet/pdf/"
+               "02336ea48ea44ca18c72517dd3cb7b47.pdf",
+        "retrieved": "2026-09-10",
+        "document_id": "Samsung Electro-Mechanics Multilayer Ceramic "
+                       "Capacitors, November 2015",
+        "applies_to": ["CL05B104KO5NNNC", "CL21A475KAQNNNE"],
+    },
     "me6211_microne": {
         "file": "datasheets/me6211_microne.pdf",
         "url": "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/"
@@ -53,6 +62,15 @@ SOURCES = {
         "retrieved": "2026-09-01",
         "document_id": "LCSC C165948 footprint, docType 4",
         "applies_to": ["TYPE-C-31-M-12"],
+    },
+    "chip_resistor_uniroyal": {
+        "file": "datasheets/chip_resistor_uniroyal.pdf",
+        "url": "https://datasheet.lcsc.com/datasheet/pdf/"
+               "0a975aaa49b7c97f38a963127be4a823.pdf",
+        "retrieved": "2026-09-10",
+        "document_id": "Uniroyal Thick Film Chip Resistors Feb.12,2019 V.3",
+        "applies_to": ["0402WGF1001TCE", "0402WGF1002TCE",
+                       "0402WGF330JTCE", "0402WGF5101TCE"],
     },
     "k2_1187sq_hro": {
         "file": "datasheets/k2_1187sq_hro.pdf",
